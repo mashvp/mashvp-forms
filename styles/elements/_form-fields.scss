@@ -1,0 +1,477 @@
+$black: #212121;
+
+$lighter-blue: lighten(#d6e4ff, 6%);
+$light-blue: #adc8ff;
+$dark-blue: #091a7a;
+
+$light-red: #fce9dd !default;
+$red: #d1574f !default;
+
+$block-like-inputs: (
+  'datetime-local',
+  'email',
+  'file',
+  'number',
+  'password',
+  'tel',
+  'text',
+  'url'
+);
+
+body.dnd-dragging {
+  cursor: grabbing;
+}
+
+.mashvp-forms.form-fields--wrapper {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  .stage--root {
+    .row--item {
+      width: 0;
+      flex-grow: 1;
+
+      cursor: grab;
+
+      body.dnd-dragging & {
+        cursor: grabbing;
+      }
+
+      .row--item-contents {
+        height: 100%;
+
+        outline: 4px solid transparent;
+        outline-offset: -4px;
+
+        @include transition((outline));
+
+        &.selected {
+          outline: 4px solid $light-blue;
+        }
+
+        .row--item-contents--inner {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: flex-start;
+          height: 100%;
+          padding: 8px;
+
+          background-color: transparent;
+          border: 1px solid transparent;
+          border-radius: 4px;
+          box-shadow: 0 0 0 transparent;
+
+          @include transition(
+            (background-color, border-color, box-shadow, opacity)
+          );
+
+          pointer-events: none;
+
+          .name {
+            margin-bottom: 4px;
+
+            font-weight: 500;
+          }
+
+          .item--preview {
+            width: 100%;
+
+            select,
+            textarea {
+              width: 100%;
+              resize: none;
+            }
+
+            input {
+              @each $type in $block-like-inputs {
+                &[type='#{$type}'] {
+                  width: 100%;
+                }
+              }
+            }
+
+            p.message {
+              margin: 0;
+
+              color: grey;
+            }
+
+            p.error {
+              margin: 0;
+              padding: 8px;
+
+              color: $red;
+              background-color: $light-red;
+            }
+
+            .field--group {
+              display: flex;
+              flex-direction: row;
+              justify-content: flex-start;
+              gap: 0 4px;
+
+              .field--group-item {
+                width: 0;
+                flex-grow: 1;
+
+                &.optional {
+                  &:not(.active) {
+                    display: none;
+                  }
+                }
+
+                .field--group-item-label {
+                  margin-bottom: 2px;
+
+                  font-size: 0.8em;
+                }
+              }
+            }
+          }
+        }
+
+        &:hover {
+          .row--item-contents--inner {
+            background-color: white;
+            border: 1px solid rgba(black, 0.2);
+          }
+        }
+
+        &.dragging {
+          .row--item-contents--inner {
+            background-color: white;
+            border: 1px solid rgba(black, 0.2);
+            box-shadow: 0 8px 10px 1px rgba(black, 0.14),
+              0 3px 14px 2px rgba(black, 0.12), 0 5px 5px -3px rgba(black, 0.2);
+          }
+        }
+
+        &.dropping {
+          .row--item-contents--inner {
+            background-color: transparent;
+            border: 1px solid transparent;
+            box-shadow: 0 0 0 transparent;
+          }
+
+          &.dismissing {
+            .row--item-contents--inner {
+              opacity: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .stage--toolbar {
+      position: relative;
+      margin-bottom: 16px;
+
+      background-color: darken(white, 3%);
+      border-bottom: 1px solid rgba(black, 0.2);
+      box-shadow: 0 1px 1px rgba(black, 0.04);
+
+      z-index: 10;
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 40px;
+
+        background: linear-gradient(
+          to top,
+          darken(white, 3%) 10%,
+          transparent 100%
+        );
+
+        opacity: 1;
+        @include transition((opacity));
+
+        z-index: 200;
+        pointer-events: none;
+
+        body.dnd-dragging & {
+          opacity: 0;
+        }
+      }
+
+      .stage--toolbar-dnd {
+        position: relative;
+        display: block;
+        height: 260px;
+        padding: 8px;
+        padding-top: 0;
+
+        overflow-y: scroll;
+        z-index: 100;
+
+        .smooth-dnd-container {
+          display: grid;
+          grid-template-columns: repeat(5, minmax(0, 1fr));
+          grid-auto-flow: row;
+          margin-bottom: 48px;
+
+          z-index: -1;
+
+          .separator {
+            position: sticky;
+            top: 0;
+            display: block;
+            grid-column: 1 / span 5;
+            padding: 8px;
+            margin-bottom: 8px;
+
+            text-align: center;
+
+            @include transition((opacity));
+
+            pointer-events: none;
+            user-select: none;
+
+            &:not(:first-child) {
+              margin-top: 16px;
+            }
+
+            span {
+              display: inline-block;
+              padding: 0 12px;
+
+              color: $black;
+              background-color: darken(white, 3%);
+              text-transform: uppercase;
+            }
+
+            &::before {
+              content: '';
+              display: block;
+              position: absolute;
+              top: 50%;
+              left: -8px;
+              width: calc(100% + 16px);
+              height: 1px;
+
+              background-color: lighten($black, 70%);
+
+              pointer-events: none;
+              z-index: -1;
+            }
+
+            &::after {
+              content: '';
+              display: block;
+              position: absolute;
+              top: 0;
+              left: -8px;
+              width: calc(100% + 16px);
+              height: 100%;
+
+              background: linear-gradient(to bottom, darken(white, 3%) 50%, transparent 100%);
+
+              pointer-events: none;
+              z-index: -2;
+            }
+          }
+
+          .row--item {
+            width: 100%;
+
+            @include transition((opacity));
+          }
+        }
+      }
+
+      .stage--rubbish-bin {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        background-color: rgba(black, 0.2);
+        border: 2px dashed black;
+
+        opacity: 0;
+        @include transition((opacity, background-color, border-color));
+
+        pointer-events: none;
+        z-index: 0;
+
+        &::before {
+          content: '\f182';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+
+          font-size: 32px;
+          color: currentColor;
+          @include transition((color));
+
+          pointer-events: none;
+        }
+
+        &:hover {
+          background-color: $light-red;
+          border-color: $red;
+          color: $red;
+        }
+
+        .smooth-dnd-container {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      body.dnd-dragging & {
+        .stage--toolbar-dnd {
+          pointer-events: none;
+
+          .smooth-dnd-container {
+            .separator,
+            .row--item:not(.smooth-dnd-ghost) {
+              opacity: 0;
+            }
+          }
+        }
+
+        .stage--rubbish-bin {
+          opacity: 1;
+          pointer-events: initial;
+        }
+      }
+    }
+
+    .stage--container {
+      padding: 0 16px;
+
+      .drop-preview {
+        border: 2px dashed $light-blue;
+        background-color: $lighter-blue;
+
+        &.row {
+          margin: 4px;
+        }
+      }
+
+      // .smooth-dnd-container.vertical {
+      //   min-height: 200px;
+      // }
+
+      .row {
+        .row--inner {
+          position: relative;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: stretch;
+          margin: 4px;
+
+          background-color: darken(white, 3%);
+          border: 1px solid rgba(black, 0.2);
+          box-shadow: 0 1px 1px rgba(black, 0.04);
+
+          @include transition((transform, box-shadow));
+
+          &.dragging {
+            transform: scale(1.02);
+            box-shadow: 0 16px 24px 2px rgba(black, 0.14),
+              0 6px 30px 5px rgba(black, 0.12), 0 8px 10px -5px rgba(black, 0.2);
+          }
+
+          &.dropping {
+            transform: scale(1);
+            box-shadow: 0 1px 1px rgba(black, 0.04);
+          }
+
+          &.empty {
+            &::before {
+              content: attr(data-message-on-empty);
+              display: block;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+
+              color: grey;
+
+              pointer-events: none;
+            }
+          }
+
+          .row--handle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            flex-grow: 0;
+            width: 20px;
+            height: unset;
+
+            font-size: 18px;
+            background-color: darken(white, 10%);
+
+            cursor: grab;
+
+            body.dnd-dragging & {
+              cursor: grabbing;
+            }
+
+            &::before {
+              content: '\f333';
+              transform: rotate(90deg);
+            }
+          }
+
+          .smooth-dnd-container.horizontal {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: stretch;
+            flex-grow: 1;
+            min-height: 60px;
+          }
+        }
+      }
+    }
+
+    .stage--controls {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 16px;
+    }
+  }
+
+  // TODO: Hide this field
+  // TODO: Replace with input[type=hidden]
+  textarea#_mashvp-forms__fields {
+    width: 100%;
+    min-height: 300px;
+    font-family: 'Courier New', Courier, monospace;
+    resize: none;
+
+    // display: none;
+  }
+}
+
+#post_metadata_mashvp-forms__fields .inside {
+  margin-top: 0;
+  padding: 0;
+}

@@ -1,0 +1,270 @@
+# Copyright (C) 2020 Mashvp
+# This file is distributed under the same license as the Mashvp — Forms plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Mashvp — Forms 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mashvp-forms\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-11-30T17:22:29+01:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+"X-Domain: mashvp-forms\n"
+
+#. Plugin Name of the plugin
+msgid "Mashvp — Forms"
+msgstr ""
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "http://mashvp.com"
+msgstr ""
+
+#. Description of the plugin
+msgid "No-bullsh!t form plugin"
+msgstr ""
+
+#. Author of the plugin
+msgid "Mashvp"
+msgstr ""
+
+#: includes/classes/Admin.php:70
+msgid "Form fields"
+msgstr ""
+
+#: includes/classes/Admin.php:79
+msgid "Shortcode"
+msgstr ""
+
+#: includes/classes/Admin.php:88
+msgid "Field options"
+msgstr ""
+
+#: includes/classes/PostTypes.php:15
+#: includes/classes/PostTypes.php:17
+msgctxt "Post type UI"
+msgid "Forms"
+msgstr ""
+
+#: includes/classes/PostTypes.php:18
+msgctxt "Post type UI"
+msgid "Form"
+msgstr ""
+
+#: includes/classes/PostTypes.php:19
+msgctxt "Post type UI"
+msgid "All forms"
+msgstr ""
+
+#: includes/classes/PostTypes.php:20
+msgctxt "Post type UI"
+msgid "Add new"
+msgstr ""
+
+#: includes/classes/PostTypes.php:21
+msgctxt "Post type UI"
+msgid "Edit form"
+msgstr ""
+
+#: includes/classes/PostTypes.php:22
+msgctxt "Post type UI"
+msgid "New form"
+msgstr ""
+
+#: includes/classes/PostTypes.php:23
+msgctxt "Post type UI"
+msgid "Show form"
+msgstr ""
+
+#: includes/classes/PostTypes.php:24
+msgctxt "Post type UI"
+msgid "Search forms"
+msgstr ""
+
+#: includes/classes/PostTypes.php:25
+msgctxt "Post type UI"
+msgid "No forms found"
+msgstr ""
+
+#: includes/classes/PostTypes.php:26
+msgctxt "Post type UI"
+msgid "No forms found in Trash"
+msgstr ""
+
+#: includes/classes/PostTypes.php:59
+msgctxt "Post type columns"
+msgid "ID"
+msgstr ""
+
+#: includes/classes/PostTypes.php:60
+msgctxt "Post type columns"
+msgid "Shortcode"
+msgstr ""
+
+#: templates/admin/field-options.html.php:3
+msgid "Select a field to edit"
+msgstr ""
+
+#: js/controllers/form/components/AppControls.js:13
+msgid "Add row"
+msgstr ""
+
+#: js/controllers/form/components/Item.js:49
+msgid "Unknown field type"
+msgstr ""
+
+#: js/controllers/form/components/Row.js:15
+msgid "Drop items here"
+msgstr ""
+
+#: js/controllers/form/components/utils.js:86
+msgid "Inputs"
+msgstr ""
+
+#: js/controllers/form/components/utils.js:90
+msgid "Text"
+msgstr ""
+
+#: js/controllers/form/components/utils.js:91
+msgctxt "Text field default value"
+msgid "Text"
+msgstr ""
+
+#: js/controllers/form/components/utils.js:95
+msgid "Email"
+msgstr ""
+
+#: js/controllers/form/components/utils.js:96
+msgctxt "Email field default value"
+msgid "user@example.com"
+msgstr ""
+
+#: js/controllers/form/components/utils.js:104
+msgid "Password"
+msgstr ""
+
+#: js/controllers/form/components/utils.js:105
+msgctxt "Password field default value"
+msgid "password"
+msgstr ""
+
+#: js/controllers/form/components/utils.js:113
+msgid "Phone number"
+msgstr ""
+
+#: js/controllers/form/components/utils.js:114
+msgctxt "Phone number field default value"
+msgid "(541) 754-3010"
+msgstr ""
+
+#: js/controllers/form/components/utils.js:122
+msgid "URL"
+msgstr ""
+
+#: js/controllers/form/components/utils.js:123
+msgctxt "URL field default value"
+msgid "http://example.com/"
+msgstr ""
+
+#: js/controllers/form/components/utils.js:131
+msgid "Number"
+msgstr ""
+
+#: js/controllers/form/components/utils.js:136
+msgid "Date and time"
+msgstr ""
+
+#: js/controllers/form/components/utils.js:141
+msgid "File upload"
+msgstr ""
+
+#: js/controllers/form/components/utils.js:145
+msgid "Text area"
+msgstr ""
+
+#: js/controllers/form/components/utils.js:146
+msgctxt "Text area field default value"
+msgid "Multi-line text"
+msgstr ""
+
+#: js/controllers/form/components/utils.js:155
+msgid "Composite"
+msgstr ""
+
+#: js/controllers/form/components/utils.js:159
+msgid "Full name"
+msgstr ""
+
+#: js/controllers/form/components/utils.js:163
+msgid "First name"
+msgstr ""
+
+#: js/controllers/form/components/utils.js:164
+msgctxt "First name field default value"
+msgid "John"
+msgstr ""
+
+#: js/controllers/form/components/utils.js:173
+msgid "Middle name"
+msgstr ""
+
+#: js/controllers/form/components/utils.js:174
+msgctxt "Middle name field default value"
+msgid "H."
+msgstr ""
+
+#: js/controllers/form/components/utils.js:184
+msgid "Last name"
+msgstr ""
+
+#: js/controllers/form/components/utils.js:185
+msgctxt "Last name field default value"
+msgid "Doe"
+msgstr ""
+
+#: js/controllers/form/components/utils.js:197
+msgid "Controls"
+msgstr ""
+
+#: js/controllers/form/components/utils.js:201
+msgid "Submit form button"
+msgstr ""
+
+#: js/controllers/form/components/utils.js:202
+msgctxt "Submit form field default value"
+msgid "Send"
+msgstr ""
+
+#: js/controllers/form/components/utils.js:206
+msgid "Reset form button"
+msgstr ""
+
+#: js/controllers/form/components/utils.js:207
+msgctxt "Reset form field default value"
+msgid "Reset"
+msgstr ""
+
+#: js/controllers/form/components/utils.js:211
+msgid "Generic button"
+msgstr ""
+
+#: js/controllers/form/components/utils.js:212
+msgctxt "Generic button field default value"
+msgid "Generic button"
+msgstr ""
+
+#: js/controllers/form/components/utils.js:221
+msgid "Custom content"
+msgstr ""
+
+#: js/controllers/form/components/utils.js:225
+msgid "Text message"
+msgstr ""
+
+#: js/controllers/form/components/utils.js:226
+msgctxt "Text message field default value"
+msgid "You can insert text anywhere in the form"
+msgstr ""

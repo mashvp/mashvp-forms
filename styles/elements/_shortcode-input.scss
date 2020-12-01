@@ -1,0 +1,51 @@
+.mashvp-forms.shortcode-input {
+  position: relative;
+  display: inline-block;
+
+  input {
+    padding-right: 28px;
+    font-family: 'Courier New', Courier, monospace;
+
+    @include transition((border-color, box-shadow));
+
+    &:focus {
+      border-color: #007cba;
+      box-shadow: 0 0 0 1px #007cba;
+
+      &[data-clipboard-copied] {
+        border-color: #2eac4d;
+        box-shadow: 0 0 0 1px #2eac4d;
+
+        &::selection {
+          background: #14743e !important;
+          color: white !important;
+        }
+      }
+    }
+  }
+
+  span.dashicons {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    right: 6px;
+    transform: translateY(-50%);
+
+    font-size: 16px;
+    opacity: 0.6;
+
+    pointer-events: none;
+  }
+}
+
+#post_metadata_mashvp-forms__shortcode {
+  .mashvp-forms.shortcode-input {
+    width: 100%;
+
+    input {
+      width: 100%;
+    }
+  }
+}
