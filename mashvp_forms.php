@@ -19,7 +19,7 @@ if (defined('MASHVP_FORMS')) {
 }
 
 define('MASHVP_FORMS', true);
-define('MASHVP_FORMS__VERSION', '0.1.0');
+define('MASHVP_FORMS__VERSION', '0.1.0-alpha.0');
 define('MASHVP_FORMS__DIR', basename(dirname(__FILE__)));
 define('MASHVP_FORMS__PATH', plugin_dir_path(__FILE__));
 
