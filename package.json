@@ -1,6 +1,6 @@
 {
   "name": "mashvp-forms",
-  "version": "0.1.0-alpha.0",
+  "version": "0.1.0-alpha.1",
   "description": "No-bullsh!t form plugin",
   "main": "js/index.js",
   "author": "Mashvp",
