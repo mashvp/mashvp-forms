@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2020-11-30T02:44:43+01:00\n"
-"PO-Revision-Date: 2021-01-06 15:06+0000\n"
+"PO-Revision-Date: 2021-01-06 17:15+0000\n"
 "Language: fr_FR\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: mashvp-forms\n"
@@ -71,6 +71,7 @@ msgid "Email"
 msgstr "Adresse email"
 
 #: js/controllers/form/react-app/utils.js:165
+#: js/controllers/form/react-app/utils.js:590
 msgctxt "Email field placeholder example"
 msgid "user@example.com"
 msgstr "prenom.nom@domaine.fr"
@@ -162,6 +163,7 @@ msgid "Unknown attribute"
 msgstr "Attribut inconnu"
 
 #: js/controllers/form/react-app/utils.js:123
+#: js/controllers/form/react-app/utils.js:592
 msgctxt "Field attribute label"
 msgid "Value"
 msgstr "Valeur"
@@ -191,6 +193,11 @@ msgstr "Champs du formulaire"
 #: includes/classes/Admin.php:145
 msgid "Form options"
 msgstr "Options du formulaire"
+
+#: js/controllers/form/react-app/utils.js:589
+msgctxt "Form options"
+msgid "Condition"
+msgstr "Condition"
 
 #: templates/admin/metaboxes/options-editor.html.php:20
 msgctxt "Form options"
@@ -226,6 +233,11 @@ msgstr "réglages du formulaire"
 msgctxt "Form settings email"
 msgid "Add email"
 msgstr "Ajouter une adresse mail"
+
+#: js/controllers/form/react-app/utils.js:591
+msgctxt "Form settings email condition"
+msgid "IF"
+msgstr "SI"
 
 #: js/controllers/form/react-app/utils.js:358
 msgid "Generic button"
@@ -803,6 +815,21 @@ msgstr "Effacer"
 #: templates/admin/metaboxes/field-options.html.php:3
 msgid "Select a field to edit"
 msgstr "Sélectionnez un champ à éditer"
+
+#: js/controllers/form/react-app/utils.js:594
+msgctxt "Select field option attribute"
+msgid "Label"
+msgstr "Libellé"
+
+#: js/controllers/form/react-app/utils.js:593
+msgctxt "Select field option attribute"
+msgid "Value"
+msgstr "Valeur"
+
+#: js/controllers/form/react-app/utils.js:588
+msgctxt "Select field options"
+msgid "Add an option"
+msgstr "Ajouter une option"
 
 #: js/controllers/form/react-app/utils.js:234
 msgctxt "Select field placeholder example"

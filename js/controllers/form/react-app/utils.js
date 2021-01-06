@@ -582,3 +582,14 @@ export const htmlButtonTypes = {
   submit: _x('Submit', 'Button HTML type', 'mashvp-forms'),
   reset: _x('Reset', 'Button HTML type', 'mashvp-forms'),
 };
+
+// Define deeper translations here as they don't get picked up by the generator
+() => {
+  _x('Add an option', 'Select field options', 'mashvp-forms');
+  _x('Condition', 'Form options', 'mashvp-forms');
+  _x('user@example.com', 'Email field placeholder example', 'mashvp-forms');
+  _x('IF', 'Form settings email condition', 'mashvp-forms');
+  _x('Value', 'Field attribute label', 'mashvp-forms');
+  _x('Value', 'Select field option attribute', 'mashvp-forms');
+  _x('Label', 'Select field option attribute', 'mashvp-forms');
+};
