@@ -8,15 +8,15 @@ module.exports = {
   entry: path.resolve(__dirname, 'js/index.js'),
 
   output: {
-    path: path.resolve(__dirname, 'assets'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'index.min.js',
     chunkFilename: 'chunks/[id]-[chunkhash].chunk.js',
     publicPath: process.env.WEBPACK_MODE
-      ? '/wp-content/plugins/mashvp-forms/assets/'
-      : '/sps/wp-content/plugins/mashvp-forms/assets/',
+      ? '/wp-content/plugins/mashvp-forms/dist/'
+      : '/sps/wp-content/plugins/mashvp-forms/dist/',
   },
 
-  devtool: 'cheap-module-source-map',
+  devtool: 'eval-source-map',
 
   plugins: [
     new TerserPlugin({

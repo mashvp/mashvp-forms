@@ -1,15 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import applicationController from '../../application-controller';
+import ApplicationController from '../../application-controller';
 import { FIELDS_UPDATED } from '../../pubsub-messages';
-import App from './components/App';
+import App from './react-app/components/App';
 
-export default class extends applicationController {
+export const renderToDOM = (root, props = {}) => {
+  if (root) {
+    ReactDOM.render(<App {...props} />, root);
+  }
+};
+
+export default class extends ApplicationController {
   static targets = ['root', 'output'];
 
   connect() {
-    ReactDOM.render(<App />, this.rootTarget);
+    renderToDOM(this.rootTarget, { initialData: this.initalRows });
 
     this.subscribe(FIELDS_UPDATED, (_, { json }) => {
       this.outputTarget.value = json;
@@ -20,5 +26,17 @@ export default class extends applicationController {
     super.disconnect();
 
     ReactDOM.unmountComponentAtNode(this.rootTarget);
+  }
+
+  get initialData() {
+    try {
+      return JSON.parse(this.outputTarget.value);
+    } catch (error) {
+      return { rows: [] };
+    }
+  }
+
+  get initalRows() {
+    return this.initialData?.rows;
   }
 }

@@ -1,0 +1,12 @@
+$black: #212121;
+
+$green: #2eac4d;
+$dark-green: #14743e;
+
+$light-blue: #007cba;
+$lighter-blue: desaturate(lighten($light-blue, 55%), 40%);
+
+$light-red: #fce9dd !default;
+$red: #d1574f !default;
+
+$toolbar-bg: darken(white, 4%) !default;

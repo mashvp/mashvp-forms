@@ -1,0 +1,238 @@
+#post_metadata_mashvp-forms__options {
+  .inside {
+    padding: 16px;
+    margin-top: 0;
+
+    #mashvp-forms--options {
+      fieldset {
+        padding: 8px;
+        border: 1px solid rgba(black, 0.2);
+
+        & + fieldset {
+          margin-top: 16px;
+        }
+
+        legend {
+          padding: 0 8px;
+        }
+      }
+
+      label.field,
+      div.field {
+        position: relative;
+        display: block;
+
+        &:not(:last-child) {
+          margin-bottom: 8px;
+        }
+
+        .row {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          padding: 1px;
+
+          @include transition((height, opacity, padding));
+          will-change: height;
+
+          overflow: hidden;
+
+          &:not(:last-child) {
+            margin-bottom: 4px;
+          }
+
+          &.closed {
+            padding: 0;
+            opacity: 0;
+            pointer-events: none;
+          }
+
+          .row--inner {
+            width: 100%;
+
+            ul.emails {
+              li.email-item {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 4px;
+
+                background-color: darken(white, 3%);
+                border: 1px solid darken(white, 6%);
+                border-radius: 4px;
+
+                button.button--delete {
+                  position: relative;
+                  min-height: unset;
+                  height: 22px;
+                  padding: 0;
+                  margin-left: 4px;
+
+                  &::before {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                  }
+                }
+
+                button.button--delete {
+                  color: $red;
+
+                  &:focus {
+                    box-shadow: 0 0 0 1px $red, 0 0 2px 1px rgba($red, 0.8);
+                  }
+                }
+
+                > * {
+                  & + * {
+                    margin-left: 12px;
+                  }
+                }
+
+                > input,
+                .conditions {
+                  flex-basis: 0;
+                  flex-grow: 1;
+                  flex-shrink: 0;
+                }
+
+                .conditions {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: flex-start;
+                  align-items: stretch;
+                  margin-right: 4px;
+
+                  header {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
+
+                    button.button--add {
+                      display: inline-flex;
+                      flex-direction: row;
+                      justify-content: space-between;
+                      align-items: center;
+                      min-height: unset;
+                      margin-left: 10px;
+
+                      line-height: 1.7;
+
+                      > * {
+                        pointer-events: none;
+                      }
+
+                      .dashicons {
+                        width: unset;
+                        height: unset;
+                        margin-left: 4px;
+                        transform: translateY(1px);
+
+                        font-size: 12px;
+                      }
+                    }
+
+                    &:not(:last-child) {
+                      display: none;
+                    }
+                  }
+
+                  li.condition {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    flex-wrap: nowrap;
+                    margin-bottom: 0;
+
+                    span.if {
+                      display: inline-flex;
+                      justify-content: center;
+                      align-items: center;
+                      width: 30px;
+                      height: 30px;
+                      flex-shrink: 0;
+                      margin-right: 12px;
+
+                      background-color: darken(white, 10%);
+                      border-radius: 50%;
+
+                      user-select: none;
+                    }
+
+                    input,
+                    select {
+                      &:not(:nth-child(2)) {
+                        margin-left: 0;
+
+                        border-left: none;
+                        border-top-left-radius: 0;
+                        border-bottom-left-radius: 0;
+                      }
+
+                      &:not(:nth-last-child(2)) {
+                        margin-right: 0;
+
+                        border-top-right-radius: 0;
+                        border-bottom-right-radius: 0;
+                      }
+                    }
+
+                    select.attribute {
+                      max-width: 250px;
+                    }
+
+                    button.button--delete {
+                      flex-shrink: 0;
+                      margin-left: 4px;
+                    }
+                  }
+                }
+              }
+
+              & + .actions {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+              }
+            }
+          }
+
+          &.expand {
+            input {
+              width: 100%;
+            }
+          }
+
+          input[type='checkbox'],
+          input[type='radio'] {
+            margin: 2px !important;
+
+            & + .label {
+              display: block;
+              margin-left: 5px;
+            }
+          }
+
+          label.radio {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+
+            & + label.radio {
+              margin-left: 16px;
+            }
+
+            input[type='radio'] {
+              width: initial;
+            }
+          }
+        }
+      }
+    }
+  }
+}

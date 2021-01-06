@@ -9,9 +9,15 @@ spl_autoload_register(
             $classes = array(
                 'mashvp\\forms\\admin' => '/classes/Admin.php',
                 'mashvp\\forms\\form' => '/classes/Form.php',
+                'mashvp\\forms\\front' => '/classes/Front.php',
+                'mashvp\\forms\\notifications\\email' => '/classes/Notification/Email.php',
+                'mashvp\\forms\\notifications\\genericnotification' => '/classes/Notification/GenericNotification.php',
                 'mashvp\\forms\\posttypes' => '/classes/PostTypes.php',
+                'mashvp\\forms\\remoteaddress' => '/classes/RemoteAddress.php',
                 'mashvp\\forms\\renderer' => '/classes/Renderer.php',
                 'mashvp\\forms\\shortcode' => '/classes/ShortCode.php',
+                'mashvp\\forms\\submission' => '/classes/Submission.php',
+                'mashvp\\forms\\submissionhandler' => '/classes/SubmissionHandler.php',
                 'mashvp\\forms\\utils' => '/classes/Utils.php',
                 'mashvp\\singletonclass' => '/classes/inherit/SingletonClass.php'
             );

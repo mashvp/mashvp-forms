@@ -1,0 +1,61 @@
+#post_metadata_mashvp-forms__submission-fields {
+  .inside {
+    padding: 0;
+    margin-top: 0;
+
+    dl.mvpf__submission-list {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: stretch;
+      gap: 1px;
+      margin-top: 0;
+      margin-bottom: 0;
+
+      background-color: #ccd0d4;
+
+      dt,
+      dd {
+        padding: 20px;
+        margin: 0;
+
+        background-color: white;
+      }
+
+      dt {
+        display: flex;
+        justify-content: flex-end;
+
+        font-weight: 500;
+
+        .label {
+          max-width: 42ch;
+
+          text-align: right;
+        }
+      }
+
+      dd {
+        display: flex;
+        align-items: center;
+
+        &[data-type='textarea'] {
+          white-space: pre-line;
+        }
+
+        &[data-type='checkbox'] {
+          input[type='checkbox'] {
+            &:disabled {
+              opacity: 1;
+
+              &::before {
+                opacity: 1;
+              }
+            }
+
+            pointer-events: none;
+          }
+        }
+      }
+    }
+  }
+}

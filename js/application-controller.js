@@ -1,5 +1,6 @@
 import { Controller } from 'stimulus';
 import { publish, subscribe, unsubscribe } from 'pubsub-js';
+import camelCase from 'lodash.camelcase';
 
 export default class extends Controller {
   constructor(...args) {
@@ -8,6 +9,8 @@ export default class extends Controller {
     this.__timeouts = [];
     this.__events = [];
     this.__subscriptions = [];
+
+    this.element[this.controllerName] = this;
   }
 
   /**
@@ -23,6 +26,22 @@ export default class extends Controller {
     this.__subscriptions.forEach((subscription) => {
       unsubscribe(subscription);
     });
+
+    this.element[this.controllerName] = null;
+  }
+
+  /**
+   * The controller name in camel came
+   */
+  get camelCaseIdentifier() {
+    return camelCase(this.identifier);
+  }
+
+  /**
+   * The controller name formatted as {name}Controller.
+   */
+  get controllerName() {
+    return `${this.camelCaseIdentifier}Controller`;
   }
 
   /**

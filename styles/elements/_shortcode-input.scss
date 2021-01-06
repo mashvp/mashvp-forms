@@ -9,16 +9,21 @@
     @include transition((border-color, box-shadow));
 
     &:focus {
-      border-color: #007cba;
-      box-shadow: 0 0 0 1px #007cba;
+      border-color: $light-blue;
+      box-shadow: 0 0 0 1px $light-blue;
 
       &[data-clipboard-copied] {
-        border-color: #2eac4d;
-        box-shadow: 0 0 0 1px #2eac4d;
+        border-color: $green;
+        box-shadow: 0 0 0 1px $green;
 
         &::selection {
-          background: #14743e !important;
+          background: $dark-green !important;
           color: white !important;
+        }
+
+        & + span.dashicons {
+          opacity: 1;
+          color: $dark-green;
         }
       }
     }
@@ -35,6 +40,8 @@
 
     font-size: 16px;
     opacity: 0.6;
+
+    @include transition((opacity, color));
 
     pointer-events: none;
   }

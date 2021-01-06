@@ -1,15 +1,15 @@
-# Copyright (C) 2020 Mashvp
+# Copyright (C) 2021 Mashvp
 # This file is distributed under the same license as the Mashvp — Forms plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Mashvp — Forms 0.1.0\n"
+"Project-Id-Version: Mashvp — Forms 0.1.0-alpha.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mashvp-forms\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-11-30T17:22:29+01:00\n"
+"POT-Creation-Date: 2021-01-06T16:05:37+01:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: mashvp-forms\n"
@@ -31,240 +31,861 @@ msgstr ""
 msgid "Mashvp"
 msgstr ""
 
-#: includes/classes/Admin.php:70
+#: includes/classes/Admin.php:67
+msgctxt "Global settings option description"
+msgid "reCAPTCHA version"
+msgstr ""
+
+#: includes/classes/Admin.php:77
+msgctxt "Global settings option description"
+msgid "Hide badge? (for v2 invisible only)"
+msgstr ""
+
+#: includes/classes/Admin.php:86
+msgctxt "Global settings option description"
+msgid "reCAPTCHA site key"
+msgstr ""
+
+#: includes/classes/Admin.php:96
+msgctxt "Global settings option description"
+msgid "reCAPTCHA secret key"
+msgstr ""
+
+#: includes/classes/Admin.php:106
+#: templates/admin/general-options.html.php:4
+msgctxt "Menu page title"
+msgid "General form settings"
+msgstr ""
+
+#: includes/classes/Admin.php:107
+msgctxt "Menu page title"
+msgid "Settings"
+msgstr ""
+
+#: includes/classes/Admin.php:136
+#: includes/classes/Admin.php:173
 msgid "Form fields"
 msgstr ""
 
-#: includes/classes/Admin.php:79
+#: includes/classes/Admin.php:145
+msgid "Form options"
+msgstr ""
+
+#: includes/classes/Admin.php:154
 msgid "Shortcode"
 msgstr ""
 
-#: includes/classes/Admin.php:88
+#: includes/classes/Admin.php:163
 msgid "Field options"
 msgstr ""
 
-#: includes/classes/PostTypes.php:15
-#: includes/classes/PostTypes.php:17
+#: includes/classes/Admin.php:182
+msgid "Info"
+msgstr ""
+
+#: includes/classes/PostTypes.php:22
+#: includes/classes/PostTypes.php:24
 msgctxt "Post type UI"
 msgid "Forms"
 msgstr ""
 
-#: includes/classes/PostTypes.php:18
+#: includes/classes/PostTypes.php:25
 msgctxt "Post type UI"
 msgid "Form"
 msgstr ""
 
-#: includes/classes/PostTypes.php:19
+#: includes/classes/PostTypes.php:26
 msgctxt "Post type UI"
 msgid "All forms"
 msgstr ""
 
-#: includes/classes/PostTypes.php:20
+#: includes/classes/PostTypes.php:27
+#: includes/classes/PostTypes.php:71
 msgctxt "Post type UI"
 msgid "Add new"
 msgstr ""
 
-#: includes/classes/PostTypes.php:21
+#: includes/classes/PostTypes.php:28
 msgctxt "Post type UI"
 msgid "Edit form"
 msgstr ""
 
-#: includes/classes/PostTypes.php:22
+#: includes/classes/PostTypes.php:29
 msgctxt "Post type UI"
 msgid "New form"
 msgstr ""
 
-#: includes/classes/PostTypes.php:23
+#: includes/classes/PostTypes.php:30
 msgctxt "Post type UI"
 msgid "Show form"
 msgstr ""
 
-#: includes/classes/PostTypes.php:24
+#: includes/classes/PostTypes.php:31
 msgctxt "Post type UI"
 msgid "Search forms"
 msgstr ""
 
-#: includes/classes/PostTypes.php:25
+#: includes/classes/PostTypes.php:32
 msgctxt "Post type UI"
 msgid "No forms found"
 msgstr ""
 
-#: includes/classes/PostTypes.php:26
+#: includes/classes/PostTypes.php:33
 msgctxt "Post type UI"
 msgid "No forms found in Trash"
 msgstr ""
 
-#: includes/classes/PostTypes.php:59
+#: includes/classes/PostTypes.php:66
+#: includes/classes/PostTypes.php:68
+#: includes/classes/PostTypes.php:70
+msgctxt "Post type UI"
+msgid "Form submissions"
+msgstr ""
+
+#: includes/classes/PostTypes.php:69
+#: includes/classes/Submission.php:86
+msgctxt "Post type UI"
+msgid "Form submission"
+msgstr ""
+
+#: includes/classes/PostTypes.php:72
+msgctxt "Post type UI"
+msgid "Edit form submission"
+msgstr ""
+
+#: includes/classes/PostTypes.php:73
+msgctxt "Post type UI"
+msgid "New form submission"
+msgstr ""
+
+#: includes/classes/PostTypes.php:74
+msgctxt "Post type UI"
+msgid "Show form submission"
+msgstr ""
+
+#: includes/classes/PostTypes.php:75
+msgctxt "Post type UI"
+msgid "Search form submissions"
+msgstr ""
+
+#: includes/classes/PostTypes.php:76
+msgctxt "Post type UI"
+msgid "No form submissions found"
+msgstr ""
+
+#: includes/classes/PostTypes.php:77
+msgctxt "Post type UI"
+msgid "No form submissions found in Trash"
+msgstr ""
+
+#: includes/classes/PostTypes.php:113
+#: includes/classes/PostTypes.php:140
 msgctxt "Post type columns"
 msgid "ID"
 msgstr ""
 
-#: includes/classes/PostTypes.php:60
+#: includes/classes/PostTypes.php:114
 msgctxt "Post type columns"
 msgid "Shortcode"
 msgstr ""
 
-#: templates/admin/field-options.html.php:3
+#: includes/classes/PostTypes.php:141
+msgctxt "Post type columns"
+msgid "Form"
+msgstr ""
+
+#: includes/classes/PostTypes.php:142
+msgctxt "Post type columns"
+msgid "Notifications"
+msgstr ""
+
+#: includes/classes/SubmissionHandler.php:138
+msgctxt "Submission handler error"
+msgid "Cannot verify reCAPTCHA response, please try again"
+msgstr ""
+
+#: includes/classes/SubmissionHandler.php:192
+msgctxt "Submission handler error"
+msgid "Cannot verify the authenticity of the message"
+msgstr ""
+
+#: includes/classes/SubmissionHandler.php:203
+msgctxt "Submission handler error"
+msgid "Missing form ID"
+msgstr ""
+
+#: includes/classes/SubmissionHandler.php:217
+msgctxt "Submission handler error"
+msgid "Unable to retreive form data"
+msgstr ""
+
+#: templates/admin/general-options.html.php:13
+msgctxt "Global settings section"
+msgid "Spam protection"
+msgstr ""
+
+#: templates/admin/general-options.html.php:16
+#: templates/admin/metaboxes/options-editor.html.php:77
+msgctxt "Form options"
+msgid "reCAPTCHA"
+msgstr ""
+
+#: templates/admin/general-options.html.php:19
+msgctxt "reCAPTCHA"
+msgid "Version"
+msgstr ""
+
+#: templates/admin/general-options.html.php:24
+msgctxt "reCAPTCHA"
+msgid "reCAPTCHA v3"
+msgstr ""
+
+#: templates/admin/general-options.html.php:28
+msgctxt "reCAPTCHA"
+msgid "reCAPTCHA v2 (\"I'm not a robot\" Checkbox)"
+msgstr ""
+
+#: templates/admin/general-options.html.php:32
+msgctxt "reCAPTCHA"
+msgid "reCAPTCHA v2 (Invisible reCAPTCHA badge)"
+msgstr ""
+
+#: templates/admin/general-options.html.php:38
+msgctxt "reCAPTCHA"
+msgid "Hide badge? (for v2 invisible only)"
+msgstr ""
+
+#: templates/admin/general-options.html.php:53
+msgctxt "reCAPTCHA"
+msgid "Site key"
+msgstr ""
+
+#: templates/admin/general-options.html.php:63
+msgctxt "reCAPTCHA"
+msgid "Secret key"
+msgstr ""
+
+#: templates/admin/general-options.html.php:74
+msgid "Be careful to select the correct version for your keys, otherwise reCAPTCHA will not function properly."
+msgstr ""
+
+#: templates/admin/general-options.html.php:76
+msgctxt "Global settings reCAPTCHA help"
+msgid "Get a reCAPTCHA key"
+msgstr ""
+
+#: templates/admin/metaboxes/field-options.html.php:3
 msgid "Select a field to edit"
 msgstr ""
 
-#: js/controllers/form/components/AppControls.js:13
-msgid "Add row"
+#: templates/admin/metaboxes/field-options.html.php:11
+msgid "Apply"
 msgstr ""
 
-#: js/controllers/form/components/Item.js:49
-msgid "Unknown field type"
+#: templates/admin/metaboxes/options-editor.html.php:5
+msgctxt "Form options section"
+msgid "Submission notifications"
 msgstr ""
 
-#: js/controllers/form/components/Row.js:15
-msgid "Drop items here"
-msgstr ""
-
-#: js/controllers/form/components/utils.js:86
-msgid "Inputs"
-msgstr ""
-
-#: js/controllers/form/components/utils.js:90
-msgid "Text"
-msgstr ""
-
-#: js/controllers/form/components/utils.js:91
-msgctxt "Text field default value"
-msgid "Text"
-msgstr ""
-
-#: js/controllers/form/components/utils.js:95
+#: templates/admin/metaboxes/options-editor.html.php:20
+msgctxt "Form options"
 msgid "Email"
 msgstr ""
 
-#: js/controllers/form/components/utils.js:96
-msgctxt "Email field default value"
+#: templates/admin/metaboxes/options-editor.html.php:36
+msgctxt "Form settings email"
+msgid "Add email"
+msgstr ""
+
+#: templates/admin/metaboxes/options-editor.html.php:45
+msgctxt "Form options section"
+msgid "Spam protection"
+msgstr ""
+
+#: templates/admin/metaboxes/options-editor.html.php:60
+msgctxt "Form options"
+msgid "Honeypot"
+msgstr ""
+
+#: templates/admin/metaboxes/submission-info.html.php:19
+msgctxt "Notification email status"
+msgid "Email sent"
+msgstr ""
+
+#: templates/admin/metaboxes/submission-info.html.php:22
+msgctxt "Notification email status"
+msgid "Email send error"
+msgstr ""
+
+#: templates/admin/metaboxes/submission-info.html.php:25
+msgctxt "Notification email status"
+msgid "Email not sent"
+msgstr ""
+
+#: templates/email/submission-notification.html.php:407
+msgctxt "Email greeting"
+msgid "Hi there,"
+msgstr ""
+
+#. translators: %s form title in quotation marks
+#: templates/email/submission-notification.html.php:412
+msgctxt "Email submission explanation"
+msgid "You have received a new message from your form %s."
+msgstr ""
+
+#. translators: %s any content between quotation marks
+#: templates/email/submission-notification.html.php:415
+msgctxt "Quotation marks"
+msgid "“%s”"
+msgstr ""
+
+#: templates/email/submission-notification.html.php:449
+msgctxt "Email submission call-to-action"
+msgid "See submission"
+msgstr ""
+
+#. translators: %s link to "form settings"
+#: templates/email/submission-notification.html.php:482
+msgid "You can disable email notifications from the %s."
+msgstr ""
+
+#: templates/email/submission-notification.html.php:486
+msgid "form settings"
+msgstr ""
+
+#. translators: %s phonetic transcription of Mashvp
+#: templates/email/submission-notification.html.php:498
+msgctxt "Sentence about the phonetic transcription of Mashvp"
+msgid "It's pronounced %s."
+msgstr ""
+
+#: templates/email/submission-notification.html.php:501
+msgctxt "Phonetic transcription of Mashvp"
+msgid "mashup"
+msgstr ""
+
+#. translators: %1%s privacy and policy link, %2$s terms of service link
+#: templates/front/form/antispam/recaptcha/v2-invisible.html.php:56
+msgctxt "reCAPTCHA"
+msgid "This site is protected by reCAPTCHA and the Google %1$s and %2$s apply."
+msgstr ""
+
+#: templates/front/form/antispam/recaptcha/v2-invisible.html.php:59
+msgctxt "reCAPTCHA"
+msgid "Privacy Policy"
+msgstr ""
+
+#: templates/front/form/antispam/recaptcha/v2-invisible.html.php:63
+msgctxt "reCAPTCHA"
+msgid "Terms of Service"
+msgstr ""
+
+#: js/controllers/form/react-app/components/AppControls.js:13
+msgid "Add row"
+msgstr ""
+
+#: js/controllers/form/react-app/components/Item.js:54
+msgid "Unknown field type"
+msgstr ""
+
+#: js/controllers/form/react-app/components/Row.js:15
+msgid "Drop items here"
+msgstr ""
+
+#: js/controllers/form/react-app/components/Toolbar.js:84
+msgid "Fields list"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:120
+msgctxt "Field attribute label"
+msgid "Type"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:121
+msgctxt "Field attribute label"
+msgid "Label"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:122
+msgctxt "Field attribute label"
+msgid "Default value"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:123
+msgctxt "Field attribute label"
+msgid "Value"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:124
+msgctxt "Field attribute label"
+msgid "Options"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:125
+msgctxt "Field attribute label"
+msgid "Placeholder"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:126
+msgctxt "Field attribute label"
+msgid "Autocomplete"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:127
+msgctxt "Field attribute label"
+msgid "Required"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:128
+msgctxt "Field attribute label"
+msgid "Hide field"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:129
+msgctxt "Field attribute label"
+msgid "Read-only"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:130
+msgctxt "Field attribute label"
+msgid "Disabled"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:131
+msgctxt "Field attribute label"
+msgid "Show label"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:132
+msgctxt "Field attribute label"
+msgid "Allowed file types"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:133
+msgctxt "Field attribute label (HTML button type)"
+msgid "Type"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:138
+msgctxt "Field attribute label"
+msgid "Additional CSS classes"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:144
+msgctxt "Field attribute label"
+msgid "Unknown attribute"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:150
+msgid "Inputs"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:154
+msgid "Text"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:156
+msgctxt "Text field placeholder example"
+msgid "Text"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:163
+msgid "Email"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:165
+msgctxt "Email field placeholder example"
 msgid "user@example.com"
 msgstr ""
 
-#: js/controllers/form/components/utils.js:104
+#: js/controllers/form/react-app/utils.js:176
 msgid "Password"
 msgstr ""
 
-#: js/controllers/form/components/utils.js:105
-msgctxt "Password field default value"
-msgid "password"
+#: js/controllers/form/react-app/utils.js:178
+msgctxt "Password field placeholder example"
+msgid "********"
 msgstr ""
 
-#: js/controllers/form/components/utils.js:113
+#: js/controllers/form/react-app/utils.js:189
 msgid "Phone number"
 msgstr ""
 
-#: js/controllers/form/components/utils.js:114
-msgctxt "Phone number field default value"
+#: js/controllers/form/react-app/utils.js:191
+msgctxt "Phone number field placeholder example"
 msgid "(541) 754-3010"
 msgstr ""
 
-#: js/controllers/form/components/utils.js:122
+#: js/controllers/form/react-app/utils.js:202
 msgid "URL"
 msgstr ""
 
-#: js/controllers/form/components/utils.js:123
-msgctxt "URL field default value"
+#: js/controllers/form/react-app/utils.js:204
+msgctxt "URL field placeholder example"
 msgid "http://example.com/"
 msgstr ""
 
-#: js/controllers/form/components/utils.js:131
+#: js/controllers/form/react-app/utils.js:215
 msgid "Number"
 msgstr ""
 
-#: js/controllers/form/components/utils.js:136
+#: js/controllers/form/react-app/utils.js:224
 msgid "Date and time"
 msgstr ""
 
-#: js/controllers/form/components/utils.js:141
-msgid "File upload"
+#: js/controllers/form/react-app/utils.js:233
+msgctxt "Form field type"
+msgid "Select"
 msgstr ""
 
-#: js/controllers/form/components/utils.js:145
+#: js/controllers/form/react-app/utils.js:234
+msgctxt "Select field placeholder example"
+msgid "Menu of options"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:256
 msgid "Text area"
 msgstr ""
 
-#: js/controllers/form/components/utils.js:146
-msgctxt "Text area field default value"
+#: js/controllers/form/react-app/utils.js:258
+msgctxt "Text area field placeholder example"
 msgid "Multi-line text"
 msgstr ""
 
-#: js/controllers/form/components/utils.js:155
-msgid "Composite"
+#: js/controllers/form/react-app/utils.js:269
+msgid "Checkbox"
 msgstr ""
 
-#: js/controllers/form/components/utils.js:159
-msgid "Full name"
-msgstr ""
-
-#: js/controllers/form/components/utils.js:163
-msgid "First name"
-msgstr ""
-
-#: js/controllers/form/components/utils.js:164
-msgctxt "First name field default value"
-msgid "John"
-msgstr ""
-
-#: js/controllers/form/components/utils.js:173
-msgid "Middle name"
-msgstr ""
-
-#: js/controllers/form/components/utils.js:174
-msgctxt "Middle name field default value"
-msgid "H."
-msgstr ""
-
-#: js/controllers/form/components/utils.js:184
-msgid "Last name"
-msgstr ""
-
-#: js/controllers/form/components/utils.js:185
-msgctxt "Last name field default value"
-msgid "Doe"
-msgstr ""
-
-#: js/controllers/form/components/utils.js:197
+#: js/controllers/form/react-app/utils.js:339
 msgid "Controls"
 msgstr ""
 
-#: js/controllers/form/components/utils.js:201
+#: js/controllers/form/react-app/utils.js:344
 msgid "Submit form button"
 msgstr ""
 
-#: js/controllers/form/components/utils.js:202
-msgctxt "Submit form field default value"
+#: js/controllers/form/react-app/utils.js:345
+msgctxt "Submit form field placeholder example"
 msgid "Send"
 msgstr ""
 
-#: js/controllers/form/components/utils.js:206
+#: js/controllers/form/react-app/utils.js:351
 msgid "Reset form button"
 msgstr ""
 
-#: js/controllers/form/components/utils.js:207
-msgctxt "Reset form field default value"
+#: js/controllers/form/react-app/utils.js:352
+msgctxt "Reset form field placeholder example"
 msgid "Reset"
 msgstr ""
 
-#: js/controllers/form/components/utils.js:211
+#: js/controllers/form/react-app/utils.js:358
 msgid "Generic button"
 msgstr ""
 
-#: js/controllers/form/components/utils.js:212
-msgctxt "Generic button field default value"
+#: js/controllers/form/react-app/utils.js:359
+msgctxt "Generic button field placeholder example"
 msgid "Generic button"
 msgstr ""
 
-#: js/controllers/form/components/utils.js:221
+#: js/controllers/form/react-app/utils.js:370
 msgid "Custom content"
 msgstr ""
 
-#: js/controllers/form/components/utils.js:225
+#: js/controllers/form/react-app/utils.js:376
 msgid "Text message"
 msgstr ""
 
-#: js/controllers/form/components/utils.js:226
-msgctxt "Text message field default value"
+#: js/controllers/form/react-app/utils.js:377
+msgctxt "Text message field placeholder example"
 msgid "You can insert text anywhere in the form"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:387
+msgctxt "Input autocomplete value"
+msgid "(none)"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:388
+msgctxt "Input autocomplete value"
+msgid "Off"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:389
+msgctxt "Input autocomplete value"
+msgid "On"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:390
+msgctxt "Input autocomplete value"
+msgid "Name"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:391
+msgctxt "Input autocomplete value"
+msgid "Honorific prefix"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:396
+msgctxt "Input autocomplete value"
+msgid "Given (first) name"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:401
+msgctxt "Input autocomplete value"
+msgid "Additional (middle) name"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:406
+msgctxt "Input autocomplete value"
+msgid "Family (last) name"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:411
+msgctxt "Input autocomplete value"
+msgid "Honorific suffix"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:416
+msgctxt "Input autocomplete value"
+msgid "Nickname"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:417
+msgctxt "Input autocomplete value"
+msgid "Email address"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:418
+msgctxt "Input autocomplete value"
+msgid "Username"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:419
+msgctxt "Input autocomplete value"
+msgid "New password"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:424
+msgctxt "Input autocomplete value"
+msgid "Current password"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:429
+msgctxt "Input autocomplete value"
+msgid "One time code"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:434
+msgctxt "Input autocomplete value"
+msgid "Job title"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:439
+msgctxt "Input autocomplete value"
+msgid "Company name"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:440
+msgctxt "Input autocomplete value"
+msgid "Street address"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:445
+msgctxt "Input autocomplete value"
+msgid "Address line 1"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:450
+msgctxt "Input autocomplete value"
+msgid "Address line 2"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:455
+msgctxt "Input autocomplete value"
+msgid "Address line 3"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:460
+msgctxt "Input autocomplete value"
+msgid "Address administrative level 4"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:465
+msgctxt "Input autocomplete value"
+msgid "Address administrative level 3"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:470
+msgctxt "Input autocomplete value"
+msgid "Address administrative level 2"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:475
+msgctxt "Input autocomplete value"
+msgid "Address administrative level 1"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:480
+msgctxt "Input autocomplete value"
+msgid "Country"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:481
+msgctxt "Input autocomplete value"
+msgid "Country name"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:486
+msgctxt "Input autocomplete value"
+msgid "Postal code"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:487
+msgctxt "Input autocomplete value"
+msgid "Credit card name"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:488
+msgctxt "Input autocomplete value"
+msgid "Credit card given name"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:493
+msgctxt "Input autocomplete value"
+msgid "Credit card additional name"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:498
+msgctxt "Input autocomplete value"
+msgid "Credit card family name"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:503
+msgctxt "Input autocomplete value"
+msgid "Credit card number"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:508
+msgctxt "Input autocomplete value"
+msgid "Credit card expiration"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:513
+msgctxt "Input autocomplete value"
+msgid "Credit card expiration month"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:518
+msgctxt "Input autocomplete value"
+msgid "Credit card expiration year"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:523
+msgctxt "Input autocomplete value"
+msgid "Credit card security code"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:528
+msgctxt "Input autocomplete value"
+msgid "Credit card type"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:529
+msgctxt "Input autocomplete value"
+msgid "Transaction currency"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:534
+msgctxt "Input autocomplete value"
+msgid "Transaction amount"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:539
+msgctxt "Input autocomplete value"
+msgid "Language"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:540
+msgctxt "Input autocomplete value"
+msgid "Birthday"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:541
+msgctxt "Input autocomplete value"
+msgid "Birthday day"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:542
+msgctxt "Input autocomplete value"
+msgid "Birthday month"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:547
+msgctxt "Input autocomplete value"
+msgid "Birthday year"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:548
+msgctxt "Input autocomplete value"
+msgid "Gender"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:549
+msgctxt "Input autocomplete value"
+msgid "Telephone"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:550
+msgctxt "Input autocomplete value"
+msgid "Telephone country code"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:555
+msgctxt "Input autocomplete value"
+msgid "Telephone national (without country code)"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:560
+msgctxt "Input autocomplete value"
+msgid "Telephone area code"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:565
+msgctxt "Input autocomplete value"
+msgid "Telephone local (without country and area code)"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:570
+msgctxt "Input autocomplete value"
+msgid "Telephone extension"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:575
+msgctxt "Input autocomplete value"
+msgid "IMPP"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:576
+msgctxt "Input autocomplete value"
+msgid "URL"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:577
+msgctxt "Input autocomplete value"
+msgid "Photo URL"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:581
+msgctxt "Button HTML type"
+msgid "Button"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:582
+msgctxt "Button HTML type"
+msgid "Submit"
+msgstr ""
+
+#: js/controllers/form/react-app/utils.js:583
+msgctxt "Button HTML type"
+msgid "Reset"
 msgstr ""

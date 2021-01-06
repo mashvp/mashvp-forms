@@ -1,0 +1,121 @@
+#poststuff.mvpf__general-options {
+  .postbox {
+    .postbox-header {
+      h1 {
+        margin: 0;
+        padding: 8px 16px;
+      }
+    }
+
+    .inside {
+      margin-top: 0;
+      padding: 16px;
+
+      form {
+        fieldset {
+          padding: 16px;
+          border: 1px solid rgba(black, 0.2);
+
+          & + fieldset {
+            margin-top: 16px;
+          }
+
+          legend {
+            padding: 0 8px;
+            margin-left: -8px;
+          }
+
+          .row {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: stretch;
+            flex-wrap: wrap;
+            width: 100%;
+
+            & + .row {
+              margin-top: 24px;
+            }
+
+            &.comment {
+              align-items: center;
+              margin-top: 8px;
+
+              font-size: 12px;
+              font-style: italic;
+
+              p {
+                margin-top: 0;
+                margin-bottom: 0;
+              }
+            }
+
+            .row-label {
+              flex-basis: 100%;
+              flex-grow: 1;
+              flex-shrink: 0;
+              margin-bottom: 4px;
+
+              font-weight: bold;
+            }
+
+            label {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              align-items: flex-start;
+              flex-basis: 0;
+              flex-grow: 1;
+              flex-shrink: 0;
+
+              &.intrinsic {
+                flex-basis: auto;
+                flex-grow: 0;
+              }
+
+              &.horizontal {
+                flex-direction: row-reverse;
+                justify-content: flex-start;
+                align-items: flex-end;
+                margin-left: 32px;
+
+                span.label {
+                  margin-left: 4px;
+                  margin-bottom: 0;
+                }
+              }
+
+              & + label {
+                margin-left: 16px;
+              }
+
+              span.label {
+                display: inline-block;
+                margin-bottom: 8px;
+              }
+
+              input:not([type='checkbox']) {
+                width: 100%;
+
+                &.monospace {
+                  font-family: 'Courier New', Courier, monospace;
+                }
+              }
+            }
+          }
+        }
+
+        p.submit {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+          align-items: center;
+
+          padding: 0;
+          margin-top: 40px;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

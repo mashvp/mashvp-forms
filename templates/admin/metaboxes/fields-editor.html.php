@@ -2,12 +2,15 @@
   <div class="stage-wrapper" data-controller="form--stage">
     <div class="stage--root" data-target="form--stage.root"></div>
 
-    <textarea
-      data-target="form--stage.output"
+    <input
+      type="hidden"
       name="_mashvp-forms__fields"
       id="_mashvp-forms__fields"
-      value=""
+      data-target="form--stage.output"
+      value="<?= esc_html($form_fields_json) ?>"
       readOnly
-    ></textarea>
+    >
+
+    <?php wp_nonce_field('update_mashvp-forms__fields', 'fields_nonce') ?>
   </div>
 </div>

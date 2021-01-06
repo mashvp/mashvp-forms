@@ -22,11 +22,36 @@ abstract class Utils
         return $file_path;
     }
 
+    public static function dist_uri($name)
+    {
+        $dist_dir = plugin_dir_url('mashvp-forms') . 'mashvp-forms/dist';
+        $file_path = $dist_dir . "/$name";
+
+        return $file_path;
+    }
+
+    public static function dist_path($name)
+    {
+        $dist_dir = self::PLUGIN_BASE_PATH . '/dist';
+        $file_path = $dist_dir . "/$name";
+
+        return $file_path;
+    }
+
     public static function template_path($name)
     {
         $template_dir = self::PLUGIN_BASE_PATH . '/templates';
         $file_path = $template_dir . "/$name.html.php";
 
         return $file_path;
+    }
+
+    public static function get($array, $prop, $default = null)
+    {
+        if ($array && is_array($array) && isset($array[$prop])) {
+            return $array[$prop];
+        }
+
+        return $default;
     }
 }

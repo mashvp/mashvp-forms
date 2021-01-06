@@ -8,7 +8,22 @@ export default class extends applicationController {
     document.execCommand('copy');
 
     this.data.set('copied', '');
-    this.later(() => this.removeCopiedStyled(), 1200);
+
+    this.later(() => {
+      document.getSelection().removeAllRanges();
+
+      this.later(() => {
+        this.element.select();
+
+        this.later(() => {
+          document.getSelection().removeAllRanges();
+          this.later(() => {
+            this.element.blur();
+            this.removeCopiedStyled();
+          }, 800);
+        }, 100);
+      }, 100);
+    }, 100);
   }
 
   removeCopiedStyled() {

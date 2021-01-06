@@ -17,6 +17,10 @@ class Renderer extends SingletonClass
             include $path;
 
             return true;
+        } else {
+            echo <<<HTML
+                <!-- [mashvp-forms] Render error: Template "$name" not found -->
+            HTML;
         }
 
         return false;
@@ -26,7 +30,7 @@ class Renderer extends SingletonClass
     {
         ob_start();
 
-        $content = $this->renderTemplate($name, $locals);
+        $this->renderTemplate($name, $locals);
 
         return ob_get_clean();
     }
