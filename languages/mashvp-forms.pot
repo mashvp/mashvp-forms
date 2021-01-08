@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-01-06T18:13:29+01:00\n"
+"POT-Creation-Date: 2021-01-08T16:20:26+01:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: mashvp-forms\n"
@@ -380,539 +380,563 @@ msgctxt "reCAPTCHA"
 msgid "Terms of Service"
 msgstr ""
 
-#: js/controllers/form/react-app/components/AppControls.js:13
+#: js/react-app/components/AppControls.js:13
 msgid "Add row"
 msgstr ""
 
-#: js/controllers/form/react-app/components/Item.js:54
+#: js/react-app/components/Item.js:63
 msgid "Unknown field type"
 msgstr ""
 
-#: js/controllers/form/react-app/components/Row.js:15
+#: js/react-app/components/Row.js:15
 msgid "Drop items here"
 msgstr ""
 
-#: js/controllers/form/react-app/components/Toolbar.js:84
+#: js/react-app/components/Toolbar.js:84
 msgid "Fields list"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:120
+#: js/react-app/utils.js:121
 msgctxt "Field attribute label"
 msgid "Type"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:121
+#: js/react-app/utils.js:122
 msgctxt "Field attribute label"
 msgid "Label"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:122
+#: js/react-app/utils.js:123
 msgctxt "Field attribute label"
 msgid "Default value"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:123
-#: js/controllers/form/react-app/utils.js:592
+#: js/react-app/utils.js:124
+#: js/react-app/utils.js:612
 msgctxt "Field attribute label"
 msgid "Value"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:124
+#: js/react-app/utils.js:125
 msgctxt "Field attribute label"
 msgid "Options"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:125
+#: js/react-app/utils.js:126
 msgctxt "Field attribute label"
 msgid "Placeholder"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:126
+#: js/react-app/utils.js:127
 msgctxt "Field attribute label"
 msgid "Autocomplete"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:127
+#: js/react-app/utils.js:128
 msgctxt "Field attribute label"
 msgid "Required"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:128
+#: js/react-app/utils.js:129
 msgctxt "Field attribute label"
 msgid "Hide field"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:129
+#: js/react-app/utils.js:130
 msgctxt "Field attribute label"
 msgid "Read-only"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:130
+#: js/react-app/utils.js:131
 msgctxt "Field attribute label"
 msgid "Disabled"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:131
+#: js/react-app/utils.js:132
 msgctxt "Field attribute label"
 msgid "Show label"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:132
+#: js/react-app/utils.js:133
 msgctxt "Field attribute label"
 msgid "Allowed file types"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:133
+#: js/react-app/utils.js:134
+msgctxt "Field attribute label"
+msgid "Date and/or time type"
+msgstr ""
+
+#: js/react-app/utils.js:139
 msgctxt "Field attribute label (HTML button type)"
 msgid "Type"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:138
+#: js/react-app/utils.js:144
 msgctxt "Field attribute label"
 msgid "Additional CSS classes"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:144
+#: js/react-app/utils.js:150
 msgctxt "Field attribute label"
 msgid "Unknown attribute"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:150
+#: js/react-app/utils.js:156
 msgid "Inputs"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:154
+#: js/react-app/utils.js:160
 msgid "Text"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:156
+#: js/react-app/utils.js:162
 msgctxt "Text field placeholder example"
 msgid "Text"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:163
+#: js/react-app/utils.js:169
 msgid "Email"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:165
-#: js/controllers/form/react-app/utils.js:590
+#: js/react-app/utils.js:171
+#: js/react-app/utils.js:610
 msgctxt "Email field placeholder example"
 msgid "user@example.com"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:176
+#: js/react-app/utils.js:182
 msgid "Password"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:178
+#: js/react-app/utils.js:184
 msgctxt "Password field placeholder example"
 msgid "********"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:189
+#: js/react-app/utils.js:195
 msgid "Phone number"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:191
+#: js/react-app/utils.js:197
 msgctxt "Phone number field placeholder example"
 msgid "(541) 754-3010"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:202
+#: js/react-app/utils.js:208
 msgid "URL"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:204
+#: js/react-app/utils.js:210
 msgctxt "URL field placeholder example"
 msgid "http://example.com/"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:215
+#: js/react-app/utils.js:221
 msgid "Number"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:224
+#: js/react-app/utils.js:230
 msgid "Date and time"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:233
+#: js/react-app/utils.js:240
 msgctxt "Form field type"
 msgid "Select"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:234
+#: js/react-app/utils.js:241
 msgctxt "Select field placeholder example"
 msgid "Menu of options"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:256
+#: js/react-app/utils.js:263
 msgid "Text area"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:258
+#: js/react-app/utils.js:265
 msgctxt "Text area field placeholder example"
 msgid "Multi-line text"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:269
+#: js/react-app/utils.js:276
 msgid "Checkbox"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:339
+#: js/react-app/utils.js:346
 msgid "Controls"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:344
+#: js/react-app/utils.js:351
 msgid "Submit form button"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:345
+#: js/react-app/utils.js:352
 msgctxt "Submit form field placeholder example"
 msgid "Send"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:351
+#: js/react-app/utils.js:358
 msgid "Reset form button"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:352
+#: js/react-app/utils.js:359
 msgctxt "Reset form field placeholder example"
 msgid "Reset"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:358
+#: js/react-app/utils.js:365
 msgid "Generic button"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:359
+#: js/react-app/utils.js:366
 msgctxt "Generic button field placeholder example"
 msgid "Generic button"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:370
+#: js/react-app/utils.js:377
 msgid "Custom content"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:376
+#: js/react-app/utils.js:383
 msgid "Text message"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:377
+#: js/react-app/utils.js:384
 msgctxt "Text message field placeholder example"
 msgid "You can insert text anywhere in the form"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:387
+#: js/react-app/utils.js:394
+msgid "Horizontal separator"
+msgstr ""
+
+#: js/react-app/utils.js:401
 msgctxt "Input autocomplete value"
 msgid "(none)"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:388
+#: js/react-app/utils.js:402
 msgctxt "Input autocomplete value"
 msgid "Off"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:389
+#: js/react-app/utils.js:403
 msgctxt "Input autocomplete value"
 msgid "On"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:390
+#: js/react-app/utils.js:404
 msgctxt "Input autocomplete value"
 msgid "Name"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:391
+#: js/react-app/utils.js:405
 msgctxt "Input autocomplete value"
 msgid "Honorific prefix"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:396
+#: js/react-app/utils.js:410
 msgctxt "Input autocomplete value"
 msgid "Given (first) name"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:401
+#: js/react-app/utils.js:415
 msgctxt "Input autocomplete value"
 msgid "Additional (middle) name"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:406
+#: js/react-app/utils.js:420
 msgctxt "Input autocomplete value"
 msgid "Family (last) name"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:411
+#: js/react-app/utils.js:425
 msgctxt "Input autocomplete value"
 msgid "Honorific suffix"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:416
+#: js/react-app/utils.js:430
 msgctxt "Input autocomplete value"
 msgid "Nickname"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:417
+#: js/react-app/utils.js:431
 msgctxt "Input autocomplete value"
 msgid "Email address"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:418
+#: js/react-app/utils.js:432
 msgctxt "Input autocomplete value"
 msgid "Username"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:419
+#: js/react-app/utils.js:433
 msgctxt "Input autocomplete value"
 msgid "New password"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:424
+#: js/react-app/utils.js:438
 msgctxt "Input autocomplete value"
 msgid "Current password"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:429
+#: js/react-app/utils.js:443
 msgctxt "Input autocomplete value"
 msgid "One time code"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:434
+#: js/react-app/utils.js:448
 msgctxt "Input autocomplete value"
 msgid "Job title"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:439
+#: js/react-app/utils.js:453
 msgctxt "Input autocomplete value"
 msgid "Company name"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:440
+#: js/react-app/utils.js:454
 msgctxt "Input autocomplete value"
 msgid "Street address"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:445
+#: js/react-app/utils.js:459
 msgctxt "Input autocomplete value"
 msgid "Address line 1"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:450
+#: js/react-app/utils.js:464
 msgctxt "Input autocomplete value"
 msgid "Address line 2"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:455
+#: js/react-app/utils.js:469
 msgctxt "Input autocomplete value"
 msgid "Address line 3"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:460
+#: js/react-app/utils.js:474
 msgctxt "Input autocomplete value"
 msgid "Address administrative level 4"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:465
+#: js/react-app/utils.js:479
 msgctxt "Input autocomplete value"
 msgid "Address administrative level 3"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:470
+#: js/react-app/utils.js:484
 msgctxt "Input autocomplete value"
 msgid "Address administrative level 2"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:475
+#: js/react-app/utils.js:489
 msgctxt "Input autocomplete value"
 msgid "Address administrative level 1"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:480
+#: js/react-app/utils.js:494
 msgctxt "Input autocomplete value"
 msgid "Country"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:481
+#: js/react-app/utils.js:495
 msgctxt "Input autocomplete value"
 msgid "Country name"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:486
+#: js/react-app/utils.js:500
 msgctxt "Input autocomplete value"
 msgid "Postal code"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:487
+#: js/react-app/utils.js:501
 msgctxt "Input autocomplete value"
 msgid "Credit card name"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:488
+#: js/react-app/utils.js:502
 msgctxt "Input autocomplete value"
 msgid "Credit card given name"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:493
+#: js/react-app/utils.js:507
 msgctxt "Input autocomplete value"
 msgid "Credit card additional name"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:498
+#: js/react-app/utils.js:512
 msgctxt "Input autocomplete value"
 msgid "Credit card family name"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:503
+#: js/react-app/utils.js:517
 msgctxt "Input autocomplete value"
 msgid "Credit card number"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:508
+#: js/react-app/utils.js:522
 msgctxt "Input autocomplete value"
 msgid "Credit card expiration"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:513
+#: js/react-app/utils.js:527
 msgctxt "Input autocomplete value"
 msgid "Credit card expiration month"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:518
+#: js/react-app/utils.js:532
 msgctxt "Input autocomplete value"
 msgid "Credit card expiration year"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:523
+#: js/react-app/utils.js:537
 msgctxt "Input autocomplete value"
 msgid "Credit card security code"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:528
+#: js/react-app/utils.js:542
 msgctxt "Input autocomplete value"
 msgid "Credit card type"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:529
+#: js/react-app/utils.js:543
 msgctxt "Input autocomplete value"
 msgid "Transaction currency"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:534
+#: js/react-app/utils.js:548
 msgctxt "Input autocomplete value"
 msgid "Transaction amount"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:539
+#: js/react-app/utils.js:553
 msgctxt "Input autocomplete value"
 msgid "Language"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:540
+#: js/react-app/utils.js:554
 msgctxt "Input autocomplete value"
 msgid "Birthday"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:541
+#: js/react-app/utils.js:555
 msgctxt "Input autocomplete value"
 msgid "Birthday day"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:542
+#: js/react-app/utils.js:556
 msgctxt "Input autocomplete value"
 msgid "Birthday month"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:547
+#: js/react-app/utils.js:561
 msgctxt "Input autocomplete value"
 msgid "Birthday year"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:548
+#: js/react-app/utils.js:562
 msgctxt "Input autocomplete value"
 msgid "Gender"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:549
+#: js/react-app/utils.js:563
 msgctxt "Input autocomplete value"
 msgid "Telephone"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:550
+#: js/react-app/utils.js:564
 msgctxt "Input autocomplete value"
 msgid "Telephone country code"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:555
+#: js/react-app/utils.js:569
 msgctxt "Input autocomplete value"
 msgid "Telephone national (without country code)"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:560
+#: js/react-app/utils.js:574
 msgctxt "Input autocomplete value"
 msgid "Telephone area code"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:565
+#: js/react-app/utils.js:579
 msgctxt "Input autocomplete value"
 msgid "Telephone local (without country and area code)"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:570
+#: js/react-app/utils.js:584
 msgctxt "Input autocomplete value"
 msgid "Telephone extension"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:575
+#: js/react-app/utils.js:589
 msgctxt "Input autocomplete value"
 msgid "IMPP"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:576
+#: js/react-app/utils.js:590
 msgctxt "Input autocomplete value"
 msgid "URL"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:577
+#: js/react-app/utils.js:591
 msgctxt "Input autocomplete value"
 msgid "Photo URL"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:581
+#: js/react-app/utils.js:595
 msgctxt "Button HTML type"
 msgid "Button"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:582
+#: js/react-app/utils.js:596
 msgctxt "Button HTML type"
 msgid "Submit"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:583
+#: js/react-app/utils.js:597
 msgctxt "Button HTML type"
 msgid "Reset"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:588
+#: js/react-app/utils.js:601
+msgctxt "DateTime HTML type"
+msgid "Date and time"
+msgstr ""
+
+#: js/react-app/utils.js:602
+msgctxt "DateTime HTML type"
+msgid "Date"
+msgstr ""
+
+#: js/react-app/utils.js:603
+msgctxt "DateTime HTML type"
+msgid "Time"
+msgstr ""
+
+#: js/react-app/utils.js:608
 msgctxt "Select field options"
 msgid "Add an option"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:589
+#: js/react-app/utils.js:609
 msgctxt "Form options"
 msgid "Condition"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:591
+#: js/react-app/utils.js:611
 msgctxt "Form settings email condition"
 msgid "IF"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:593
+#: js/react-app/utils.js:613
 msgctxt "Select field option attribute"
 msgid "Value"
 msgstr ""
 
-#: js/controllers/form/react-app/utils.js:594
+#: js/react-app/utils.js:614
 msgctxt "Select field option attribute"
 msgid "Label"
 msgstr ""

@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import ApplicationController from '../../application-controller';
+import App from '../../react-app/components/App';
+
 import { FIELDS_UPDATED } from '../../pubsub-messages';
-import App from './react-app/components/App';
 
 export const renderToDOM = (root, props = {}) => {
   if (root) {

@@ -4,7 +4,8 @@ import {
   attributeLabels,
   autocompleteValues,
   htmlButtonTypes,
-} from './react-app/utils';
+  htmlDateTimeTypes,
+} from '../../react-app/utils';
 
 import { html, safeHtml } from '../../templates';
 import { _x } from '../../i18n';
@@ -12,10 +13,12 @@ import { _x } from '../../i18n';
 import {
   FIELD_ATTRIBUTES_UPDATED,
   FIELD_SELECTED,
+  FIELD_OPTIONS_REBUILD_REQUESTED,
 } from '../../pubsub-messages';
 
 export default class extends ApplicationController {
   #fieldData;
+  #rebuildSubscription;
 
   static targets = ['default', 'options', 'fieldsContainer'];
 
@@ -26,9 +29,21 @@ export default class extends ApplicationController {
       if (selected) {
         this.#fieldData = fieldData;
         this.showOptions({ id, type, attributes });
+
+        this.#rebuildSubscription = this.subscribe(
+          FIELD_OPTIONS_REBUILD_REQUESTED,
+          (_, { attributes: newAttributes }) => {
+            this.showOptions({ id, type, attributes: newAttributes });
+          }
+        );
       } else {
         this.#fieldData = null;
         this.showDefault();
+
+        if (this.#rebuildSubscription) {
+          this.unsubscribe(this.#rebuildSubscription);
+          this.#rebuildSubscription = null;
+        }
       }
     });
   }
@@ -51,7 +66,7 @@ export default class extends ApplicationController {
     }
   }
 
-  makeSelect(attribute, values, currentValue) {
+  makeSelect(attribute, values, currentValue, additionalActions = []) {
     const optionTemplates = safeHtml`${Object.entries(values)
       .map(([key, label]) =>
         key === currentValue
@@ -60,14 +75,23 @@ export default class extends ApplicationController {
       )
       .join('')}`;
 
+    const actions = ['input->form--field-options#save', ...additionalActions]
+      .filter((v) => v)
+      .join(' ');
+
     return html`
-      <select name="${attribute}" data-action="input->form--field-options#save">
+      <select name="${attribute}" data-action="${actions}">
         ${optionTemplates}
       </select>
     `;
   }
 
-  createInputForOptionField({ fieldType, name: attributeName, value }) {
+  createInputForOptionField({
+    fieldType,
+    name: attributeName,
+    value,
+    attributes,
+  }) {
     const markup = (() => {
       switch (attributeName) {
         case 'label':
@@ -84,6 +108,10 @@ export default class extends ApplicationController {
               if (fieldType === 'number') {
                 return 'number';
               }
+
+              if (fieldType === 'datetime-local') {
+                return attributes?.dateTimeType;
+              }
             }
 
             if (fieldType === 'message' && attributeName === 'value') {
@@ -94,8 +122,6 @@ export default class extends ApplicationController {
           })();
 
           if (inputType === 'checkbox') {
-            console.log(fieldType, attributeName, value);
-
             return html`<input
               name="${attributeName}"
               type="${inputType}"
@@ -128,6 +154,12 @@ export default class extends ApplicationController {
           return this.makeSelect(attributeName, htmlButtonTypes, value);
         }
 
+        case 'dateTimeType': {
+          return this.makeSelect(attributeName, htmlDateTimeTypes, value, [
+            'input->form--field-options#rebuild',
+          ]);
+        }
+
         case 'required':
         case 'optional':
         case 'readonly':
@@ -155,7 +187,11 @@ export default class extends ApplicationController {
                 data-target="form--select-options.list"
               ></ul>
               <div class="actions">
-                <button class="button" type="button" data-action="form--select-options#add">
+                <button
+                  class="button"
+                  type="button"
+                  data-action="form--select-options#add"
+                >
                   ${_x('Add an option', 'Select field options', 'mashvp-forms')}
                 </button>
               </div>
@@ -182,7 +218,7 @@ export default class extends ApplicationController {
     return inputContainer;
   }
 
-  createOptionField({ id, fieldType, name, label, value }) {
+  createOptionField({ id, fieldType, name, label, value, attributes }) {
     const li = document.createElement('li');
     const labelElement = document.createElement('label');
     const span = document.createElement('span');
@@ -192,10 +228,16 @@ export default class extends ApplicationController {
 
     span.textContent = label;
 
+    const input = this.createInputForOptionField({
+      fieldType,
+      name,
+      value,
+      attributes,
+    });
+
     labelElement.appendChild(span);
-    labelElement.appendChild(
-      this.createInputForOptionField({ fieldType, name, value })
-    );
+    labelElement.appendChild(input);
+
     li.appendChild(labelElement);
 
     this.fieldsContainerTarget.appendChild(li);
@@ -218,6 +260,8 @@ export default class extends ApplicationController {
           fieldType: type,
           label,
           value,
+
+          attributes,
         });
       }
     });
@@ -236,6 +280,13 @@ export default class extends ApplicationController {
       (acc, input) => ({ ...acc, [input.name]: this.getInputValue(input) }),
       {}
     );
+  }
+
+  rebuild() {
+    this.publish(FIELD_OPTIONS_REBUILD_REQUESTED, {
+      id: this.fieldID,
+      attributes: this.serializedAttributes,
+    });
   }
 
   save() {

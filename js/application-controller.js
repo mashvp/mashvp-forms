@@ -144,6 +144,23 @@ export default class extends Controller {
    * @param {SubscriptionCallback} func
    */
   subscribe(message, func) {
-    this.__subscriptions.push(subscribe(message, func));
+    const subscription = subscribe(message, func);
+
+    this.__subscriptions.push(subscribe);
+
+    return subscription;
+  }
+
+  /**
+   * Unsubscribes from a PubSub event.
+   *
+   * @param {Subscription} subscription
+   */
+  unsubscribe(subscription) {
+    unsubscribe(subscription);
+
+    this.__subscriptions = this.__subscriptions.filter(
+      (sub) => sub !== subscription
+    );
   }
 }
