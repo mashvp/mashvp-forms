@@ -3,7 +3,7 @@
   use Mashvp\Forms\Renderer;
 ?>
 
-<label class="mvpf__form-field--text <?= Form::get($field, 'attributes.className') ?>" for="<?= Form::get($field, 'id') ?>">
+<label class="mvpf__form-field--horizontal-separator <?= Form::get($field, 'attributes.className') ?>" for="<?= Form::get($field, 'id') ?>">
   <hr
     id="<?= Form::get($field, 'id') ?>"
 
