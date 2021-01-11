@@ -76,25 +76,27 @@ body.dnd-dragging {
 
             overflow: hidden;
 
-            &::after {
-              content: '';
-              display: block;
-              position: absolute;
-              top: 0;
-              right: 0;
-              width: 12px;
-              height: 100%;
+            &.item--preview-choice-list {
+              &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 12px;
+                height: 100%;
 
-              background: linear-gradient(
-                to left,
-                darken(white, 3%) 0%,
-                transparent 100%
-              );
+                background: linear-gradient(
+                  to left,
+                  darken(white, 3%) 0%,
+                  transparent 100%
+                );
 
-              @include transition((background));
+                @include transition((background));
 
-              z-index: 5;
-              pointer-events: none;
+                z-index: 5;
+                pointer-events: none;
+              }
             }
 
             select,
@@ -108,10 +110,6 @@ body.dnd-dragging {
                 &[type='#{$type}'] {
                   width: 100%;
                 }
-              }
-
-              &[type='range'] {
-                margin-right: 12px;
               }
             }
 

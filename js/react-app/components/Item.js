@@ -137,7 +137,7 @@ const Item = ({ id, attributes, inert }) => {
               </p>
             )}
 
-            <div className="item--preview">
+            <div className={`item--preview item--preview-${type}`}>
               {renderField(type, { id, attributes })}
             </div>
           </div>
@@ -153,7 +153,7 @@ const Item = ({ id, attributes, inert }) => {
         <div className="row--item-contents--inner">
           <span className="item--handle name">{label}</span>
 
-          <div className="item--preview">
+          <div className={`item--preview item--preview-${type}`}>
             {renderField(type, { id, attributes })}
           </div>
         </div>
