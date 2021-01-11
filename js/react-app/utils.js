@@ -114,6 +114,7 @@ export const attributesPropType = PropTypes.shape({
     PropTypes.string,
     PropTypes.arrayOf(PropTypes.string),
   ]),
+  multipleChoice: PropTypes.bool,
   className: PropTypes.string,
 }).isRequired;
 
@@ -131,6 +132,7 @@ export const attributeLabels = {
   disabled: _x('Disabled', 'Field attribute label', 'mashvp-forms'),
   showLabel: _x('Show label', 'Field attribute label', 'mashvp-forms'),
   accept: _x('Allowed file types', 'Field attribute label', 'mashvp-forms'),
+  multipleChoice: _x('Multiple choice', 'Field attribute label', 'mashvp-forms'),
   dateTimeType: _x(
     'Date and/or time type',
     'Field attribute label',
@@ -280,13 +282,24 @@ export const toolbarItems = [
     className: '',
   },
 
-  //
-  // TODO: Group fields are currently not handled
-  //
-  // {
-  //   type: 'separator',
-  //   label: __('Composite', 'mashvp-forms'),
-  // },
+  {
+    type: 'separator',
+    label: __('Composite', 'mashvp-forms'),
+  },
+  {
+    type: 'choice-list',
+    label: __('Choice list', 'mashvp-forms'),
+    multipleChoice: false,
+    options: {
+      one: _x('One', 'Choice list field default option', 'mashvp-forms'),
+      two: _x('Two', 'Choice list field default option', 'mashvp-forms'),
+      three: _x('Three', 'Choice list field default option', 'mashvp-forms'),
+    },
+    defaultValue: null,
+    required: false,
+    className: '',
+  },
+
   // {
   //   type: 'group',
   //   label: __('Full name', 'mashvp-forms'),

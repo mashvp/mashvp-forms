@@ -43,6 +43,33 @@ const renderField = (type, { id, attributes }) => {
       );
     }
 
+    case 'choice-list': {
+      const { multipleChoice, options, defaultValue } = attributes;
+      const type = multipleChoice ? 'checkbox' : 'radio';
+
+      const defaultValues = (defaultValue || '')
+        .split(',')
+        .map((v) => v.trim());
+
+      return (
+        <ul className="choice-list">
+          {Object.entries(options).map(([name, label], index) => (
+            <li key={`${id}-${name}-${index}`}>
+              <InputField
+                type={type}
+                id={id}
+                attributes={{
+                  label,
+                  showLabel: true,
+                  defaultValue: defaultValues.includes(name),
+                }}
+              />
+            </li>
+          ))}
+        </ul>
+      );
+    }
+
     case 'message': {
       return (
         <p className="message">{attributes.value || attributes.defaultValue}</p>

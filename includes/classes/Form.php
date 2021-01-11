@@ -22,6 +22,10 @@ class Form
         }
     }
 
+    public function getPost() {
+        return $this->post;
+    }
+
     public function getID()
     {
         return $this->id;
@@ -120,6 +124,18 @@ class Form
         }
 
         return $fields;
+    }
+
+    public function getFieldByID($id) {
+        $filtered = array_filter($this->getFields(), function($field) use ($id) {
+            return $field['id'] === $id;
+        });
+
+        if (!empty($filtered)) {
+            return array_values($filtered)[0];
+        }
+
+        return null;
     }
 
     public function deleteAllMeta()

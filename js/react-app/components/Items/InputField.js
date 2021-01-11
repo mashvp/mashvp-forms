@@ -64,11 +64,11 @@ const InputField = ({ type, id, attributes }) => {
     );
   }
 
-  if (type === 'checkbox') {
+  if (['checkbox', 'radio'].includes(type)) {
     const { showLabel } = attributes;
 
     return (
-      <div className="checkbox-wrapper">
+      <div className={`${type}-wrapper`}>
         <input
           className={classes}
           type={type}
@@ -78,7 +78,7 @@ const InputField = ({ type, id, attributes }) => {
           onChange={noop}
         ></input>
 
-        {showLabel && <span className="checkbox-label">{label}</span>}
+        {showLabel && <span className={`${type}-label`}>{label}</span>}
       </div>
     );
   }

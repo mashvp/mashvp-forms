@@ -2,6 +2,8 @@
 
 namespace Mashvp\Forms;
 
+use Mashvp\Forms\Form;
+
 class Submission
 {
     public const FORM_FIELDS_META_NAME = '_mashvp-forms__fields';
@@ -22,8 +24,13 @@ class Submission
         } else {
             if (get_post_type($form_or_submission_id) === 'mvpf-submission') {
                 $this->id = $form_or_submission_id;
+                $this->post = get_post($form_or_submission_id);
             }
         }
+    }
+
+    public function getPost() {
+        return $this->post;
     }
 
     private function getSubmissionCount()
@@ -150,26 +157,47 @@ class Submission
         return $mail_status;
     }
 
-    public static function renderField($field)
+    public static function renderField($field, $form_post_id = null, $args = [])
     {
+        $args = wp_parse_args($args, [
+            'context' => 'admin'
+        ]);
+
+        $form = null;
+
+        if ($form_post_id) {
+            $form = new Form($form_post_id);
+        }
+
         if ($field) {
             switch ($field['type']) {
                 case 'checkbox':
                     return Renderer::instance()->renderTemplateToString(
                         'admin/metaboxes/fields/checkbox',
-                        ['field' => $field]
+                        ['field' => $field, 'args' => $args]
+                    );
+                case 'radio':
+                    return Renderer::instance()->renderTemplateToString(
+                        'admin/metaboxes/fields/radio',
+                        ['field' => $field, 'args' => $args]
+                    );
+                case 'choice-list':
+                    return Renderer::instance()->renderTemplateToString(
+                        'admin/metaboxes/fields/choice-list',
+                        ['field' => $field, 'form' => $form, 'args' => $args]
                     );
                 case 'url':
                     return Renderer::instance()->renderTemplateToString(
                         'admin/metaboxes/fields/link',
-                        ['field' => $field]
+                        ['field' => $field, 'args' => $args]
                     );
                 case 'email':
                     return Renderer::instance()->renderTemplateToString(
                         'admin/metaboxes/fields/link',
                         [
                             'field' => $field,
-                            'url'   => sprintf('mailto:%s', $field['value'])
+                            'url'   => sprintf('mailto:%s', $field['value']),
+                            'args'  => $args
                         ]
                     );
                 case 'tel':
@@ -177,13 +205,14 @@ class Submission
                         'admin/metaboxes/fields/link',
                         [
                             'field' => $field,
-                            'url'   => sprintf('tel:%s', $field['value'])
+                            'url'   => sprintf('tel:%s', $field['value']),
+                            'args'  => $args
                         ]
                     );
                 default:
                     return Renderer::instance()->renderTemplateToString(
                         'admin/metaboxes/fields/generic',
-                        ['field' => $field]
+                        ['field' => $field, 'args' => $args]
                     );
             }
         }

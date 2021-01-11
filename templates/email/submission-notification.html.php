@@ -5,7 +5,7 @@
 
   use Mashvp\Forms\Submission;
 
-  ?>
+?>
 
 <!doctype html>
 <html>
@@ -42,16 +42,28 @@
         border-collapse: separate;
         mso-table-lspace: 0pt;
         mso-table-rspace: 0pt;
-        width: 100%; }
-        table td {
-          font-family: sans-serif;
-          font-size: 14px;
-          vertical-align: top;
+        width: 100%;
+      }
+
+      table td {
+        font-family: sans-serif;
+        font-size: 14px;
+        vertical-align: top;
       }
 
       table.submission-fields {
         margin: 30px 0;
         border-collapse: collapse;
+      }
+
+      table.submission-fields th,
+      table.submission-fields td {
+        padding: 8px 22px;
+      }
+
+      table.submission-fields table th,
+      table.submission-fields table td {
+        padding: 1px;
       }
 
       table.submission-fields thead {
@@ -430,7 +442,7 @@
                               <?php if (!in_array($field['type'], ['submit', 'reset', 'button'])): ?>
                                 <tr>
                                   <th><?= $field['label'] ?></th>
-                                  <td><?= Submission::renderField($field) ?></td>
+                                  <td><?= Submission::renderField($field, $form->getID(), ['context' => 'email']) ?></td>
                                 </tr>
                               <?php endif ?>
                             <?php endforeach ?>

@@ -99,6 +99,8 @@ export default class extends ApplicationController {
   }
 
   add({ value, label } = { value: null, label: null }) {
+    console.log('add???');
+
     this.listTarget.appendChild(this.newOption);
 
     if (value || label) {
@@ -107,6 +109,7 @@ export default class extends ApplicationController {
   }
 
   remove(event) {
+    console.log('remove');
     const { target } = event;
     const { parentElement: item } = target;
 

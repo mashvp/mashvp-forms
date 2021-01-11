@@ -12,5 +12,5 @@
     placeholder="<?= Form::get($field, 'attributes.placeholder') ?>"
     autocomplete="<?= Form::get($field, 'attributes.autocomplete') ?>"
     <?= Form::required($field) ?>
-  ></textarea>
+  ><?= Form::get($field, 'attributes.defaultValue') ?></textarea>
 </label>

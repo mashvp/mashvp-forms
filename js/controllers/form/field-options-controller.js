@@ -164,7 +164,8 @@ export default class extends ApplicationController {
         case 'optional':
         case 'readonly':
         case 'disabled':
-        case 'showLabel': {
+        case 'showLabel':
+        case 'multipleChoice': {
           return html`<input
             name="${attributeName}"
             type="checkbox"
@@ -220,8 +221,10 @@ export default class extends ApplicationController {
 
   createOptionField({ id, fieldType, name, label, value, attributes }) {
     const li = document.createElement('li');
-    const labelElement = document.createElement('label');
+    const container = document.createElement('div');
     const span = document.createElement('span');
+
+    container.classList.add('option-field--container');
 
     li.classList.add('option-field', name);
     li.dataset.id = id;
@@ -235,10 +238,10 @@ export default class extends ApplicationController {
       attributes,
     });
 
-    labelElement.appendChild(span);
-    labelElement.appendChild(input);
+    container.appendChild(span);
+    container.appendChild(input);
 
-    li.appendChild(labelElement);
+    li.appendChild(container);
 
     this.fieldsContainerTarget.appendChild(li);
   }

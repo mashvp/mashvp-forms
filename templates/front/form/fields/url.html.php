@@ -10,6 +10,7 @@
     type="url"
     name="<?= Form::get($field, 'id') ?>"
     id="<?= Form::get($field, 'id') ?>"
+    value="<?= Form::get($field, 'attributes.defaultValue') ?>"
     placeholder="<?= Form::get($field, 'attributes.placeholder') ?>"
     autocomplete="<?= Form::get($field, 'attributes.autocomplete') ?>"
     <?= Form::required($field) ?>
