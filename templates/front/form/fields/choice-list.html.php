@@ -9,7 +9,7 @@
   $type_class = "mvpf__form-field--choices-list--$type";
 ?>
 
-<label class="mvpf__form-field--choices-list <?= $type_class ?> <?= $classes ?>" for="<?= $id ?>">
+<div class="mvpf__form-field--choices-list <?= $type_class ?> <?= $classes ?>" for="<?= $id ?>">
   <?php Renderer::renderTemplate('front/form/fields/partials/label', ['field' => $field]) ?>
 
   <div class="mvpf__form-field--choices-wrapper">
@@ -79,4 +79,4 @@
       <?php endforeach ?>
     <?php endif ?>
   </div>
-</label>
+</div>
