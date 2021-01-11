@@ -15,6 +15,9 @@ const InputField = ({ type, id, attributes }) => {
     placeholder,
     options,
     dateTimeType,
+    min,
+    max,
+    step,
   } = attributes;
 
   const currentValue = value || defaultValue || '';
@@ -90,6 +93,23 @@ const InputField = ({ type, id, attributes }) => {
         type={dateTimeType || type}
         name={name}
         value={currentValue}
+        placeholder={placeholder}
+        tabIndex="-1"
+        onChange={noop}
+      ></input>
+    );
+  }
+
+  if (type === 'range') {
+    return (
+      <input
+        className={classes}
+        type={type}
+        name={name}
+        value={currentValue}
+        min={min}
+        max={max}
+        step={step}
         placeholder={placeholder}
         tabIndex="-1"
         onChange={noop}

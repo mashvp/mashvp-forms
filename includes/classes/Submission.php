@@ -209,6 +209,11 @@ class Submission
                             'args'  => $args
                         ]
                     );
+                case 'range':
+                    return Renderer::instance()->renderTemplateToString(
+                        'admin/metaboxes/fields/range',
+                        ['field' => $field, 'args' => $args]
+                    );
                 default:
                     return Renderer::instance()->renderTemplateToString(
                         'admin/metaboxes/fields/generic',

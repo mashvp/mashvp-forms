@@ -57,6 +57,36 @@
           }
         }
 
+        &[data-type='range'] {
+          flex-direction: column;
+          align-items: flex-start;
+
+          .value-range,
+          input[type='range'] {
+            width: 100%;
+            max-width: 300px;
+          }
+
+          .value-range {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px;
+
+            box-sizing: border-box;
+
+            span {
+              display: inline-block;
+            }
+
+            .current-value {
+              position: relative;
+              font-weight: bold;
+            }
+          }
+        }
+
         &.with-sub-dl {
           padding: 0;
         }

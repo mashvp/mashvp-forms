@@ -99,6 +99,28 @@
         border-color: #ccc;
       }
 
+      table.submission-fields dd[data-type="range"] {
+        position: relative;
+      }
+
+      table.submission-fields dd[data-type="range"] .value-range,
+      table.submission-fields dd[data-type="range"] input[type="range"] {
+        width: 100%;
+      }
+
+      table.submission-fields dd[data-type="range"] .value-range span {
+        position: relative;
+        display: inline-block;
+      }
+
+      table.submission-fields dd[data-type="range"] .value-range span.current-value {
+        font-weight: bold;
+      }
+
+      table.submission-fields dd[data-type="range"] .value-range span.max {
+        float: right;
+      }
+
       /* -------------------------------------
           BODY & CONTAINER
       ------------------------------------- */

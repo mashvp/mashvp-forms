@@ -29,7 +29,7 @@ export default class extends ApplicationController {
 
     if (raw) {
       try {
-        return JSON.parse(atob(raw));
+        return JSON.parse(raw);
       } catch (err) {
         console.warn(err);
 

@@ -174,6 +174,17 @@ export default class extends ApplicationController {
           />`;
         }
 
+        case 'min':
+        case 'max':
+        case 'step': {
+          return html`<input
+            name="${attributeName}"
+            type="number"
+            value="${value}"
+            data-action="input->form--field-options#save"
+          />`;
+        }
+
         case 'options': {
           return html`
             <div
@@ -181,7 +192,7 @@ export default class extends ApplicationController {
               name="${attributeName}"
               data-controller="form--select-options"
               data-action="select-options:save->form--field-options#save"
-              data-form--select-options-initial-value="${btoa(JSON.stringify(value))}"
+              data-form--select-options-initial-value="${JSON.stringify(value)}"
             >
               <ul
                 class="options-list"
