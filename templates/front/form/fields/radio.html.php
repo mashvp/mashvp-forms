@@ -9,6 +9,8 @@
       value="<?= Form::get($field, 'attributes.defaultValue') ?>"
       <?= Form::required($field) ?>
     >
+
+    <div class="mvpf__ui mvpf__form-field--radio-ui"></div>
   </div>
 
   <span class="mvpf__form-field--radio-label"><?= Form::get($field, 'attributes.label') ?></span>
