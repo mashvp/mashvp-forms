@@ -303,7 +303,6 @@ class Admin extends SingletonClass
         global $post;
 
         $fields = get_post_meta($post->ID, self::FORM_FIELDS_META_NAME, true);
-        $fields = unserialize($fields);
 
         Renderer::instance()->renderTemplate(
             'admin/metaboxes/submission-fields',

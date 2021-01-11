@@ -61,7 +61,6 @@ class Submission
         }
 
         $fields = get_post_meta($this->id, self::FORM_FIELDS_META_NAME, true);
-        $fields = unserialize($fields);
         $this->fields = $fields;
 
         return $fields;
@@ -111,10 +110,7 @@ class Submission
             return false;
         }
 
-        $this->updateMeta(
-            self::FORM_FIELDS_META_NAME,
-            serialize($this->fields)
-        );
+        $this->updateMeta(self::FORM_FIELDS_META_NAME, $this->fields);
 
         do_action('mvpf__submission_created', $this, $this->form);
 
