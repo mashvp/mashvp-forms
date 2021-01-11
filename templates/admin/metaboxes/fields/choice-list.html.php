@@ -30,8 +30,6 @@
       ?>
 
       <tr>
-        <th><?= $label ?></th>
-
         <td>
           <?=
             Submission::renderField(
@@ -45,6 +43,8 @@
             )
           ?>
         </td>
+
+        <th><?= $label ?></th>
       </tr>
     <?php endforeach ?>
   </table>
