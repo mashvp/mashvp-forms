@@ -461,7 +461,11 @@
                           </thead>
                           <tbody>
                             <?php foreach ($submission->getFields() as $field): ?>
-                              <?php if (!in_array($field['type'], ['submit', 'reset', 'button'])): ?>
+                              <?php
+                                $skip_fields = ['submit', 'reset', 'button', 'message', 'horizontal-separator'];
+
+                                if (!in_array($field['type'], $skip_fields)):
+                              ?>
                                 <tr>
                                   <th><?= $field['label'] ?></th>
                                   <td><?= Submission::renderField($field, $form->getID(), ['context' => 'email']) ?></td>
