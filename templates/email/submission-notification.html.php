@@ -121,6 +121,10 @@
         float: right;
       }
 
+      table.submission-fields table.choice-list th {
+        width: 80%;
+      }
+
       /* -------------------------------------
           BODY & CONTAINER
       ------------------------------------- */

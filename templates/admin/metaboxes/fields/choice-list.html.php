@@ -18,7 +18,7 @@
 
 <?php if ($context === 'email'): ?>
 
-  <table>
+  <table class="choice-list">
     <?php foreach ($options as $value => $label): ?>
       <?php
         $value_name = preg_replace("/^__label--/", '', $value);
