@@ -93,7 +93,7 @@ body.dnd-dragging {
 
               @include transition((background));
 
-              z-index: 900;
+              z-index: 5;
               pointer-events: none;
             }
 
