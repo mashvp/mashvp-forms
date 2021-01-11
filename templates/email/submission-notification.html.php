@@ -122,7 +122,13 @@
       }
 
       table.submission-fields table.choice-list th {
-        width: 80%;
+        width: 90%;
+        font-size: 10px;
+        color: #333;
+      }
+
+      table.submission-fields table.choice-list td {
+        text-align: center;
       }
 
       /* -------------------------------------
