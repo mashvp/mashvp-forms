@@ -47,7 +47,8 @@
             "front/form/fields/$type",
             [
               'field' => [
-                'id' => "{$id}[]",
+                'id' => "{$id}[{$index}]",
+                'name' => "{$id}[]",
                 'attributes' => [
                   'className' => $classes,
                   'defaultValue' => $value,

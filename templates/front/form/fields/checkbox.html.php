@@ -4,7 +4,7 @@
   <div class="mvpf__form-field--checkbox-wrapper">
     <input
       type="checkbox"
-      name="<?= Form::get($field, 'id') ?>"
+      name="<?= Form::get($field, 'name', Form::get($field, 'id')) ?>"
       id="<?= Form::get($field, 'id') ?>"
       value="<?= Form::get($field, 'attributes.defaultValue') ?>"
       <?= Form::required($field) ?>
