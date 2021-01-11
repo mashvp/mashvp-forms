@@ -38,7 +38,7 @@
   </style>
 <?php endif ?>
 
-<div class="mvpf mvpf__form-row mvpf__recaptcha">
+<span class="mvpf mvpf__form-row mvpf__recaptcha">
   <div class="mvpf mvpf__form-field mvpf__form-field--recaptcha">
     <div
       id="recaptcha"
@@ -67,4 +67,4 @@
       </div>
     <?php endif ?>
   </div>
-</div>
+</span>

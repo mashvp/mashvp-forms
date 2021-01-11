@@ -1,4 +1,4 @@
-<div class="mvpf mvpf__form-row mvpf__sweet-sugary-goodness">
+<span class="mvpf mvpf__form-row mvpf__sweet-sugary-goodness">
   <div class="mvpf mvpf__form-field mvpf__sweet-sugary-goodness">
     <label class="mvpf__form-field--text mvpf__sweet-sugary-goodness" for="name">
       <span>Name</span>
@@ -32,4 +32,4 @@
       <textarea name="message" tabindex="-1" autocomplete="off"></textarea>
     </label>
   </div>
-</div>
+</span>
