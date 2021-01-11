@@ -7,7 +7,7 @@
   <?php Renderer::renderTemplate('front/form/fields/partials/label', ['field' => $field]) ?>
 
   <input
-    type="datetime-local"
+    type="<?= Form::get($field, 'attributes.dateTimeType', 'datetime-local') ?>"
     name="<?= Form::get($field, 'id') ?>"
     id="<?= Form::get($field, 'id') ?>"
     value="<?= Form::get($field, 'attributes.defaultValue') ?>"
