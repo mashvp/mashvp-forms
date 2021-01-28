@@ -99,7 +99,7 @@ class SubmissionHandler extends SingletonClass
         if (curl_errno($ch)) {
             $err = curl_error($ch);
 
-            error_log("[mashvp-forms] Error verifying reCAPTCHA token: $err (from $remote_ip)");
+            error_log("[mashvp-forms] Error verifying reCAPTCHA token: $err (from: $remote_ip)");
             return false;
         }
 
@@ -107,7 +107,7 @@ class SubmissionHandler extends SingletonClass
 
         $json = json_decode($result, true);
         if (!$json) {
-            error_log("[mashvp-forms] reCAPTCHA error: Unable to decode JSON response (from $remote_ip)");
+            error_log("[mashvp-forms] reCAPTCHA error: Unable to decode JSON response (from: $remote_ip)");
 
             return false;
         };
@@ -115,7 +115,7 @@ class SubmissionHandler extends SingletonClass
         if (!$json['success'] && is_array($json['error-codes'])) {
             $err = implode(', ', $json['error-codes']);
 
-            error_log("[mashvp-forms] reCAPTCHA error: $err (from $remote_ip)");
+            error_log("[mashvp-forms] reCAPTCHA error: $err (from: $remote_ip)");
         }
 
         return $json['success'];
@@ -131,7 +131,7 @@ class SubmissionHandler extends SingletonClass
 
         // reCAPTCHA is enabled but no token was submitted
         if (!$token) {
-            error_log("[mashvp-forms] reCAPTCHA error: No token was submitted but validation is enabled (from $remote_ip)");
+            error_log("[mashvp-forms] reCAPTCHA error: No token was submitted but validation is enabled (from: $remote_ip)");
 
             return $this->endProcessAndRedirect(
                 false,
@@ -156,7 +156,7 @@ class SubmissionHandler extends SingletonClass
             );
 
             if ($fail) {
-                return $fail;
+                return 'Honeypot was triggered';
             }
         }
 
@@ -164,21 +164,21 @@ class SubmissionHandler extends SingletonClass
             $fail = $this->isRecaptchaSpam($form);
 
             if ($fail) {
-                return $fail;
+                return 'reCAPTCHA verification failed';
             }
         }
 
         return false;
     }
 
-    private function logSpamAttempt($form)
+    private function logSpamAttempt($form, $reason = 'unknown')
     {
         $remote_addr = new RemoteAddress();
 
         $form_name = $form->getTitle();
         $remote_ip = $remote_addr->getIpAddress();
 
-        error_log("[mashvp-forms] Spam attempt detected on form \"$form_name\" (from $remote_ip)");
+        error_log("[mashvp-forms] Spam attempt detected on form \"$form_name\" (reason: $reason, from: $remote_ip)");
     }
 
     public function handleFormSubmit()
@@ -222,11 +222,17 @@ class SubmissionHandler extends SingletonClass
             );
         }
 
-        if ($this->isSpam($form)) {
-            $this->logSpamAttempt($form);
+        if ($reason = $this->isSpam($form)) {
+            $this->logSpamAttempt($form, $reason = '', $reason);
 
-            // Fake successfull submission
-            return $this->endProcessAndRedirect(true);
+            return $this->endProcessAndRedirect(
+                false,
+                _x(
+                    'Your message was rejected because it looks like spam. If you are a legitimate user, please try again.',
+                    'Submission handler error',
+                    'mashvp-forms'
+                )
+            );
         }
 
         $fields = array_map(function ($field) {
