@@ -29,8 +29,15 @@ export default class extends ApplicationController {
 
   setStatusMessage(status, message = '') {
     this.statusMessageTargets.forEach((target) => {
+      const { defaultSuccessMessage } = target.dataset;
+
       target.dataset.status = status;
-      target.innerText = message;
+
+      if (status === 'success') {
+        target.innerText = defaultSuccessMessage || message;
+      } else {
+        target.innerText = message;
+      }
     });
   }
 
