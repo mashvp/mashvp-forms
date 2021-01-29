@@ -1,7 +1,7 @@
-import ApplicationController from '../../application-controller';
+import ApplicationController from '../../../common/application-controller';
 
-import { html } from '../../templates';
-import { _x } from '../../i18n';
+import { html } from '../../../common/templates';
+import { _x } from '../../../common/i18n';
 
 export default class extends ApplicationController {
   static targets = ['list'];

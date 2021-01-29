@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { __ } from '../../i18n';
+import { __ } from '../../../common/i18n';
 
 const AppControls = ({ addRow }) => (
   <div className="stage--controls">

@@ -1,6 +1,6 @@
-import applicationController from '../application-controller';
+import ApplicationController from '../../common/application-controller';
 
-export default class extends applicationController {
+export default class extends ApplicationController {
   copy() {
     this.element.focus();
     this.element.select();

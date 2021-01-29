@@ -1,4 +1,4 @@
-import ApplicationController from '../../application-controller';
+import ApplicationController from '../../../common/application-controller';
 
 import {
   attributeLabels,
@@ -7,14 +7,14 @@ import {
   htmlDateTimeTypes,
 } from '../../react-app/utils';
 
-import { html, safeHtml } from '../../templates';
-import { _x } from '../../i18n';
+import { html, safeHtml } from '../../../common/templates';
+import { _x } from '../../../common/i18n';
 
 import {
   FIELD_ATTRIBUTES_UPDATED,
   FIELD_SELECTED,
   FIELD_OPTIONS_REBUILD_REQUESTED,
-} from '../../pubsub-messages';
+} from '../../../common/pubsub-messages';
 
 export default class extends ApplicationController {
   #fieldData;
@@ -98,7 +98,8 @@ export default class extends ApplicationController {
         case 'placeholder':
         case 'className':
         case 'defaultValue':
-        case 'value': {
+        case 'value':
+        case 'successMessage': {
           const inputType = (() => {
             if (attributeName === 'defaultValue') {
               if (fieldType === 'checkbox') {

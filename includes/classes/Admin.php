@@ -38,8 +38,8 @@ class Admin extends SingletonClass
             $css = Utils::dist_uri('admin.css');
             $css_version = @filemtime(Utils::dist_path('admin.css'));
 
-            $js = Utils::dist_uri('index.min.js');
-            $js_version = @filemtime(Utils::dist_path('index.min.js'));
+            $js = Utils::dist_uri('admin.min.js');
+            $js_version = @filemtime(Utils::dist_path('admin.min.js'));
 
             wp_register_style('mashvp-forms--admin-styles', $css, [], $css_version);
             wp_register_script('mashvp-forms--admin-script', $js, ['wp-i18n'], $js_version);
@@ -119,8 +119,8 @@ class Admin extends SingletonClass
                 $css = Utils::dist_uri('admin.css');
                 $css_version = @filemtime(Utils::dist_path('admin.css'));
 
-                $js = Utils::dist_uri('index.min.js');
-                $js_version = @filemtime(Utils::dist_path('index.min.js'));
+                $js = Utils::dist_uri('admin.min.js');
+                $js_version = @filemtime(Utils::dist_path('admin.min.js'));
 
                 wp_enqueue_style('mashvp-forms--admin-styles', $css, [], $css_version);
                 wp_enqueue_script('mashvp-forms--admin-script', $js, ['wp-i18n'], $js_version);
@@ -199,6 +199,12 @@ class Admin extends SingletonClass
     private function getFormOptionValues()
     {
         $values = [
+            'submission' => [
+                'ajax' => [
+                    'enabled' => $this->getFormOptionFromPost('submission__ajax--enabled', null, true)
+                ]
+            ],
+
             'notifications' => [
                 'email' => [
                     'enabled' => $this->getFormOptionFromPost('notification__email--enabled', null, true),
@@ -208,10 +214,10 @@ class Admin extends SingletonClass
 
             'antispam' => [
                 'honeypot' => [
-                    'enabled' => $this->getFormOptionFromPost('antispam_honeypot--enabled', null, true),
+                    'enabled' => $this->getFormOptionFromPost('antispam__honeypot--enabled', null, true),
                 ],
                 'recaptcha' => [
-                    'enabled'  => $this->getFormOptionFromPost('antispam_recaptcha--enabled', null, true),
+                    'enabled'  => $this->getFormOptionFromPost('antispam__recaptcha--enabled', null, true),
                 ]
             ]
         ];

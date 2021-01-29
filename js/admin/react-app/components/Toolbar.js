@@ -6,7 +6,7 @@ import { v4 as generateUUID } from 'uuid';
 import Item from './Item';
 
 import { toolbarItems } from '../utils';
-import { __ } from '../../i18n';
+import { __ } from '../../../common/i18n';
 
 const Toolbar = () => {
   const [open, setOpen] = useState(false);

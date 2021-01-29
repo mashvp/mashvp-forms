@@ -48,19 +48,19 @@ class SubmissionHandler extends SingletonClass
         return Utils::get($_POST, $id);
     }
 
-    private function endProcessAndRedirect($success, $message = '')
+    private function redirectToReferer($success, $message = '', $localizedMessage = '')
     {
         $args = [
             'mvpf-submit' => $success ? 'success' : 'error',
             'mvpf-message' => '',
         ];
 
-        if ($message) {
-            $args['mvpf-message'] = rawurlencode($message);
+        if ($localizedMessage) {
+            $args['mvpf-message'] = rawurlencode($localizedMessage);
+        }
 
-            if (!$success) {
-                error_log("[mashvp-forms] Process ended with error: $message");
-            }
+        if (!$success) {
+            error_log("[mashvp-forms] Process ended with error: $message");
         }
 
         $args = array_merge($_GET, $args);
@@ -70,6 +70,39 @@ class SubmissionHandler extends SingletonClass
             add_query_arg($args, $_POST['_wp_http_referer']),
             303
         );
+    }
+
+    private function generateJSONResponse($success, $message = '', $localizedMessage = '')
+    {
+        if (!$localizedMessage) {
+            $localizedMessage = _x(
+                'Message sent successfully',
+                'Submission default success message',
+                'mashvp-forms'
+            );
+        }
+
+        $data = [
+            'success' => !!$success,
+            'message' => esc_html($localizedMessage),
+            'rawMessage' => $message,
+        ];
+
+        if ($message && !$success) {
+            error_log("[mashvp-forms] Process ended with error: $message");
+        }
+
+        header('Content-Type: application/json;charset=utf-8');
+        echo json_encode($data);
+    }
+
+    private function terminateSubmissionProcess($success, $message = '', $localizedMessage = '')
+    {
+        if ($_SERVER['HTTP_X_MVPF_METHOD'] === 'AJAX') {
+            $this->generateJSONResponse($success, $message, $localizedMessage);
+        } else {
+            $this->redirectToReferer($success, $message, $localizedMessage);
+        }
 
         die();
     }
@@ -133,8 +166,9 @@ class SubmissionHandler extends SingletonClass
         if (!$token) {
             error_log("[mashvp-forms] reCAPTCHA error: No token was submitted but validation is enabled (from: $remote_ip)");
 
-            return $this->endProcessAndRedirect(
+            return $this->terminateSubmissionProcess(
                 false,
+                'Cannot verify reCAPTCHA response, please try again',
                 _x(
                     'Cannot verify reCAPTCHA response, please try again',
                     'Submission handler error',
@@ -187,7 +221,7 @@ class SubmissionHandler extends SingletonClass
             empty($_POST) ||
             !wp_verify_nonce($_POST[Form::SECURITY_CODE], 'mvpf_form_submit')
         ) {
-            return $this->endProcessAndRedirect(
+            return $this->terminateSubmissionProcess(
                 false,
                 _x(
                     'Cannot verify the authenticity of the message',
@@ -198,8 +232,9 @@ class SubmissionHandler extends SingletonClass
         }
 
         if (!isset($_POST['_mvpf_form_id'])) {
-            return $this->endProcessAndRedirect(
+            return $this->terminateSubmissionProcess(
                 false,
+                'Missing form ID',
                 _x(
                     'Missing form ID',
                     'Submission handler error',
@@ -212,8 +247,9 @@ class SubmissionHandler extends SingletonClass
         $fields = $form->getFields();
 
         if (!isset($fields)) {
-            return $this->endProcessAndRedirect(
+            return $this->terminateSubmissionProcess(
                 false,
+                'Unable to retreive form data',
                 _x(
                     'Unable to retreive form data',
                     'Submission handler error',
@@ -225,8 +261,9 @@ class SubmissionHandler extends SingletonClass
         if ($reason = $this->isSpam($form)) {
             $this->logSpamAttempt($form, $reason = '', $reason);
 
-            return $this->endProcessAndRedirect(
+            return $this->terminateSubmissionProcess(
                 false,
+                'Your message was rejected because it looks like spam. If you are a legitimate user, please try again.',
                 _x(
                     'Your message was rejected because it looks like spam. If you are a legitimate user, please try again.',
                     'Submission handler error',
@@ -248,6 +285,6 @@ class SubmissionHandler extends SingletonClass
         $submission = new Submission($form, $fields);
         $success = $submission->createAndRunHooks();
 
-        return $this->endProcessAndRedirect($success);
+        return $this->terminateSubmissionProcess($success);
     }
 }

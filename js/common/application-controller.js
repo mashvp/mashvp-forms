@@ -2,7 +2,7 @@ import { Controller } from 'stimulus';
 import { publish, subscribe, unsubscribe } from 'pubsub-js';
 import camelCase from 'lodash.camelcase';
 
-export default class extends Controller {
+class ApplicationController extends Controller {
   constructor(...args) {
     super(...args);
 
@@ -164,3 +164,5 @@ export default class extends Controller {
     );
   }
 }
+
+export default ApplicationController;

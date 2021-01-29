@@ -12,3 +12,11 @@
   pointer-events: none !important;
   user-select: none !important;
 }
+
+.mvpf__recaptcha .mvpf__form-field--recaptcha {
+  .g-recaptcha {
+    &.hidden {
+      visibility: hidden;
+    }
+  }
+}

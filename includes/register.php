@@ -61,10 +61,3 @@ function mashvp_forms__save_post($post_id)
 }
 
 add_action('mvpf__submission_created', [Email::class, 'handle'], 10, 2);
-
-// add_action('admin_post_mvpf_send_mail', 'mashvp_forms__blabla');
-// function mashvp_forms__blabla()
-// {
-//     var_dump($_REQUEST);
-//     die();
-// }

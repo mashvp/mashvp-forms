@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import ApplicationController from '../../application-controller';
+import ApplicationController from '../../../common/application-controller';
 import App from '../../react-app/components/App';
 
-import { FIELDS_UPDATED } from '../../pubsub-messages';
+import { FIELDS_UPDATED } from '../../../common/pubsub-messages';
 
 export const renderToDOM = (root, props = {}) => {
   if (root) {

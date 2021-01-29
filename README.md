@@ -2,4 +2,4 @@
 
 No-bullsh!t form plugin
 
-**This plugin is in early alpha, DO NOT USE IN PRODUCTION**
+**This plugin is in beta, be careful before using it in production.**

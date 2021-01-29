@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import Item from './Item';
 
 import { attributesPropType } from '../utils';
-import { __ } from '../../i18n';
+import { __ } from '../../../common/i18n';
 
 const Row = ({ id, items, onDrop, getItemPayload }) => (
   <Draggable className="row">

@@ -1,10 +1,10 @@
 <div id="mashvp-forms--field-options" data-controller="form--field-options">
-  <p class="field-options--placeholder" data-target="form--field-options.default">
+  <p class="field-options--placeholder" data-form--field-options-target="default">
     <?= __('Select a field to edit', 'mashvp-forms') ?>
   </p>
 
-  <div class="field-options hidden" data-target="form--field-options.options">
-    <ul class="field-options--list" data-target="form--field-options.fieldsContainer"></ul>
+  <div class="field-options hidden" data-form--field-options-target="options">
+    <ul class="field-options--list" data-form--field-options-target="fieldsContainer"></ul>
 
     <div class="field-options--actions">
       <button type="button" class="button" data-action="form--field-options#save">

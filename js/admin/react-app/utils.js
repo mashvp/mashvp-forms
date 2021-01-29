@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import { _x, __ } from '../i18n';
+import { _x, __ } from '../../common/i18n';
 
 export const applyDrag = (arr, dragResult) => {
   const { removedIndex, addedIndex, payload } = dragResult;
@@ -118,6 +118,7 @@ export const attributesPropType = PropTypes.shape({
   max: PropTypes.number,
   step: PropTypes.number,
   multipleChoice: PropTypes.bool,
+  successMessage: PropTypes.string,
   className: PropTypes.string,
 }).isRequired;
 
@@ -135,7 +136,11 @@ export const attributeLabels = {
   disabled: _x('Disabled', 'Field attribute label', 'mashvp-forms'),
   showLabel: _x('Show label', 'Field attribute label', 'mashvp-forms'),
   accept: _x('Allowed file types', 'Field attribute label', 'mashvp-forms'),
-  multipleChoice: _x('Multiple choice', 'Field attribute label', 'mashvp-forms'),
+  multipleChoice: _x(
+    'Multiple choice',
+    'Field attribute label',
+    'mashvp-forms'
+  ),
   min: _x('Minimum', 'Field attribute label', 'mashvp-forms'),
   max: _x('Maximum', 'Field attribute label', 'mashvp-forms'),
   step: _x('Step', 'Field attribute label', 'mashvp-forms'),
@@ -149,6 +154,7 @@ export const attributeLabels = {
     'Field attribute label (HTML button type)',
     'mashvp-forms'
   ),
+  successMessage: _x('Sucess message', 'Field attribute label', 'mashvp-forms'),
   className: _x(
     'Additional CSS classes',
     'Field attribute label',
@@ -403,7 +409,7 @@ export const toolbarItems = [
 
   {
     type: 'separator',
-    label: __('Custom content', 'mashvp-forms'),
+    label: __('Miscellaneous', 'mashvp-forms'),
     className: '',
   },
   {
@@ -422,6 +428,22 @@ export const toolbarItems = [
     type: 'horizontal-separator',
     label: __('Horizontal separator', 'mashvp-forms'),
     value: '',
+    className: '',
+  },
+  {
+    _skip: ['label'],
+    type: 'builtin-status-message-zone',
+    label: __('Status message zone', 'mashvp-forms'),
+    value: _x(
+      'Status messages are inserted in this zone if the form runs in AJAX mode.',
+      'Builtin message zone placeholder example',
+      'mashvp-forms'
+    ),
+    successMessage: _x(
+      'Message sent successfully',
+      'Submission default success message',
+      'mashvp-forms'
+    ),
     className: '',
   },
 ];

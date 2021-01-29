@@ -2,6 +2,25 @@
 
 <div id="mashvp-forms--options" data-controller="form--options">
   <fieldset>
+    <legend><?= _x('Submission', 'Form options section', 'mashvp-forms') ?></legend>
+
+    <label class="field">
+      <div class="row">
+        <input
+          type="checkbox"
+          name="mvpf_options--submission__ajax--enabled"
+
+          <?php if (Form::get($form_options, 'submission.ajax.enabled')): ?>
+            checked
+          <?php endif ?>
+        >
+
+        <span class="label"><?= _x('Submit via AJAX', 'Form options', 'mashvp-forms') ?></span>
+      </div>
+    </label>
+  </fieldset>
+
+  <fieldset>
     <legend><?= _x('Submission notifications', 'Form options section', 'mashvp-forms') ?></legend>
 
     <div class="field" data-controller="form--option-field">
@@ -9,7 +28,7 @@
         <input
           type="checkbox"
           name="mvpf_options--notification__email--enabled"
-          data-target="form--option-field.toggle"
+          data-form--option-field-target="toggle"
           data-action="input->form--option-field#toggleAccordion"
 
           <?php if (Form::get($form_options, 'notifications.email.enabled')): ?>
@@ -23,13 +42,13 @@
       <div
         class="row expand"
         data-controller="form--email-settings"
-        data-target="form--option-field.accordion"
+        data-form--option-field-target="accordion"
         data-form--email-settings-initial-data="<?= Form::get($form_options, 'notifications.email.settings') ?>"
       >
-        <input type="hidden" name="mvpf_options--notification__email--values" data-target="form--email-settings.output">
+        <input type="hidden" name="mvpf_options--notification__email--values" data-form--email-settings-target="output">
 
         <div class="row--inner">
-          <ul class="emails" data-target="form--email-settings.list"></ul>
+          <ul class="emails" data-form--email-settings-target="list"></ul>
 
           <div class="actions">
             <button type="button" class="button" data-action="form--email-settings#add">
@@ -44,13 +63,11 @@
   <fieldset>
     <legend><?= _x('Spam protection', 'Form options section', 'mashvp-forms') ?></legend>
 
-    <label class="field" data-controller="form--option-field">
+    <label class="field">
       <div class="row">
         <input
           type="checkbox"
-          name="mvpf_options--antispam_honeypot--enabled"
-          data-target="form--option-field.toggle"
-          data-action="input->form--option-field#toggleAccordion"
+          name="mvpf_options--antispam__honeypot--enabled"
 
           <?php if (Form::get($form_options, 'antispam.honeypot.enabled')): ?>
             checked
@@ -61,13 +78,11 @@
       </div>
     </label>
 
-    <label class="field" data-controller="form--option-field">
+    <label class="field">
       <div class="row">
         <input
           type="checkbox"
-          name="mvpf_options--antispam_recaptcha--enabled"
-          data-target="form--option-field.toggle"
-          data-action="input->form--option-field#toggleAccordion"
+          name="mvpf_options--antispam__recaptcha--enabled"
 
           <?php if (Form::get($form_options, 'antispam.recaptcha.enabled')): ?>
             checked

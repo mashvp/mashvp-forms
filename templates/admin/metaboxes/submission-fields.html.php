@@ -1,7 +1,14 @@
 <?php
   use Mashvp\Forms\Submission;
 
-  $skip_fields = ['submit', 'reset', 'button', 'message', 'horizontal-separator'];
+  $skip_fields = [
+    'submit',
+    'reset',
+    'button',
+    'message',
+    'horizontal-separator',
+    'builtin-status-message-zone'
+  ];
 ?>
 
 <dl class="mvpf mvpf__submission-list">

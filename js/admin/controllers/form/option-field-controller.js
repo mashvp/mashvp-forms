@@ -1,4 +1,4 @@
-import ApplicationController from '../../application-controller';
+import ApplicationController from '../../../common/application-controller';
 
 export default class extends ApplicationController {
   #observer;

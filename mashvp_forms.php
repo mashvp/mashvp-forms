@@ -4,7 +4,7 @@
  * Plugin Name: Mashvp — Forms
  * Plugin URI: http://mashvp.com
  * Description: No-bullsh!t form plugin
- * Version: 0.1.0-alpha.1
+ * Version: 0.2.0-beta.1
  * Author: Mashvp
  * Author URI: http://mashvp.com
  * Text Domain: mashvp-forms

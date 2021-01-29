@@ -9,11 +9,12 @@ import Toolbar from './Toolbar';
 import AppControls from './AppControls';
 
 import { applyDrag, attributesPropType } from '../utils';
+import { useSubscriber } from './hooks';
+
 import {
   FIELDS_UPDATED,
   FIELD_ATTRIBUTES_UPDATED,
-} from '../../pubsub-messages';
-import { useSubscriber } from './hooks';
+} from '../../../common/pubsub-messages';
 
 const App = ({ initialData }) => {
   const [rows, setRows] = useState(initialData);
@@ -58,21 +59,25 @@ const App = ({ initialData }) => {
     publish(FIELDS_UPDATED, { json: serializeData() });
   }, [rows]);
 
-  useSubscriber(FIELD_ATTRIBUTES_UPDATED, (_, { id, attributes }) => {
-    const clonedRows = cloneDeep(rows);
+  useSubscriber(
+    FIELD_ATTRIBUTES_UPDATED,
+    (_, { id, attributes }) => {
+      const clonedRows = cloneDeep(rows);
 
-    clonedRows.forEach((row) => {
-      const { items } = row;
+      clonedRows.forEach((row) => {
+        const { items } = row;
 
-      items.forEach((item) => {
-        if (item.id === id) {
-          item.attributes = { ...item.attributes, ...attributes };
-        }
+        items.forEach((item) => {
+          if (item.id === id) {
+            item.attributes = { ...item.attributes, ...attributes };
+          }
+        });
       });
-    });
 
-    setRows(clonedRows);
-  }, [rows]);
+      setRows(clonedRows);
+    },
+    [rows]
+  );
 
   return (
     <>

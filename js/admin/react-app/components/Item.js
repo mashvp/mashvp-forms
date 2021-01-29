@@ -8,8 +8,8 @@ import InputField from './Items/InputField';
 
 import { attributesPropType, inputTypes, shouldShowLabel } from '../utils';
 import { useSubscriber } from './hooks';
-import { FIELD_SELECTED } from '../../pubsub-messages';
-import { __ } from '../../i18n';
+import { FIELD_SELECTED } from '../../../common/pubsub-messages';
+import { __ } from '../../../common/i18n';
 
 const renderField = (type, { id, attributes }) => {
   if (inputTypes.includes(type)) {
@@ -70,7 +70,8 @@ const renderField = (type, { id, attributes }) => {
       );
     }
 
-    case 'message': {
+    case 'message':
+    case 'builtin-status-message-zone': {
       return (
         <p className="message">{attributes.value || attributes.defaultValue}</p>
       );

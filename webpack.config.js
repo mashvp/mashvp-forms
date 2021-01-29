@@ -4,18 +4,7 @@ const path = require('path');
 
 const TerserPlugin = require('terser-webpack-plugin');
 
-module.exports = {
-  entry: path.resolve(__dirname, 'js/index.js'),
-
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'index.min.js',
-    chunkFilename: 'chunks/[id]-[chunkhash].chunk.js',
-    publicPath: process.env.WEBPACK_MODE
-      ? '/wp-content/plugins/mashvp-forms/dist/'
-      : '/sps/wp-content/plugins/mashvp-forms/dist/',
-  },
-
+const config = {
   devtool: 'eval-source-map',
 
   plugins: [
@@ -50,3 +39,23 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
 };
+
+const adminConfig = Object.assign({}, config, {
+  entry: path.resolve(__dirname, 'js/admin/index.js'),
+
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'admin.min.js',
+  },
+});
+
+const frontConfig = Object.assign({}, config, {
+  entry: path.resolve(__dirname, 'js/front/index.js'),
+
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'front.min.js',
+  },
+});
+
+module.exports = [adminConfig, frontConfig];
