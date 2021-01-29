@@ -8,12 +8,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2020-11-30T02:44:43+01:00\n"
-"PO-Revision-Date: 2021-01-29 10:13+0000\n"
+"PO-Revision-Date: 2021-01-29 11:11+0000\n"
 "Language: fr_FR\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: mashvp-forms\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Loco-Version: 2.4.6; wp-5.5.3"
+"X-Loco-Version: 2.5.0; wp-5.6"
 
 #: js/admin/react-app/components/AppControls.js:13
 msgid "Add row"
@@ -940,7 +940,7 @@ msgstr "Shortcode"
 
 #: js/admin/react-app/utils.js:436
 msgid "Status message zone"
-msgstr "Zone de message de status"
+msgstr "Zone de message de statut"
 
 #: includes/classes/SubmissionHandler.php:76 js/admin/react-app/utils.js:442
 msgctxt "Submission default success message"
