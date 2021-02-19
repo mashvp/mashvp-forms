@@ -41,6 +41,14 @@ export default class extends ApplicationController {
     });
   }
 
+  dispatch(name, data = {}) {
+    const event = new Event(`mvpf:${name}`);
+
+    event.detail = data;
+
+    this.element.dispatchEvent(event);
+  }
+
   sendForm() {
     if (this.status !== 'sending') {
       this.setStatusMessage('sending');
@@ -59,19 +67,22 @@ export default class extends ApplicationController {
           if (response.ok) {
             return response.json();
           }
+
+          // TODO: Translate this message
+          throw new Error('Error while submitting form');
         })
         .then((json) => {
           const { success, message } = json;
 
           this.setStatusMessage(success ? 'success' : 'error', message);
+          this.dispatch('ajax-submitted', { success, message });
         })
         .catch((error) => {
           this.setStatusMessage('error', error);
+          this.dispatch('ajax-submitted', { success: false, error });
         })
         .finally(() => {
           this.status = null;
-
-          this.element.dispatchEvent(new Event('mvpf:ajax-submitted'));
         });
     }
   }
