@@ -431,7 +431,7 @@ export const toolbarItems = [
     className: '',
   },
   {
-    _skip: ['label'],
+    _skip: ['label', 'value'],
     type: 'builtin-status-message-zone',
     label: __('Status message zone', 'mashvp-forms'),
     value: _x(

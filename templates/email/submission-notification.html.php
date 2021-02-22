@@ -474,7 +474,7 @@
                           <tbody>
                             <?php foreach ($submission->getFields() as $field): ?>
                               <?php
-                                $skip_fields = ['submit', 'reset', 'button', 'message', 'horizontal-separator'];
+                                $skip_fields = ['submit', 'reset', 'button', 'message', 'horizontal-separator', 'builtin-status-message-zone'];
 
                                 if (!in_array($field['type'], $skip_fields)):
                               ?>
