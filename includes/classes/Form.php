@@ -2,6 +2,8 @@
 
 namespace Mashvp\Forms;
 
+use Mashvp\Forms\Utils;
+
 class Form
 {
     public const FORM_FIELDS_META_NAME = '_mashvp-forms__fields';
@@ -10,11 +12,13 @@ class Form
     public const SECURITY_CODE = 'AGs9jXb8dNHMEhh8CxJs6srBDqm5HH9p';
 
     private $id;
+    private $options;
     private $post;
 
-    public function __construct($form_id)
+    public function __construct($form_id, $options = [])
     {
         $this->id = $form_id;
+        $this->options = $options;
 
         $post = get_post($form_id);
         if (get_post_type($post) === 'mvpf-form') {
@@ -92,6 +96,7 @@ class Form
                 'post' => $this->post,
                 'form_data' => $form_data,
                 'form' => $this,
+                'is_admin_preview' => Utils::get($this->options, 'is_admin_preview'),
             ]
         );
     }

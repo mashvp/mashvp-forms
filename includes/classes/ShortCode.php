@@ -3,11 +3,13 @@
 namespace Mashvp\Forms;
 
 use Mashvp\SingletonClass;
+
 use Mashvp\Forms\Form;
+use Mashvp\Forms\Utils;
 
 class ShortCode extends SingletonClass
 {
-    private const DEFAULT_ATTRIBUTES = [ 'id' => false ];
+    private const DEFAULT_ATTRIBUTES = [ 'id' => false, 'is_admin_preview' => false ];
 
     public function register()
     {
@@ -26,7 +28,9 @@ class ShortCode extends SingletonClass
             HTML;
         }
 
-        $form = new Form($attributes['id']);
+        $form = new Form($attributes['id'], [
+            'is_admin_preview' => !!Utils::get($attributes, 'is_admin_preview', false),
+        ]);
 
         return $form->render();
     }
