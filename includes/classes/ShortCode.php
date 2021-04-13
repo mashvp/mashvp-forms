@@ -32,6 +32,9 @@ class ShortCode extends SingletonClass
             'is_admin_preview' => !!Utils::get($attributes, 'is_admin_preview', false),
         ]);
 
-        return $form->render();
+        ob_start();
+        $form->render();
+
+        return ob_get_clean();
     }
 }
