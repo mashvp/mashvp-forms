@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-06-11T10:53:45+02:00\n"
+"POT-Creation-Date: 2021-06-11T11:26:34+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: mashvp-forms\n"
@@ -228,6 +228,16 @@ msgstr ""
 #: includes/classes/SubmissionHandler.php:267
 msgctxt "Submission handler error"
 msgid "Your message was rejected because it looks like spam. If you are a legitimate user, please try again."
+msgstr ""
+
+#: includes/classes/SubmissionHandler.php:293
+msgctxt "Message submission status"
+msgid "Your message was sent successfully."
+msgstr ""
+
+#: includes/classes/SubmissionHandler.php:298
+msgctxt "Message submission status"
+msgid "There was an error trying to send your message. Please try again later."
 msgstr ""
 
 #: templates/admin/general-options.html.php:13

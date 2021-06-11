@@ -259,7 +259,7 @@ class SubmissionHandler extends SingletonClass
         }
 
         if ($reason = $this->isSpam($form)) {
-            $this->logSpamAttempt($form, $reason = '', $reason);
+            $this->logSpamAttempt($form, $reason);
 
             return $this->terminateSubmissionProcess(
                 false,
@@ -285,6 +285,26 @@ class SubmissionHandler extends SingletonClass
         $submission = new Submission($form, $fields);
         $success = $submission->createAndRunHooks();
 
-        return $this->terminateSubmissionProcess($success);
+        $defaultMessage = $success ?
+            'Your message was sent successfully.' :
+            'There was an error trying to send your message. Please try again later.';
+
+        $defaultLocalizedMessage = $success ?
+            _x(
+                'Your message was sent successfully.',
+                'Message submission status',
+                'mashvp-forms'
+            ) :
+            _x(
+                'There was an error trying to send your message. Please try again later.',
+                'Message submission status',
+                'mashvp-forms'
+            );
+
+        return $this->terminateSubmissionProcess(
+            $success,
+            $defaultMessage,
+            $defaultLocalizedMessage
+        );
     }
 }

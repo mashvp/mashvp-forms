@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2020-11-30T02:44:43+01:00\n"
-"PO-Revision-Date: 2021-06-11 08:54+0000\n"
+"PO-Revision-Date: 2021-06-11 09:27+0000\n"
 "Language: fr_FR\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: mashvp-forms\n"
@@ -672,6 +672,18 @@ msgstr "Réglages généraux des formulaires"
 msgctxt "Menu page title"
 msgid "Settings"
 msgstr "Réglages"
+
+#: includes/classes/SubmissionHandler.php:298
+msgctxt "Message submission status"
+msgid "There was an error trying to send your message. Please try again later."
+msgstr ""
+"Une erreur est survenue pendant l'envoi de votre message. Veuillez réessayer "
+"plus tard."
+
+#: includes/classes/SubmissionHandler.php:293
+msgctxt "Message submission status"
+msgid "Your message was sent successfully."
+msgstr "Votre message a bien été envoyé."
 
 #: js/admin/react-app/utils.js:412
 msgid "Miscellaneous"
