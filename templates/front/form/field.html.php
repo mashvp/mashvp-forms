@@ -3,7 +3,10 @@
   use Mashvp\Forms\Renderer;
 ?>
 
-<div class="mvpf mvpf__form-field" data-field-id=<?= Form::get($field, 'id') ?>>
+<div
+  class="mvpf mvpf__form-field <?= Form::get($field, 'attributes.className') ?>"
+  data-field-id=<?= Form::get($field, 'id') ?>
+>
   <?php
     $type = Form::get($field, 'attributes.type');
 
