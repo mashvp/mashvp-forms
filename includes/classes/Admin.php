@@ -308,7 +308,9 @@ class Admin extends SingletonClass
     {
         global $post;
 
-        $fields = get_post_meta($post->ID, self::FORM_FIELDS_META_NAME, true);
+        $fields = maybe_unserialize(
+            get_post_meta($post->ID, self::FORM_FIELDS_META_NAME, true)
+        );
 
         Renderer::instance()->renderTemplate(
             'admin/metaboxes/submission-fields',

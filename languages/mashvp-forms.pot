@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Mashvp — Forms plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Mashvp — Forms 0.1.0-alpha.1\n"
+"Project-Id-Version: Mashvp — Forms 0.2.0-beta.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mashvp-forms\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-01-29T11:59:05+01:00\n"
+"POT-Creation-Date: 2021-06-11T10:53:45+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: mashvp-forms\n"
@@ -328,6 +328,11 @@ msgctxt "Form options"
 msgid "Honeypot"
 msgstr ""
 
+#: templates/admin/metaboxes/submission-fields.html.php:24
+msgctxt "Submission preview"
+msgid "No fields found"
+msgstr ""
+
 #: templates/admin/metaboxes/submission-info.html.php:19
 msgctxt "Notification email status"
 msgid "Email sent"
@@ -399,6 +404,11 @@ msgstr ""
 #: templates/front/form/antispam/recaptcha/v2-invisible.html.php:28
 msgctxt "reCAPTCHA"
 msgid "Terms of Service"
+msgstr ""
+
+#: templates/front/form/fields/partials/label.html.php:9
+msgctxt "ARIA label"
+msgid "Required"
 msgstr ""
 
 #: js/admin/react-app/components/AppControls.js:13
