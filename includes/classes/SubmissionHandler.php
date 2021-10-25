@@ -223,6 +223,7 @@ class SubmissionHandler extends SingletonClass
         ) {
             return $this->terminateSubmissionProcess(
                 false,
+                'Cannot verify the authenticity of the message',
                 _x(
                     'Cannot verify the authenticity of the message',
                     'Submission handler error',
