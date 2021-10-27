@@ -3,10 +3,10 @@
   $url = isset($url) ? $url : $field['value'];
 ?>
 
-<dd data-type="<?= $field['type'] ?>">
+<dd data-type="<?= esc_attr($field['type']) ?>">
   <a
-    href="<?= $url ?>"
+    href="<?= esc_attr($url) ?>"
     target="_blank"
     rel="noopener noreferrer"
-  ><?= $title ?></a>
+  ><?= esc_html($title) ?></a>
 </dd>

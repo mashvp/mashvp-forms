@@ -44,7 +44,7 @@
           ?>
         </td>
 
-        <th><?= $label ?></th>
+        <th><?= esc_html($label) ?></th>
       </tr>
     <?php endforeach ?>
   </table>
@@ -63,7 +63,7 @@
           $selected = in_array($value_name, $selected_value);
         ?>
 
-        <dt><?= $label ?></dt>
+        <dt><?= esc_html($label) ?></dt>
 
         <?=
           Submission::renderField(

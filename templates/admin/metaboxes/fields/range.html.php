@@ -12,7 +12,7 @@
 <dd data-type="<?= $field['type'] ?>">
   <div class="value-range">
     <span class="current-value" style="left: <?= $percent ?>%; transform: translateX(-<?= $percent ?>%)">
-      <?= $value ?>
+      <?= esc_html($value) ?>
     </span>
   </div>
 
@@ -20,17 +20,17 @@
     type="range"
     readonly
 
-    value="<?= $value ?>"
-    min="<?= $min ?>"
-    max="<?= $max ?>"
-    step="<?= $step ?>"
+    value="<?= esc_attr($value) ?>"
+    min="<?= esc_attr($min) ?>"
+    max="<?= esc_attr($max) ?>"
+    step="<?= esc_attr($step) ?>"
 
     onclick="return false"
     style="pointer-events: none"
   >
 
   <div class="value-range">
-    <span class="min"><?= $min ?></span>
-    <span class="max"><?= $max ?></span>
+    <span class="min"><?= esc_html($min) ?></span>
+    <span class="max"><?= esc_html($max) ?></span>
   </div>
 </dd>

@@ -27,6 +27,6 @@ global $wp;
     ?>
 
     <div class="dashicons dashicons-email <?= $status ?>"></div>
-    <span><?= $label ?></span>
+    <span><?= esc_html($label) ?></span>
   </li>
 </ul>
