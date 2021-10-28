@@ -59,7 +59,7 @@ export default class extends ApplicationController {
         credentials: 'same-origin',
         headers: new Headers({
           'Content-Type': 'application/x-www-form-urlencoded',
-          'x-mvpf-method': 'AJAX',
+          'X-Mvpf-Method': 'AJAX',
         }),
         body: this.formParams,
       })
