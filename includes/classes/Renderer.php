@@ -18,9 +18,7 @@ class Renderer extends SingletonClass
 
             return true;
         } else {
-            echo <<<HTML
-                <!-- [mashvp-forms] Render error: Template "$name" not found -->
-            HTML;
+            echo "<!-- [mashvp-forms] Render error: Template \"$name\" not found -->";
         }
 
         return false;
