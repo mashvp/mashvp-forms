@@ -4,7 +4,7 @@
  * Plugin Name: Mashvp — Forms
  * Plugin URI: http://mashvp.com
  * Description: No-bullsh!t form plugin
- * Version: 0.2.1-beta.2
+ * Version: 0.2.1-beta.3
  * Author: Mashvp
  * Author URI: http://mashvp.com
  * Text Domain: mashvp-forms
@@ -19,7 +19,7 @@ if (defined('MASHVP_FORMS')) {
 }
 
 define('MASHVP_FORMS', true);
-define('MASHVP_FORMS__VERSION', '0.2.1-beta.2');
+define('MASHVP_FORMS__VERSION', '0.2.1-beta.3');
 define('MASHVP_FORMS__DIR', basename(dirname(__FILE__)));
 define('MASHVP_FORMS__PATH', plugin_dir_path(__FILE__));
 
