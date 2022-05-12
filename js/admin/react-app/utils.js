@@ -549,6 +549,7 @@ export const autocompleteValues = {
     'mashvp-forms'
   ),
   'postal-code': _x('Postal code', 'Input autocomplete value', 'mashvp-forms'),
+  'home city': _x('City', 'Input autocomplete value', 'mashvp-forms'),
   'cc-name': _x('Credit card name', 'Input autocomplete value', 'mashvp-forms'),
   'cc-given-name': _x(
     'Credit card given name',
