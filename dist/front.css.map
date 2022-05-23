@@ -1,9 +1,1 @@
-{
-	"version": 3,
-	"file": "front.css",
-	"sources": [
-		"../styles/front.scss"
-	],
-	"names": [],
-	"mappings": "AAAA,AAAA,4BAA4B,CAAC;EAC3B,QAAQ,EAAE,mBAAmB;EAC7B,GAAG,EAAE,kBAAkB;EACvB,IAAI,EAAE,kBAAkB;EACxB,KAAK,EAAE,YAAY;EACnB,MAAM,EAAE,YAAY;EACpB,MAAM,EAAE,YAAY;EACpB,OAAO,EAAE,YAAY;EACrB,SAAS,EAAE,YAAY;EACvB,WAAW,EAAE,YAAY;EACzB,OAAO,EAAE,YAAY;EACrB,cAAc,EAAE,eAAe;EAC/B,WAAW,EAAE,eAAe,GAC7B;;AAED,AAEI,gBAFY,CAAC,4BAA4B,CAC3C,YAAY,AACT,OAAO,CAAC;EACP,UAAU,EAAE,MAAM,GACnB"
-}
+{"version":3,"sourceRoot":"","sources":["../styles/front.scss"],"names":[],"mappings":"AAAA,6BACE,6BACA,uBACA,wBACA,mBACA,oBACA,oBACA,qBACA,uBACA,yBACA,qBACA,+BACA,4BAKE,kEACE","file":"front.css"}

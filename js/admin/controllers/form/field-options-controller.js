@@ -70,8 +70,8 @@ export default class extends ApplicationController {
     const optionTemplates = safeHtml`${Object.entries(values)
       .map(([key, label]) =>
         key === currentValue
-          ? safeHtml`<option value=${key} selected>${label}</option>`
-          : safeHtml`<option value=${key}>${label}</option>`
+          ? safeHtml`<option value="${key}" selected>${label}</option>`
+          : safeHtml`<option value="${key}">${label}</option>`
       )
       .join('')}`;
 
