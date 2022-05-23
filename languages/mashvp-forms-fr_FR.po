@@ -2,666 +2,55 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mashvp — Forms 0.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mashvp-forms\n"
+"POT-Creation-Date: 2022-05-12T18:18:24+02:00\n"
+"PO-Revision-Date: 2022-05-12 18:18+0200\n"
 "Last-Translator: \n"
 "Language-Team: Français\n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-11-30T02:44:43+01:00\n"
-"PO-Revision-Date: 2021-06-11 09:27+0000\n"
-"Language: fr_FR\n"
-"X-Generator: Loco https://localise.biz/\n"
-"X-Domain: mashvp-forms\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Loco-Version: 2.5.0; wp-5.6"
-
-#: js/admin/react-app/components/AppControls.js:13
-msgid "Add row"
-msgstr "Ajouter une ligne"
-
-#: templates/admin/metaboxes/field-options.html.php:11
-msgid "Apply"
-msgstr "Appliquer"
-
-#: templates/front/form/fields/partials/label.html.php:9
-msgctxt "ARIA label"
-msgid "Required"
-msgstr "Obligatoire"
-
-#: templates/admin/general-options.html.php:74
-msgid ""
-"Be careful to select the correct version for your keys, otherwise reCAPTCHA "
-"will not function properly."
-msgstr ""
-"Veuillez vous assurer que la version sélectionnée corresponde bien à la "
-"version des clés, sinon reCAPTCHA ne fonctionnera pas correctement."
-
-#: js/admin/react-app/utils.js:437
-msgctxt "Builtin message zone placeholder example"
-msgid ""
-"Status messages are inserted in this zone if the form runs in AJAX mode."
-msgstr ""
-"Les messages de statut sont insérés dans cette zone si le mode AJAX est "
-"sélectionné."
-
-#: js/admin/react-app/utils.js:646
-msgctxt "Button HTML type"
-msgid "Button"
-msgstr "Bouton"
-
-#: js/admin/react-app/utils.js:648
-msgctxt "Button HTML type"
-msgid "Reset"
-msgstr "Effacer formulaire"
-
-#: js/admin/react-app/utils.js:647
-msgctxt "Button HTML type"
-msgid "Submit"
-msgstr "Envoyer formulaire"
-
-#: js/admin/react-app/utils.js:290
-msgid "Checkbox"
-msgstr "Case à cocher"
-
-#: js/admin/react-app/utils.js:313
-msgid "Choice list"
-msgstr "Liste de choix"
-
-#: js/admin/react-app/utils.js:316
-msgctxt "Choice list field default option"
-msgid "One"
-msgstr "Un"
-
-#: js/admin/react-app/utils.js:318
-msgctxt "Choice list field default option"
-msgid "Three"
-msgstr "Trois"
-
-#: js/admin/react-app/utils.js:317
-msgctxt "Choice list field default option"
-msgid "Two"
-msgstr "Deux"
-
-#: js/admin/react-app/utils.js:309
-msgid "Composite"
-msgstr "Composé"
-
-#: js/admin/react-app/utils.js:381
-msgid "Controls"
-msgstr "Contrôles"
-
-#: js/admin/react-app/utils.js:244
-msgid "Date and time"
-msgstr "Date et heure"
-
-#: js/admin/react-app/utils.js:653
-msgctxt "DateTime HTML type"
-msgid "Date"
-msgstr "Date"
-
-#: js/admin/react-app/utils.js:652
-msgctxt "DateTime HTML type"
-msgid "Date and time"
-msgstr "Date et heure"
-
-#: js/admin/react-app/utils.js:654
-msgctxt "DateTime HTML type"
-msgid "Time"
-msgstr "Heure"
-
-#: js/admin/react-app/components/Row.js:15
-msgid "Drop items here"
-msgstr "Déposez des champs ici"
-
-#: js/admin/react-app/utils.js:183
-msgid "Email"
-msgstr "Adresse email"
-
-#: js/admin/react-app/utils.js:185 js/admin/react-app/utils.js:661
-msgctxt "Email field placeholder example"
-msgid "user@example.com"
-msgstr "prenom.nom@domaine.fr"
-
-#: templates/email/submission-notification.html.php:453
-msgctxt "Email greeting"
-msgid "Hi there,"
-msgstr "Bonjour,"
-
-#: templates/email/submission-notification.html.php:499
-msgctxt "Email submission call-to-action"
-msgid "See submission"
-msgstr "Voir le message"
-
-#. translators: %s form title in quotation marks
-#: templates/email/submission-notification.html.php:458
-msgctxt "Email submission explanation"
-msgid "You have received a new message from your form %s."
-msgstr "Vous avez reçu un nouveau message depuis votre formulaire %s."
-
-#: js/admin/react-app/utils.js:158
-msgctxt "Field attribute label"
-msgid "Additional CSS classes"
-msgstr "Classes CSS additionnelles"
-
-#: js/admin/react-app/utils.js:138
-msgctxt "Field attribute label"
-msgid "Allowed file types"
-msgstr "Types de fichiers autorisés"
-
-#: js/admin/react-app/utils.js:132
-msgctxt "Field attribute label"
-msgid "Autocomplete"
-msgstr "Auto-complétion"
-
-#: js/admin/react-app/utils.js:147
-msgctxt "Field attribute label"
-msgid "Date and/or time type"
-msgstr "Type de champ date et/ou heure"
-
-#: js/admin/react-app/utils.js:128
-msgctxt "Field attribute label"
-msgid "Default value"
-msgstr "Valeur par défaut"
-
-#: js/admin/react-app/utils.js:136
-msgctxt "Field attribute label"
-msgid "Disabled"
-msgstr "Désactivé"
-
-#: js/admin/react-app/utils.js:134
-msgctxt "Field attribute label"
-msgid "Hide field"
-msgstr "Cacher le champ"
-
-#: js/admin/react-app/utils.js:127
-msgctxt "Field attribute label"
-msgid "Label"
-msgstr "Libellé"
-
-#: js/admin/react-app/utils.js:145
-msgctxt "Field attribute label"
-msgid "Maximum"
-msgstr "Maximum"
-
-#: js/admin/react-app/utils.js:144
-msgctxt "Field attribute label"
-msgid "Minimum"
-msgstr "Minimum"
-
-#: js/admin/react-app/utils.js:139
-msgctxt "Field attribute label"
-msgid "Multiple choice"
-msgstr "Choix multiple"
-
-#: js/admin/react-app/utils.js:130
-msgctxt "Field attribute label"
-msgid "Options"
-msgstr "Options"
-
-#: js/admin/react-app/utils.js:131
-msgctxt "Field attribute label"
-msgid "Placeholder"
-msgstr "Valeur d'exemple"
-
-#: js/admin/react-app/utils.js:135
-msgctxt "Field attribute label"
-msgid "Read-only"
-msgstr "Lecture seule"
-
-#: js/admin/react-app/utils.js:133
-msgctxt "Field attribute label"
-msgid "Required"
-msgstr "Obligatoire"
-
-#: js/admin/react-app/utils.js:137
-msgctxt "Field attribute label"
-msgid "Show label"
-msgstr "Afficher le libellé"
-
-#: js/admin/react-app/utils.js:146
-msgctxt "Field attribute label"
-msgid "Step"
-msgstr "Pas"
-
-#: js/admin/react-app/utils.js:157
-msgctxt "Field attribute label"
-msgid "Sucess message"
-msgstr "Message d'envoi réussi"
-
-#: js/admin/react-app/utils.js:126
-msgctxt "Field attribute label"
-msgid "Type"
-msgstr "Type"
-
-#: js/admin/react-app/utils.js:164
-msgctxt "Field attribute label"
-msgid "Unknown attribute"
-msgstr "Attribut inconnu"
-
-#: js/admin/react-app/utils.js:129 js/admin/react-app/utils.js:663
-msgctxt "Field attribute label"
-msgid "Value"
-msgstr "Valeur"
-
-#: js/admin/react-app/utils.js:152
-msgctxt "Field attribute label (HTML button type)"
-msgid "Type"
-msgstr "Type"
-
-#: includes/classes/Admin.php:163
-msgid "Field options"
-msgstr "Options du champ"
-
-#: js/admin/react-app/components/Toolbar.js:84
-msgid "Fields list"
-msgstr "Liste des champs"
-
-#: js/admin/react-app/utils.js:254
-msgctxt "Form field type"
-msgid "Select"
-msgstr "Liste déroulante"
-
-#: includes/classes/Admin.php:136 includes/classes/Admin.php:173
-msgid "Form fields"
-msgstr "Champs du formulaire"
-
-#: includes/classes/Admin.php:145
-msgid "Form options"
-msgstr "Options du formulaire"
-
-#: js/admin/react-app/utils.js:660
-msgctxt "Form options"
-msgid "Condition"
-msgstr "Condition"
-
-#: templates/admin/metaboxes/options-editor.html.php:39
-msgctxt "Form options"
-msgid "Email"
-msgstr "Email"
-
-#: templates/admin/metaboxes/options-editor.html.php:77
-msgctxt "Form options"
-msgid "Honeypot"
-msgstr "Honeypot"
-
-#: templates/admin/general-options.html.php:16
-#: templates/admin/metaboxes/options-editor.html.php:92
-msgctxt "Form options"
-msgid "reCAPTCHA"
-msgstr "reCAPTCHA"
-
-#: templates/admin/metaboxes/options-editor.html.php:18
-msgctxt "Form options"
-msgid "Submit via AJAX"
-msgstr "Envoyer via AJAX"
-
-#: templates/admin/metaboxes/options-editor.html.php:64
-msgctxt "Form options section"
-msgid "Spam protection"
-msgstr "Protection anti-spam"
-
-#: templates/admin/metaboxes/options-editor.html.php:5
-msgctxt "Form options section"
-msgid "Submission"
-msgstr "Envoi"
-
-#: templates/admin/metaboxes/options-editor.html.php:24
-msgctxt "Form options section"
-msgid "Submission notifications"
-msgstr "Notifications des messages"
-
-#: templates/email/submission-notification.html.php:536
-msgid "form settings"
-msgstr "réglages du formulaire"
-
-#: templates/admin/metaboxes/options-editor.html.php:55
-msgctxt "Form settings email"
-msgid "Add email"
-msgstr "Ajouter une adresse mail"
-
-#: js/admin/react-app/utils.js:662
-msgctxt "Form settings email condition"
-msgid "IF"
-msgstr "SI"
-
-#: js/admin/react-app/utils.js:400
-msgid "Generic button"
-msgstr "Bouton générique"
-
-#: js/admin/react-app/utils.js:401
-msgctxt "Generic button field placeholder example"
-msgid "Generic button"
-msgstr "Bouton générique"
-
-#: includes/classes/Admin.php:77
-msgctxt "Global settings option description"
-msgid "Hide badge? (for v2 invisible only)"
-msgstr "Masquer le badge ? (v2 invisible uniquement)"
-
-#: includes/classes/Admin.php:96
-msgctxt "Global settings option description"
-msgid "reCAPTCHA secret key"
-msgstr "Clé secrète reCAPTCHA"
-
-#: includes/classes/Admin.php:86
-msgctxt "Global settings option description"
-msgid "reCAPTCHA site key"
-msgstr "Clé de site reCAPTCHA"
-
-#: includes/classes/Admin.php:67
-msgctxt "Global settings option description"
-msgid "reCAPTCHA version"
-msgstr "Version reCAPTCHA"
-
-#: templates/admin/general-options.html.php:76
-msgctxt "Global settings reCAPTCHA help"
-msgid "Get a reCAPTCHA key"
-msgstr "Obtenir une clé reCAPTCHA"
-
-#: templates/admin/general-options.html.php:13
-msgctxt "Global settings section"
-msgid "Spam protection"
-msgstr "Protection anti-spam"
-
-#: js/admin/react-app/utils.js:429
-msgid "Horizontal separator"
-msgstr "Séparateur horizontal"
+"X-Generator: Poedit 3.0.1\n"
+"X-Domain: mashvp-forms\n"
+"X-Loco-Version: 2.5.0; wp-5.6\n"
+
+#. Plugin Name of the plugin
+msgid "Mashvp — Forms"
+msgstr "Mashvp — Formulaires"
 
 #. Plugin URI of the plugin
 #. Author URI of the plugin
 msgid "http://mashvp.com"
 msgstr "http://mashvp.com/fr"
 
-#: includes/classes/Admin.php:182
-msgid "Info"
-msgstr "Informations"
-
-#: js/admin/react-app/utils.js:452
-msgctxt "Input autocomplete value"
-msgid "(none)"
-msgstr "(aucune)"
-
-#: js/admin/react-app/utils.js:466
-msgctxt "Input autocomplete value"
-msgid "Additional (middle) name"
-msgstr "Autres prénoms"
-
-#: js/admin/react-app/utils.js:540
-msgctxt "Input autocomplete value"
-msgid "Address administrative level 1"
-msgstr "Adresse administrative niveau 1"
-
-#: js/admin/react-app/utils.js:535
-msgctxt "Input autocomplete value"
-msgid "Address administrative level 2"
-msgstr "Adresse administrative niveau 2"
-
-#: js/admin/react-app/utils.js:530
-msgctxt "Input autocomplete value"
-msgid "Address administrative level 3"
-msgstr "Adresse administrative niveau 3"
-
-#: js/admin/react-app/utils.js:525
-msgctxt "Input autocomplete value"
-msgid "Address administrative level 4"
-msgstr "Adresse administrative niveau 4"
-
-#: js/admin/react-app/utils.js:510
-msgctxt "Input autocomplete value"
-msgid "Address line 1"
-msgstr "Adresse ligne 1"
-
-#: js/admin/react-app/utils.js:515
-msgctxt "Input autocomplete value"
-msgid "Address line 2"
-msgstr "Adresse ligne 2"
-
-#: js/admin/react-app/utils.js:520
-msgctxt "Input autocomplete value"
-msgid "Address line 3"
-msgstr "Adresse ligne 3"
-
-#: js/admin/react-app/utils.js:605
-msgctxt "Input autocomplete value"
-msgid "Birthday"
-msgstr "Date de naissance"
-
-#: js/admin/react-app/utils.js:606
-msgctxt "Input autocomplete value"
-msgid "Birthday day"
-msgstr "Jour de naissance"
-
-#: js/admin/react-app/utils.js:607
-msgctxt "Input autocomplete value"
-msgid "Birthday month"
-msgstr "Mois de naissance"
-
-#: js/admin/react-app/utils.js:612
-msgctxt "Input autocomplete value"
-msgid "Birthday year"
-msgstr "Année de naissance"
-
-#: js/admin/react-app/utils.js:504
-msgctxt "Input autocomplete value"
-msgid "Company name"
-msgstr "Nom d'entreprise"
-
-#: js/admin/react-app/utils.js:545
-msgctxt "Input autocomplete value"
-msgid "Country"
-msgstr "Pays"
-
-#: js/admin/react-app/utils.js:546
-msgctxt "Input autocomplete value"
-msgid "Country name"
-msgstr "Nom du pays"
-
-#: js/admin/react-app/utils.js:558
-msgctxt "Input autocomplete value"
-msgid "Credit card additional name"
-msgstr "Carte de crédit : Autres prénoms"
-
-#: js/admin/react-app/utils.js:573
-msgctxt "Input autocomplete value"
-msgid "Credit card expiration"
-msgstr "Carte de crédit : Date d'expiration"
-
-#: js/admin/react-app/utils.js:578
-msgctxt "Input autocomplete value"
-msgid "Credit card expiration month"
-msgstr "Carte de crédit : Mois d'expiration"
-
-#: js/admin/react-app/utils.js:583
-msgctxt "Input autocomplete value"
-msgid "Credit card expiration year"
-msgstr "Carte de crédit : Année d'expiration"
-
-#: js/admin/react-app/utils.js:563
-msgctxt "Input autocomplete value"
-msgid "Credit card family name"
-msgstr "Carte de crédit : Nom de famille"
-
-#: js/admin/react-app/utils.js:553
-msgctxt "Input autocomplete value"
-msgid "Credit card given name"
-msgstr "Carte de crédit : Prénom"
-
-#: js/admin/react-app/utils.js:552
-msgctxt "Input autocomplete value"
-msgid "Credit card name"
-msgstr "Carte de crédit : Nom"
-
-#: js/admin/react-app/utils.js:568
-msgctxt "Input autocomplete value"
-msgid "Credit card number"
-msgstr "Carte de crédit : Numéro"
-
-#: js/admin/react-app/utils.js:588
-msgctxt "Input autocomplete value"
-msgid "Credit card security code"
-msgstr "Carte de crédit : Cryptogramme visuel"
-
-#: js/admin/react-app/utils.js:593
-msgctxt "Input autocomplete value"
-msgid "Credit card type"
-msgstr "Carte de crédit : Type"
-
-#: js/admin/react-app/utils.js:489
-msgctxt "Input autocomplete value"
-msgid "Current password"
-msgstr "Mot de passe actuel"
-
-#: js/admin/react-app/utils.js:482
-msgctxt "Input autocomplete value"
-msgid "Email address"
-msgstr "Adresse email"
-
-#: js/admin/react-app/utils.js:471
-msgctxt "Input autocomplete value"
-msgid "Family (last) name"
-msgstr "Nom de famille"
-
-#: js/admin/react-app/utils.js:613
-msgctxt "Input autocomplete value"
-msgid "Gender"
-msgstr "Genre"
-
-#: js/admin/react-app/utils.js:461
-msgctxt "Input autocomplete value"
-msgid "Given (first) name"
-msgstr "Prénom"
-
-#: js/admin/react-app/utils.js:456
-msgctxt "Input autocomplete value"
-msgid "Honorific prefix"
-msgstr "Préfixe honorifique"
-
-#: js/admin/react-app/utils.js:476
-msgctxt "Input autocomplete value"
-msgid "Honorific suffix"
-msgstr "Suffixe honorifique"
-
-#: js/admin/react-app/utils.js:640
-msgctxt "Input autocomplete value"
-msgid "IMPP"
-msgstr "IMPP"
-
-#: js/admin/react-app/utils.js:499
-msgctxt "Input autocomplete value"
-msgid "Job title"
-msgstr "Métier"
-
-#: js/admin/react-app/utils.js:604
-msgctxt "Input autocomplete value"
-msgid "Language"
-msgstr "Langue"
-
-#: js/admin/react-app/utils.js:455
-msgctxt "Input autocomplete value"
-msgid "Name"
-msgstr "Nom"
-
-#: js/admin/react-app/utils.js:484
-msgctxt "Input autocomplete value"
-msgid "New password"
-msgstr "Nouveau mot de passe"
-
-#: js/admin/react-app/utils.js:481
-msgctxt "Input autocomplete value"
-msgid "Nickname"
-msgstr "Surnom"
-
-#: js/admin/react-app/utils.js:453
-msgctxt "Input autocomplete value"
-msgid "Off"
-msgstr "Désactivé"
-
-#: js/admin/react-app/utils.js:454
-msgctxt "Input autocomplete value"
-msgid "On"
-msgstr "Activé"
-
-#: js/admin/react-app/utils.js:494
-msgctxt "Input autocomplete value"
-msgid "One time code"
-msgstr "Code à usage unique"
-
-#: js/admin/react-app/utils.js:642
-msgctxt "Input autocomplete value"
-msgid "Photo URL"
-msgstr "URL photo de profil"
-
-#: js/admin/react-app/utils.js:551
-msgctxt "Input autocomplete value"
-msgid "Postal code"
-msgstr "Code postal"
-
-#: js/admin/react-app/utils.js:505
-msgctxt "Input autocomplete value"
-msgid "Street address"
-msgstr "Adresse"
-
-#: js/admin/react-app/utils.js:614
-msgctxt "Input autocomplete value"
-msgid "Telephone"
-msgstr "Numéro de téléphone"
-
-#: js/admin/react-app/utils.js:625
-msgctxt "Input autocomplete value"
-msgid "Telephone area code"
-msgstr "Téléphone : Code régional"
-
-#: js/admin/react-app/utils.js:615
-msgctxt "Input autocomplete value"
-msgid "Telephone country code"
-msgstr "Téléphone : Code pays"
-
-#: js/admin/react-app/utils.js:635
-msgctxt "Input autocomplete value"
-msgid "Telephone extension"
-msgstr "Téléphone : Extension"
-
-#: js/admin/react-app/utils.js:630
-msgctxt "Input autocomplete value"
-msgid "Telephone local (without country and area code)"
-msgstr "Téléphone : Numéro local (sans code pays ou régional)"
-
-#: js/admin/react-app/utils.js:620
-msgctxt "Input autocomplete value"
-msgid "Telephone national (without country code)"
-msgstr "Téléphone : Numéro national (sans code régional)"
-
-#: js/admin/react-app/utils.js:599
-msgctxt "Input autocomplete value"
-msgid "Transaction amount"
-msgstr "Valeur de transaction"
-
-#: js/admin/react-app/utils.js:594
-msgctxt "Input autocomplete value"
-msgid "Transaction currency"
-msgstr "Devise de transaction"
-
-#: js/admin/react-app/utils.js:641
-msgctxt "Input autocomplete value"
-msgid "URL"
-msgstr "URL"
-
-#: js/admin/react-app/utils.js:483
-msgctxt "Input autocomplete value"
-msgid "Username"
-msgstr "Nom d'utilisateur"
-
-#: js/admin/react-app/utils.js:170
-msgid "Inputs"
-msgstr "Champs de saisie"
+#. Description of the plugin
+msgid "No-bullsh!t form plugin"
+msgstr "No-bullsh!t form plugin"
 
 #. Author of the plugin
 msgid "Mashvp"
 msgstr "Mashvp"
 
-#. Plugin Name of the plugin
-msgid "Mashvp — Forms"
-msgstr "Mashvp — Formulaires"
+#: includes/classes/Admin.php:67
+msgctxt "Global settings option description"
+msgid "reCAPTCHA version"
+msgstr "Version reCAPTCHA"
+
+#: includes/classes/Admin.php:77
+msgctxt "Global settings option description"
+msgid "Hide badge? (for v2 invisible only)"
+msgstr "Masquer le badge ? (v2 invisible uniquement)"
+
+#: includes/classes/Admin.php:86
+msgctxt "Global settings option description"
+msgid "reCAPTCHA site key"
+msgstr "Clé de site reCAPTCHA"
+
+#: includes/classes/Admin.php:96
+msgctxt "Global settings option description"
+msgid "reCAPTCHA secret key"
+msgstr "Clé secrète reCAPTCHA"
 
 #: includes/classes/Admin.php:106 templates/admin/general-options.html.php:4
 msgctxt "Menu page title"
@@ -673,44 +62,517 @@ msgctxt "Menu page title"
 msgid "Settings"
 msgstr "Réglages"
 
-#: includes/classes/SubmissionHandler.php:298
+#: includes/classes/Admin.php:136 includes/classes/Admin.php:173
+msgid "Form fields"
+msgstr "Champs du formulaire"
+
+#: includes/classes/Admin.php:145
+msgid "Form options"
+msgstr "Options du formulaire"
+
+#: includes/classes/Admin.php:154
+msgid "Shortcode"
+msgstr "Shortcode"
+
+#: includes/classes/Admin.php:163
+msgid "Field options"
+msgstr "Options du champ"
+
+#: includes/classes/Admin.php:182
+msgid "Info"
+msgstr "Informations"
+
+#: includes/classes/PostTypes.php:22 includes/classes/PostTypes.php:24
+msgctxt "Post type UI"
+msgid "Forms"
+msgstr "Formulaires"
+
+#: includes/classes/PostTypes.php:25
+msgctxt "Post type UI"
+msgid "Form"
+msgstr "Formulaire"
+
+#: includes/classes/PostTypes.php:26
+msgctxt "Post type UI"
+msgid "All forms"
+msgstr "Tous les formulaires"
+
+#: includes/classes/PostTypes.php:27 includes/classes/PostTypes.php:71
+msgctxt "Post type UI"
+msgid "Add new"
+msgstr "Ajouter"
+
+#: includes/classes/PostTypes.php:28
+msgctxt "Post type UI"
+msgid "Edit form"
+msgstr "Modifier le formulaire"
+
+#: includes/classes/PostTypes.php:29
+msgctxt "Post type UI"
+msgid "New form"
+msgstr "Nouveau formulaire"
+
+#: includes/classes/PostTypes.php:30
+msgctxt "Post type UI"
+msgid "Show form"
+msgstr "Afficher le formulaire"
+
+#: includes/classes/PostTypes.php:31
+msgctxt "Post type UI"
+msgid "Search forms"
+msgstr "Rechercher des formulaires"
+
+#: includes/classes/PostTypes.php:32
+msgctxt "Post type UI"
+msgid "No forms found"
+msgstr "Aucun formulaire trouvé"
+
+#: includes/classes/PostTypes.php:33
+msgctxt "Post type UI"
+msgid "No forms found in Trash"
+msgstr "Aucun formulaire trouvé dans la corbeille"
+
+#: includes/classes/PostTypes.php:66 includes/classes/PostTypes.php:68
+#: includes/classes/PostTypes.php:70
+msgctxt "Post type UI"
+msgid "Form submissions"
+msgstr "Messages"
+
+#: includes/classes/PostTypes.php:69 includes/classes/Submission.php:92
+msgctxt "Post type UI"
+msgid "Form submission"
+msgstr "Message"
+
+#: includes/classes/PostTypes.php:72
+msgctxt "Post type UI"
+msgid "Edit form submission"
+msgstr "Modifier le message"
+
+#: includes/classes/PostTypes.php:73
+msgctxt "Post type UI"
+msgid "New form submission"
+msgstr "Nouveau message"
+
+#: includes/classes/PostTypes.php:74
+msgctxt "Post type UI"
+msgid "Show form submission"
+msgstr "Afficher le message"
+
+#: includes/classes/PostTypes.php:75
+msgctxt "Post type UI"
+msgid "Search form submissions"
+msgstr "Rechercher des messages"
+
+#: includes/classes/PostTypes.php:76
+msgctxt "Post type UI"
+msgid "No form submissions found"
+msgstr "Aucun message trouvé"
+
+#: includes/classes/PostTypes.php:77
+msgctxt "Post type UI"
+msgid "No form submissions found in Trash"
+msgstr "Aucun message trouvé dans la corbeille"
+
+#: includes/classes/PostTypes.php:113 includes/classes/PostTypes.php:140
+msgctxt "Post type columns"
+msgid "ID"
+msgstr "ID"
+
+#: includes/classes/PostTypes.php:114
+msgctxt "Post type columns"
+msgid "Shortcode"
+msgstr "Shortcode"
+
+#: includes/classes/PostTypes.php:141
+msgctxt "Post type columns"
+msgid "Form"
+msgstr "Formulaire"
+
+#: includes/classes/PostTypes.php:142
+msgctxt "Post type columns"
+msgid "Notifications"
+msgstr "Notifications"
+
+#: includes/classes/SubmissionHandler.php:78 js/admin/react-app/utils.js:442
+msgctxt "Submission default success message"
+msgid "Message sent successfully"
+msgstr "Message envoyé avec succès"
+
+#: includes/classes/SubmissionHandler.php:172
+msgctxt "Submission handler error"
+msgid "Cannot verify reCAPTCHA response, please try again"
+msgstr "Erreur lors de la vérification reCAPTCHA, veuillez essayer à nouveau"
+
+#: includes/classes/SubmissionHandler.php:227
+msgctxt "Submission handler error"
+msgid "Cannot verify the authenticity of the message"
+msgstr "Impossible de vérifier l'authenticité du message"
+
+#: includes/classes/SubmissionHandler.php:239
+msgctxt "Submission handler error"
+msgid "Missing form ID"
+msgstr "Identifiant de formulaire manquant"
+
+#: includes/classes/SubmissionHandler.php:254
+msgctxt "Submission handler error"
+msgid "Unable to retreive form data"
+msgstr "Impossible de récupérer les données du formulaire"
+
+#: includes/classes/SubmissionHandler.php:268
+msgctxt "Submission handler error"
+msgid ""
+"Your message was rejected because it looks like spam. If you are a "
+"legitimate user, please try again."
+msgstr ""
+"Votre message a été rejecté car il a été détecté comme spam. Si vous êtes un "
+"utilisateur légitime, veuillez essayer à nouveau."
+
+#: includes/classes/SubmissionHandler.php:294
+msgctxt "Message submission status"
+msgid "Your message was sent successfully."
+msgstr "Votre message a bien été envoyé."
+
+#: includes/classes/SubmissionHandler.php:299
 msgctxt "Message submission status"
 msgid "There was an error trying to send your message. Please try again later."
 msgstr ""
 "Une erreur est survenue pendant l'envoi de votre message. Veuillez réessayer "
 "plus tard."
 
-#: includes/classes/SubmissionHandler.php:293
-msgctxt "Message submission status"
-msgid "Your message was sent successfully."
-msgstr "Votre message a bien été envoyé."
+#: templates/admin/general-options.html.php:13
+msgctxt "Global settings section"
+msgid "Spam protection"
+msgstr "Protection anti-spam"
 
-#: js/admin/react-app/utils.js:412
-msgid "Miscellaneous"
-msgstr "Divers"
+#: templates/admin/general-options.html.php:16
+#: templates/admin/metaboxes/options-editor.html.php:92
+msgctxt "Form options"
+msgid "reCAPTCHA"
+msgstr "reCAPTCHA"
 
-#. Description of the plugin
-msgid "No-bullsh!t form plugin"
-msgstr "No-bullsh!t form plugin"
+#: templates/admin/general-options.html.php:19
+msgctxt "reCAPTCHA"
+msgid "Version"
+msgstr "Version"
 
-#: templates/admin/metaboxes/submission-info.html.php:25
-msgctxt "Notification email status"
-msgid "Email not sent"
-msgstr "Email non-envoyé"
+#: templates/admin/general-options.html.php:24
+msgctxt "reCAPTCHA"
+msgid "reCAPTCHA v3"
+msgstr "reCAPTCHA v3"
 
-#: templates/admin/metaboxes/submission-info.html.php:22
-msgctxt "Notification email status"
-msgid "Email send error"
-msgstr "Erreur d'envoi de l'email"
+#: templates/admin/general-options.html.php:28
+msgctxt "reCAPTCHA"
+msgid "reCAPTCHA v2 (\"I'm not a robot\" Checkbox)"
+msgstr "reCAPTCHA v2 (Case à cocher \"je ne suis pas un robot\")"
+
+#: templates/admin/general-options.html.php:32
+msgctxt "reCAPTCHA"
+msgid "reCAPTCHA v2 (Invisible reCAPTCHA badge)"
+msgstr "reCAPTCHA v2 (badge reCAPTCHA invisible)"
+
+#: templates/admin/general-options.html.php:38
+msgctxt "reCAPTCHA"
+msgid "Hide badge? (for v2 invisible only)"
+msgstr "Masquer le badge ? (v2 invisible uniquement)"
+
+#: templates/admin/general-options.html.php:53
+msgctxt "reCAPTCHA"
+msgid "Site key"
+msgstr "Clé du site"
+
+#: templates/admin/general-options.html.php:63
+msgctxt "reCAPTCHA"
+msgid "Secret key"
+msgstr "Clé secrète"
+
+#: templates/admin/general-options.html.php:74
+msgid ""
+"Be careful to select the correct version for your keys, otherwise reCAPTCHA "
+"will not function properly."
+msgstr ""
+"Veuillez vous assurer que la version sélectionnée corresponde bien à la "
+"version des clés, sinon reCAPTCHA ne fonctionnera pas correctement."
+
+#: templates/admin/general-options.html.php:76
+msgctxt "Global settings reCAPTCHA help"
+msgid "Get a reCAPTCHA key"
+msgstr "Obtenir une clé reCAPTCHA"
+
+#: templates/admin/metaboxes/field-options.html.php:3
+msgid "Select a field to edit"
+msgstr "Sélectionnez un champ à éditer"
+
+#: templates/admin/metaboxes/field-options.html.php:11
+msgid "Apply"
+msgstr "Appliquer"
+
+#: templates/admin/metaboxes/options-editor.html.php:5
+msgctxt "Form options section"
+msgid "Submission"
+msgstr "Envoi"
+
+#: templates/admin/metaboxes/options-editor.html.php:18
+msgctxt "Form options"
+msgid "Submit via AJAX"
+msgstr "Envoyer via AJAX"
+
+#: templates/admin/metaboxes/options-editor.html.php:24
+msgctxt "Form options section"
+msgid "Submission notifications"
+msgstr "Notifications des messages"
+
+#: templates/admin/metaboxes/options-editor.html.php:39
+msgctxt "Form options"
+msgid "Email"
+msgstr "Email"
+
+#: templates/admin/metaboxes/options-editor.html.php:55
+msgctxt "Form settings email"
+msgid "Add email"
+msgstr "Ajouter une adresse mail"
+
+#: templates/admin/metaboxes/options-editor.html.php:64
+msgctxt "Form options section"
+msgid "Spam protection"
+msgstr "Protection anti-spam"
+
+#: templates/admin/metaboxes/options-editor.html.php:77
+msgctxt "Form options"
+msgid "Honeypot"
+msgstr "Honeypot"
+
+#: templates/admin/metaboxes/submission-fields.html.php:24
+msgctxt "Submission preview"
+msgid "No fields found"
+msgstr "Aucun champ trouvé"
 
 #: templates/admin/metaboxes/submission-info.html.php:19
 msgctxt "Notification email status"
 msgid "Email sent"
 msgstr "Email envoyé"
 
-#: js/admin/react-app/utils.js:235
-msgid "Number"
-msgstr "Nombre"
+#: templates/admin/metaboxes/submission-info.html.php:22
+msgctxt "Notification email status"
+msgid "Email send error"
+msgstr "Erreur d'envoi de l'email"
+
+#: templates/admin/metaboxes/submission-info.html.php:25
+msgctxt "Notification email status"
+msgid "Email not sent"
+msgstr "Email non-envoyé"
+
+#: templates/email/submission-notification.html.php:453
+msgctxt "Email greeting"
+msgid "Hi there,"
+msgstr "Bonjour,"
+
+#. translators: %s form title in quotation marks
+#: templates/email/submission-notification.html.php:458
+msgctxt "Email submission explanation"
+msgid "You have received a new message from your form %s."
+msgstr "Vous avez reçu un nouveau message depuis votre formulaire %s."
+
+#. translators: %s any content between quotation marks
+#: templates/email/submission-notification.html.php:461
+msgctxt "Quotation marks"
+msgid "“%s”"
+msgstr "« %s »"
+
+#: templates/email/submission-notification.html.php:499
+msgctxt "Email submission call-to-action"
+msgid "See submission"
+msgstr "Voir le message"
+
+#. translators: %s link to "form settings"
+#: templates/email/submission-notification.html.php:532
+msgid "You can disable email notifications from the %s."
+msgstr "Vous pouvez désactiver les notifications par email depuis les %s."
+
+#: templates/email/submission-notification.html.php:536
+msgid "form settings"
+msgstr "réglages du formulaire"
+
+#. translators: %s phonetic transcription of Mashvp
+#: templates/email/submission-notification.html.php:548
+msgctxt "Sentence about the phonetic transcription of Mashvp"
+msgid "It's pronounced %s."
+msgstr "Ça se prononce %s."
+
+#: templates/email/submission-notification.html.php:551
+msgctxt "Phonetic transcription of Mashvp"
+msgid "mashup"
+msgstr "macheup"
+
+#. translators: %1$s privacy and policy link, %2$s terms of service link
+#: templates/front/form/antispam/recaptcha/v2-invisible.html.php:21
+msgctxt "reCAPTCHA"
+msgid "This site is protected by reCAPTCHA and the Google %1$s and %2$s apply."
+msgstr ""
+"Ce site est protégé par reCAPTCHA, et la %s et les %s de Google sont "
+"appliquables."
+
+#: templates/front/form/antispam/recaptcha/v2-invisible.html.php:24
+msgctxt "reCAPTCHA"
+msgid "Privacy Policy"
+msgstr "Politique de Confidentialité"
+
+#: templates/front/form/antispam/recaptcha/v2-invisible.html.php:28
+msgctxt "reCAPTCHA"
+msgid "Terms of Service"
+msgstr "Conditions d'Utilisation"
+
+#: templates/front/form/fields/partials/label.html.php:9
+msgctxt "ARIA label"
+msgid "Required"
+msgstr "Obligatoire"
+
+#: js/admin/react-app/components/AppControls.js:13
+msgid "Add row"
+msgstr "Ajouter une ligne"
+
+#: js/admin/react-app/components/Item.js:91
+msgid "Unknown field type"
+msgstr "Type de champ inconnu"
+
+#: js/admin/react-app/components/Row.js:15
+msgid "Drop items here"
+msgstr "Déposez des champs ici"
+
+#: js/admin/react-app/components/Toolbar.js:84
+msgid "Fields list"
+msgstr "Liste des champs"
+
+#: js/admin/react-app/utils.js:126
+msgctxt "Field attribute label"
+msgid "Type"
+msgstr "Type"
+
+#: js/admin/react-app/utils.js:127
+msgctxt "Field attribute label"
+msgid "Label"
+msgstr "Libellé"
+
+#: js/admin/react-app/utils.js:128
+msgctxt "Field attribute label"
+msgid "Default value"
+msgstr "Valeur par défaut"
+
+#: js/admin/react-app/utils.js:129 js/admin/react-app/utils.js:664
+msgctxt "Field attribute label"
+msgid "Value"
+msgstr "Valeur"
+
+#: js/admin/react-app/utils.js:130
+msgctxt "Field attribute label"
+msgid "Options"
+msgstr "Options"
+
+#: js/admin/react-app/utils.js:131
+msgctxt "Field attribute label"
+msgid "Placeholder"
+msgstr "Valeur d'exemple"
+
+#: js/admin/react-app/utils.js:132
+msgctxt "Field attribute label"
+msgid "Autocomplete"
+msgstr "Auto-complétion"
+
+#: js/admin/react-app/utils.js:133
+msgctxt "Field attribute label"
+msgid "Required"
+msgstr "Obligatoire"
+
+#: js/admin/react-app/utils.js:134
+msgctxt "Field attribute label"
+msgid "Hide field"
+msgstr "Cacher le champ"
+
+#: js/admin/react-app/utils.js:135
+msgctxt "Field attribute label"
+msgid "Read-only"
+msgstr "Lecture seule"
+
+#: js/admin/react-app/utils.js:136
+msgctxt "Field attribute label"
+msgid "Disabled"
+msgstr "Désactivé"
+
+#: js/admin/react-app/utils.js:137
+msgctxt "Field attribute label"
+msgid "Show label"
+msgstr "Afficher le libellé"
+
+#: js/admin/react-app/utils.js:138
+msgctxt "Field attribute label"
+msgid "Allowed file types"
+msgstr "Types de fichiers autorisés"
+
+#: js/admin/react-app/utils.js:139
+msgctxt "Field attribute label"
+msgid "Multiple choice"
+msgstr "Choix multiple"
+
+#: js/admin/react-app/utils.js:144
+msgctxt "Field attribute label"
+msgid "Minimum"
+msgstr "Minimum"
+
+#: js/admin/react-app/utils.js:145
+msgctxt "Field attribute label"
+msgid "Maximum"
+msgstr "Maximum"
+
+#: js/admin/react-app/utils.js:146
+msgctxt "Field attribute label"
+msgid "Step"
+msgstr "Pas"
+
+#: js/admin/react-app/utils.js:147
+msgctxt "Field attribute label"
+msgid "Date and/or time type"
+msgstr "Type de champ date et/ou heure"
+
+#: js/admin/react-app/utils.js:152
+msgctxt "Field attribute label (HTML button type)"
+msgid "Type"
+msgstr "Type"
+
+#: js/admin/react-app/utils.js:157
+msgctxt "Field attribute label"
+msgid "Sucess message"
+msgstr "Message d'envoi réussi"
+
+#: js/admin/react-app/utils.js:158
+msgctxt "Field attribute label"
+msgid "Additional CSS classes"
+msgstr "Classes CSS additionnelles"
+
+#: js/admin/react-app/utils.js:164
+msgctxt "Field attribute label"
+msgid "Unknown attribute"
+msgstr "Attribut inconnu"
+
+#: js/admin/react-app/utils.js:170
+msgid "Inputs"
+msgstr "Champs de saisie"
+
+#: js/admin/react-app/utils.js:174
+msgid "Text"
+msgstr "Texte"
+
+#: js/admin/react-app/utils.js:176
+msgctxt "Text field placeholder example"
+msgid "Text"
+msgstr "Texte"
+
+#: js/admin/react-app/utils.js:183
+msgid "Email"
+msgstr "Adresse email"
+
+#: js/admin/react-app/utils.js:185 js/admin/react-app/utils.js:662
+msgctxt "Email field placeholder example"
+msgid "user@example.com"
+msgstr "prenom.nom@domaine.fr"
 
 #: js/admin/react-app/utils.js:196
 msgid "Password"
@@ -730,286 +592,32 @@ msgctxt "Phone number field placeholder example"
 msgid "(541) 754-3010"
 msgstr "01 02 03 04 05"
 
-#: templates/email/submission-notification.html.php:551
-msgctxt "Phonetic transcription of Mashvp"
-msgid "mashup"
-msgstr "macheup"
+#: js/admin/react-app/utils.js:222
+msgid "URL"
+msgstr "URL"
 
-#: includes/classes/PostTypes.php:141
-msgctxt "Post type columns"
-msgid "Form"
-msgstr "Formulaire"
+#: js/admin/react-app/utils.js:224
+msgctxt "URL field placeholder example"
+msgid "http://example.com/"
+msgstr "http://example.com/"
 
-#: includes/classes/PostTypes.php:113 includes/classes/PostTypes.php:140
-msgctxt "Post type columns"
-msgid "ID"
-msgstr "ID"
+#: js/admin/react-app/utils.js:235
+msgid "Number"
+msgstr "Nombre"
 
-#: includes/classes/PostTypes.php:142
-msgctxt "Post type columns"
-msgid "Notifications"
-msgstr "Notifications"
+#: js/admin/react-app/utils.js:244
+msgid "Date and time"
+msgstr "Date et heure"
 
-#: includes/classes/PostTypes.php:114
-msgctxt "Post type columns"
-msgid "Shortcode"
-msgstr "Shortcode"
-
-#: includes/classes/PostTypes.php:27 includes/classes/PostTypes.php:71
-msgctxt "Post type UI"
-msgid "Add new"
-msgstr "Ajouter"
-
-#: includes/classes/PostTypes.php:26
-msgctxt "Post type UI"
-msgid "All forms"
-msgstr "Tous les formulaires"
-
-#: includes/classes/PostTypes.php:28
-#| msgid "Edit"
-msgctxt "Post type UI"
-msgid "Edit form"
-msgstr "Modifier le formulaire"
-
-#: includes/classes/PostTypes.php:72
-msgctxt "Post type UI"
-msgid "Edit form submission"
-msgstr "Modifier le message"
-
-#: includes/classes/PostTypes.php:25
-msgctxt "Post type UI"
-msgid "Form"
-msgstr "Formulaire"
-
-#: includes/classes/PostTypes.php:69 includes/classes/Submission.php:92
-msgctxt "Post type UI"
-msgid "Form submission"
-msgstr "Message"
-
-#: includes/classes/PostTypes.php:66 includes/classes/PostTypes.php:68
-#: includes/classes/PostTypes.php:70
-msgctxt "Post type UI"
-msgid "Form submissions"
-msgstr "Messages"
-
-#: includes/classes/PostTypes.php:22 includes/classes/PostTypes.php:24
-msgctxt "Post type UI"
-msgid "Forms"
-msgstr "Formulaires"
-
-#: includes/classes/PostTypes.php:29
-#| msgid "New"
-msgctxt "Post type UI"
-msgid "New form"
-msgstr "Nouveau formulaire"
-
-#: includes/classes/PostTypes.php:73
-msgctxt "Post type UI"
-msgid "New form submission"
-msgstr "Nouveau message"
-
-#: includes/classes/PostTypes.php:76
-msgctxt "Post type UI"
-msgid "No form submissions found"
-msgstr "Aucun message trouvé"
-
-#: includes/classes/PostTypes.php:77
-msgctxt "Post type UI"
-msgid "No form submissions found in Trash"
-msgstr "Aucun message trouvé dans la corbeille"
-
-#: includes/classes/PostTypes.php:32
-msgctxt "Post type UI"
-msgid "No forms found"
-msgstr "Aucun formulaire trouvé"
-
-#: includes/classes/PostTypes.php:33
-msgctxt "Post type UI"
-msgid "No forms found in Trash"
-msgstr "Aucun formulaire trouvé dans la corbeille"
-
-#: includes/classes/PostTypes.php:75
-msgctxt "Post type UI"
-msgid "Search form submissions"
-msgstr "Rechercher des messages"
-
-#: includes/classes/PostTypes.php:31
-msgctxt "Post type UI"
-msgid "Search forms"
-msgstr "Rechercher des formulaires"
-
-#: includes/classes/PostTypes.php:30
-#| msgid "Show"
-msgctxt "Post type UI"
-msgid "Show form"
-msgstr "Afficher le formulaire"
-
-#: includes/classes/PostTypes.php:74
-msgctxt "Post type UI"
-msgid "Show form submission"
-msgstr "Afficher le message"
-
-#. translators: %s any content between quotation marks
-#: templates/email/submission-notification.html.php:461
-msgctxt "Quotation marks"
-msgid "“%s”"
-msgstr "« %s »"
-
-#: js/admin/react-app/utils.js:298
-msgid "Range"
-msgstr "Intervalle"
-
-#: templates/admin/general-options.html.php:38
-msgctxt "reCAPTCHA"
-msgid "Hide badge? (for v2 invisible only)"
-msgstr "Masquer le badge ? (v2 invisible uniquement)"
-
-#: templates/front/form/antispam/recaptcha/v2-invisible.html.php:24
-msgctxt "reCAPTCHA"
-msgid "Privacy Policy"
-msgstr "Politique de Confidentialité"
-
-#: templates/admin/general-options.html.php:28
-msgctxt "reCAPTCHA"
-msgid "reCAPTCHA v2 (\"I'm not a robot\" Checkbox)"
-msgstr "reCAPTCHA v2 (Case à cocher \"je ne suis pas un robot\")"
-
-#: templates/admin/general-options.html.php:32
-msgctxt "reCAPTCHA"
-msgid "reCAPTCHA v2 (Invisible reCAPTCHA badge)"
-msgstr "reCAPTCHA v2 (badge reCAPTCHA invisible)"
-
-#: templates/admin/general-options.html.php:24
-msgctxt "reCAPTCHA"
-msgid "reCAPTCHA v3"
-msgstr "reCAPTCHA v3"
-
-#: templates/admin/general-options.html.php:63
-msgctxt "reCAPTCHA"
-msgid "Secret key"
-msgstr "Clé secrète"
-
-#: templates/admin/general-options.html.php:53
-msgctxt "reCAPTCHA"
-msgid "Site key"
-msgstr "Clé du site"
-
-#: templates/front/form/antispam/recaptcha/v2-invisible.html.php:28
-msgctxt "reCAPTCHA"
-msgid "Terms of Service"
-msgstr "Conditions d'Utilisation"
-
-#. translators: %1$s privacy and policy link, %2$s terms of service link
-#: templates/front/form/antispam/recaptcha/v2-invisible.html.php:21
-msgctxt "reCAPTCHA"
-msgid "This site is protected by reCAPTCHA and the Google %1$s and %2$s apply."
-msgstr ""
-"Ce site est protégé par reCAPTCHA, et la %s et les %s de Google sont "
-"appliquables."
-
-#: templates/admin/general-options.html.php:19
-msgctxt "reCAPTCHA"
-msgid "Version"
-msgstr "Version"
-
-#: js/admin/react-app/utils.js:393
-msgid "Reset form button"
-msgstr "Bouton effacer le formulaire"
-
-#: js/admin/react-app/utils.js:394
-msgctxt "Reset form field placeholder example"
-msgid "Reset"
-msgstr "Effacer"
-
-#: templates/admin/metaboxes/field-options.html.php:3
-msgid "Select a field to edit"
-msgstr "Sélectionnez un champ à éditer"
-
-#: js/admin/react-app/utils.js:665
-msgctxt "Select field option attribute"
-msgid "Label"
-msgstr "Libellé"
-
-#: js/admin/react-app/utils.js:664
-msgctxt "Select field option attribute"
-msgid "Value"
-msgstr "Valeur"
-
-#: js/admin/react-app/utils.js:659
-msgctxt "Select field options"
-msgid "Add an option"
-msgstr "Ajouter une option"
+#: js/admin/react-app/utils.js:254
+msgctxt "Form field type"
+msgid "Select"
+msgstr "Liste déroulante"
 
 #: js/admin/react-app/utils.js:255
 msgctxt "Select field placeholder example"
 msgid "Menu of options"
 msgstr "Liste d'options"
-
-#. translators: %s phonetic transcription of Mashvp
-#: templates/email/submission-notification.html.php:548
-msgctxt "Sentence about the phonetic transcription of Mashvp"
-msgid "It's pronounced %s."
-msgstr "Ça se prononce %s."
-
-#: includes/classes/Admin.php:154
-msgid "Shortcode"
-msgstr "Shortcode"
-
-#: js/admin/react-app/utils.js:436
-msgid "Status message zone"
-msgstr "Zone de message de statut"
-
-#: includes/classes/SubmissionHandler.php:78 js/admin/react-app/utils.js:442
-msgctxt "Submission default success message"
-msgid "Message sent successfully"
-msgstr "Message envoyé avec succès"
-
-#: includes/classes/SubmissionHandler.php:172
-msgctxt "Submission handler error"
-msgid "Cannot verify reCAPTCHA response, please try again"
-msgstr "Erreur lors de la vérification reCAPTCHA, veuillez essayer à nouveau."
-
-#: includes/classes/SubmissionHandler.php:226
-msgctxt "Submission handler error"
-msgid "Cannot verify the authenticity of the message"
-msgstr "Impossible de vérifier l'authenticité du message."
-
-#: includes/classes/SubmissionHandler.php:238
-msgctxt "Submission handler error"
-msgid "Missing form ID"
-msgstr "Identifiant de formulaire manquant."
-
-#: includes/classes/SubmissionHandler.php:253
-msgctxt "Submission handler error"
-msgid "Unable to retreive form data"
-msgstr "Impossible de récupérer les données du formulaire."
-
-#: includes/classes/SubmissionHandler.php:267
-msgctxt "Submission handler error"
-msgid ""
-"Your message was rejected because it looks like spam. If you are a "
-"legitimate user, please try again."
-msgstr ""
-"Votre message a été rejecté car il a été détecté comme spam. Si vous êtes un "
-"utilisateur légitime, veuillez essayer à nouveau."
-
-#: templates/admin/metaboxes/submission-fields.html.php:24
-msgctxt "Submission preview"
-msgid "No fields found"
-msgstr "Aucun champ trouvé"
-
-#: js/admin/react-app/utils.js:386
-msgid "Submit form button"
-msgstr "Bouton envoyer le formulaire"
-
-#: js/admin/react-app/utils.js:387
-msgctxt "Submit form field placeholder example"
-msgid "Send"
-msgstr "Envoyer"
-
-#: js/admin/react-app/utils.js:174
-msgid "Text"
-msgstr "Texte"
 
 #: js/admin/react-app/utils.js:277
 msgid "Text area"
@@ -1020,10 +628,71 @@ msgctxt "Text area field placeholder example"
 msgid "Multi-line text"
 msgstr "Texte multiligne"
 
-#: js/admin/react-app/utils.js:176
-msgctxt "Text field placeholder example"
-msgid "Text"
-msgstr "Texte"
+#: js/admin/react-app/utils.js:290
+msgid "Checkbox"
+msgstr "Case à cocher"
+
+#: js/admin/react-app/utils.js:298
+msgid "Range"
+msgstr "Intervalle"
+
+#: js/admin/react-app/utils.js:309
+msgid "Composite"
+msgstr "Composé"
+
+#: js/admin/react-app/utils.js:313
+msgid "Choice list"
+msgstr "Liste de choix"
+
+#: js/admin/react-app/utils.js:316
+msgctxt "Choice list field default option"
+msgid "One"
+msgstr "Un"
+
+#: js/admin/react-app/utils.js:317
+msgctxt "Choice list field default option"
+msgid "Two"
+msgstr "Deux"
+
+#: js/admin/react-app/utils.js:318
+msgctxt "Choice list field default option"
+msgid "Three"
+msgstr "Trois"
+
+#: js/admin/react-app/utils.js:381
+msgid "Controls"
+msgstr "Contrôles"
+
+#: js/admin/react-app/utils.js:386
+msgid "Submit form button"
+msgstr "Bouton envoyer le formulaire"
+
+#: js/admin/react-app/utils.js:387
+msgctxt "Submit form field placeholder example"
+msgid "Send"
+msgstr "Envoyer"
+
+#: js/admin/react-app/utils.js:393
+msgid "Reset form button"
+msgstr "Bouton effacer le formulaire"
+
+#: js/admin/react-app/utils.js:394
+msgctxt "Reset form field placeholder example"
+msgid "Reset"
+msgstr "Effacer"
+
+#: js/admin/react-app/utils.js:400
+msgid "Generic button"
+msgstr "Bouton générique"
+
+#: js/admin/react-app/utils.js:401
+msgctxt "Generic button field placeholder example"
+msgid "Generic button"
+msgstr "Bouton générique"
+
+#: js/admin/react-app/utils.js:412
+msgid "Miscellaneous"
+msgstr "Divers"
 
 #: js/admin/react-app/utils.js:418
 msgid "Text message"
@@ -1034,20 +703,353 @@ msgctxt "Text message field placeholder example"
 msgid "You can insert text anywhere in the form"
 msgstr "Vous pouvez insérer du texte n'importe où dans le formulaire"
 
-#: js/admin/react-app/components/Item.js:91
-msgid "Unknown field type"
-msgstr "Type de champ inconnu"
+#: js/admin/react-app/utils.js:429
+msgid "Horizontal separator"
+msgstr "Séparateur horizontal"
 
-#: js/admin/react-app/utils.js:222
+#: js/admin/react-app/utils.js:436
+msgid "Status message zone"
+msgstr "Zone de message de statut"
+
+#: js/admin/react-app/utils.js:437
+msgctxt "Builtin message zone placeholder example"
+msgid ""
+"Status messages are inserted in this zone if the form runs in AJAX mode."
+msgstr ""
+"Les messages de statut sont insérés dans cette zone si le mode AJAX est "
+"sélectionné."
+
+#: js/admin/react-app/utils.js:452
+msgctxt "Input autocomplete value"
+msgid "(none)"
+msgstr "(aucune)"
+
+#: js/admin/react-app/utils.js:453
+msgctxt "Input autocomplete value"
+msgid "Off"
+msgstr "Désactivé"
+
+#: js/admin/react-app/utils.js:454
+msgctxt "Input autocomplete value"
+msgid "On"
+msgstr "Activé"
+
+#: js/admin/react-app/utils.js:455
+msgctxt "Input autocomplete value"
+msgid "Name"
+msgstr "Nom"
+
+#: js/admin/react-app/utils.js:456
+msgctxt "Input autocomplete value"
+msgid "Honorific prefix"
+msgstr "Préfixe honorifique"
+
+#: js/admin/react-app/utils.js:461
+msgctxt "Input autocomplete value"
+msgid "Given (first) name"
+msgstr "Prénom"
+
+#: js/admin/react-app/utils.js:466
+msgctxt "Input autocomplete value"
+msgid "Additional (middle) name"
+msgstr "Autres prénoms"
+
+#: js/admin/react-app/utils.js:471
+msgctxt "Input autocomplete value"
+msgid "Family (last) name"
+msgstr "Nom de famille"
+
+#: js/admin/react-app/utils.js:476
+msgctxt "Input autocomplete value"
+msgid "Honorific suffix"
+msgstr "Suffixe honorifique"
+
+#: js/admin/react-app/utils.js:481
+msgctxt "Input autocomplete value"
+msgid "Nickname"
+msgstr "Surnom"
+
+#: js/admin/react-app/utils.js:482
+msgctxt "Input autocomplete value"
+msgid "Email address"
+msgstr "Adresse email"
+
+#: js/admin/react-app/utils.js:483
+msgctxt "Input autocomplete value"
+msgid "Username"
+msgstr "Nom d'utilisateur"
+
+#: js/admin/react-app/utils.js:484
+msgctxt "Input autocomplete value"
+msgid "New password"
+msgstr "Nouveau mot de passe"
+
+#: js/admin/react-app/utils.js:489
+msgctxt "Input autocomplete value"
+msgid "Current password"
+msgstr "Mot de passe actuel"
+
+#: js/admin/react-app/utils.js:494
+msgctxt "Input autocomplete value"
+msgid "One time code"
+msgstr "Code à usage unique"
+
+#: js/admin/react-app/utils.js:499
+msgctxt "Input autocomplete value"
+msgid "Job title"
+msgstr "Métier"
+
+#: js/admin/react-app/utils.js:504
+msgctxt "Input autocomplete value"
+msgid "Company name"
+msgstr "Nom d'entreprise"
+
+#: js/admin/react-app/utils.js:505
+msgctxt "Input autocomplete value"
+msgid "Street address"
+msgstr "Adresse"
+
+#: js/admin/react-app/utils.js:510
+msgctxt "Input autocomplete value"
+msgid "Address line 1"
+msgstr "Adresse ligne 1"
+
+#: js/admin/react-app/utils.js:515
+msgctxt "Input autocomplete value"
+msgid "Address line 2"
+msgstr "Adresse ligne 2"
+
+#: js/admin/react-app/utils.js:520
+msgctxt "Input autocomplete value"
+msgid "Address line 3"
+msgstr "Adresse ligne 3"
+
+#: js/admin/react-app/utils.js:525
+msgctxt "Input autocomplete value"
+msgid "Address administrative level 4"
+msgstr "Adresse administrative niveau 4"
+
+#: js/admin/react-app/utils.js:530
+msgctxt "Input autocomplete value"
+msgid "Address administrative level 3"
+msgstr "Adresse administrative niveau 3"
+
+#: js/admin/react-app/utils.js:535
+msgctxt "Input autocomplete value"
+msgid "Address administrative level 2"
+msgstr "Adresse administrative niveau 2"
+
+#: js/admin/react-app/utils.js:540
+msgctxt "Input autocomplete value"
+msgid "Address administrative level 1"
+msgstr "Adresse administrative niveau 1"
+
+#: js/admin/react-app/utils.js:545
+msgctxt "Input autocomplete value"
+msgid "Country"
+msgstr "Pays"
+
+#: js/admin/react-app/utils.js:546
+msgctxt "Input autocomplete value"
+msgid "Country name"
+msgstr "Nom du pays"
+
+#: js/admin/react-app/utils.js:551
+msgctxt "Input autocomplete value"
+msgid "Postal code"
+msgstr "Code postal"
+
+#: js/admin/react-app/utils.js:552
+msgctxt "Input autocomplete value"
+msgid "City"
+msgstr "Ville"
+
+#: js/admin/react-app/utils.js:553
+msgctxt "Input autocomplete value"
+msgid "Credit card name"
+msgstr "Carte de crédit : Nom"
+
+#: js/admin/react-app/utils.js:554
+msgctxt "Input autocomplete value"
+msgid "Credit card given name"
+msgstr "Carte de crédit : Prénom"
+
+#: js/admin/react-app/utils.js:559
+msgctxt "Input autocomplete value"
+msgid "Credit card additional name"
+msgstr "Carte de crédit : Autres prénoms"
+
+#: js/admin/react-app/utils.js:564
+msgctxt "Input autocomplete value"
+msgid "Credit card family name"
+msgstr "Carte de crédit : Nom de famille"
+
+#: js/admin/react-app/utils.js:569
+msgctxt "Input autocomplete value"
+msgid "Credit card number"
+msgstr "Carte de crédit : Numéro"
+
+#: js/admin/react-app/utils.js:574
+msgctxt "Input autocomplete value"
+msgid "Credit card expiration"
+msgstr "Carte de crédit : Date d'expiration"
+
+#: js/admin/react-app/utils.js:579
+msgctxt "Input autocomplete value"
+msgid "Credit card expiration month"
+msgstr "Carte de crédit : Mois d'expiration"
+
+#: js/admin/react-app/utils.js:584
+msgctxt "Input autocomplete value"
+msgid "Credit card expiration year"
+msgstr "Carte de crédit : Année d'expiration"
+
+#: js/admin/react-app/utils.js:589
+msgctxt "Input autocomplete value"
+msgid "Credit card security code"
+msgstr "Carte de crédit : Cryptogramme visuel"
+
+#: js/admin/react-app/utils.js:594
+msgctxt "Input autocomplete value"
+msgid "Credit card type"
+msgstr "Carte de crédit : Type"
+
+#: js/admin/react-app/utils.js:595
+msgctxt "Input autocomplete value"
+msgid "Transaction currency"
+msgstr "Devise de transaction"
+
+#: js/admin/react-app/utils.js:600
+msgctxt "Input autocomplete value"
+msgid "Transaction amount"
+msgstr "Valeur de transaction"
+
+#: js/admin/react-app/utils.js:605
+msgctxt "Input autocomplete value"
+msgid "Language"
+msgstr "Langue"
+
+#: js/admin/react-app/utils.js:606
+msgctxt "Input autocomplete value"
+msgid "Birthday"
+msgstr "Date de naissance"
+
+#: js/admin/react-app/utils.js:607
+msgctxt "Input autocomplete value"
+msgid "Birthday day"
+msgstr "Jour de naissance"
+
+#: js/admin/react-app/utils.js:608
+msgctxt "Input autocomplete value"
+msgid "Birthday month"
+msgstr "Mois de naissance"
+
+#: js/admin/react-app/utils.js:613
+msgctxt "Input autocomplete value"
+msgid "Birthday year"
+msgstr "Année de naissance"
+
+#: js/admin/react-app/utils.js:614
+msgctxt "Input autocomplete value"
+msgid "Gender"
+msgstr "Genre"
+
+#: js/admin/react-app/utils.js:615
+msgctxt "Input autocomplete value"
+msgid "Telephone"
+msgstr "Numéro de téléphone"
+
+#: js/admin/react-app/utils.js:616
+msgctxt "Input autocomplete value"
+msgid "Telephone country code"
+msgstr "Téléphone : Code pays"
+
+#: js/admin/react-app/utils.js:621
+msgctxt "Input autocomplete value"
+msgid "Telephone national (without country code)"
+msgstr "Téléphone : Numéro national (sans code régional)"
+
+#: js/admin/react-app/utils.js:626
+msgctxt "Input autocomplete value"
+msgid "Telephone area code"
+msgstr "Téléphone : Code régional"
+
+#: js/admin/react-app/utils.js:631
+msgctxt "Input autocomplete value"
+msgid "Telephone local (without country and area code)"
+msgstr "Téléphone : Numéro local (sans code pays ou régional)"
+
+#: js/admin/react-app/utils.js:636
+msgctxt "Input autocomplete value"
+msgid "Telephone extension"
+msgstr "Téléphone : Extension"
+
+#: js/admin/react-app/utils.js:641
+msgctxt "Input autocomplete value"
+msgid "IMPP"
+msgstr "IMPP"
+
+#: js/admin/react-app/utils.js:642
+msgctxt "Input autocomplete value"
 msgid "URL"
 msgstr "URL"
 
-#: js/admin/react-app/utils.js:224
-msgctxt "URL field placeholder example"
-msgid "http://example.com/"
-msgstr "http://example.com/"
+#: js/admin/react-app/utils.js:643
+msgctxt "Input autocomplete value"
+msgid "Photo URL"
+msgstr "URL photo de profil"
 
-#. translators: %s link to "form settings"
-#: templates/email/submission-notification.html.php:532
-msgid "You can disable email notifications from the %s."
-msgstr "Vous pouvez désactiver les notifications par email depuis les %s."
+#: js/admin/react-app/utils.js:647
+msgctxt "Button HTML type"
+msgid "Button"
+msgstr "Bouton"
+
+#: js/admin/react-app/utils.js:648
+msgctxt "Button HTML type"
+msgid "Submit"
+msgstr "Envoyer formulaire"
+
+#: js/admin/react-app/utils.js:649
+msgctxt "Button HTML type"
+msgid "Reset"
+msgstr "Effacer formulaire"
+
+#: js/admin/react-app/utils.js:653
+msgctxt "DateTime HTML type"
+msgid "Date and time"
+msgstr "Date et heure"
+
+#: js/admin/react-app/utils.js:654
+msgctxt "DateTime HTML type"
+msgid "Date"
+msgstr "Date"
+
+#: js/admin/react-app/utils.js:655
+msgctxt "DateTime HTML type"
+msgid "Time"
+msgstr "Heure"
+
+#: js/admin/react-app/utils.js:660
+msgctxt "Select field options"
+msgid "Add an option"
+msgstr "Ajouter une option"
+
+#: js/admin/react-app/utils.js:661
+msgctxt "Form options"
+msgid "Condition"
+msgstr "Condition"
+
+#: js/admin/react-app/utils.js:663
+msgctxt "Form settings email condition"
+msgid "IF"
+msgstr "SI"
+
+#: js/admin/react-app/utils.js:665
+msgctxt "Select field option attribute"
+msgid "Value"
+msgstr "Valeur"
+
+#: js/admin/react-app/utils.js:666
+msgctxt "Select field option attribute"
+msgid "Label"
+msgstr "Libellé"

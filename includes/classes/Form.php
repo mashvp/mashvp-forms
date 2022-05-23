@@ -85,9 +85,7 @@ class Form
     public function render()
     {
         if (!$this->post) {
-            return <<<HTML
-                <!-- [mashvp-form] No form with id {$this->id} was found -->
-            HTML;
+            return "<!-- [mashvp-form] No form with id {$this->id} was found -->";
         }
 
         $form_data = $this->getFormData();

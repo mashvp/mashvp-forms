@@ -172,9 +172,7 @@ class PostTypes extends SingletonClass
             $mail_status = $submission->getEmailNotificationStatus();
             $status = "mvpf--{$mail_status}";
 
-            echo <<<HTML
-                <div class="dashicons dashicons-email $status"></div>
-            HTML;
+            echo "<div class=\"dashicons dashicons-email $status\"></div>";
         }
     }
 }

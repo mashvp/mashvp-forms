@@ -23,9 +23,7 @@ class ShortCode extends SingletonClass
         if ($attributes['id'] === false) {
             error_log('[mashvp-forms] Shortcode called incorrectly. Missing mandatory parameter `id`');
 
-            return <<<HTML
-                <!-- [mashvp-form] shortcode called incorrectly. Missing mandatory parameter `id` -->
-            HTML;
+            return "<!-- [mashvp-form] shortcode called incorrectly. Missing mandatory parameter `id` -->";
         }
 
         $form = new Form($attributes['id'], [

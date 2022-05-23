@@ -28,7 +28,7 @@ class Email extends GenericNotification
             sprintf(
                 '%s | %s',
                 $submission->getTitle(),
-                get_bloginfo('name'),
+                get_bloginfo('name')
             ),
 
             // Content
