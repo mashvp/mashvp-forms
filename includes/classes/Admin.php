@@ -5,6 +5,9 @@ namespace Mashvp\Forms;
 use Mashvp\SingletonClass;
 use Mashvp\Forms\Renderer;
 use Mashvp\Forms\Utils;
+use Mashvp\Forms\Submission;
+
+use Mashvp\Forms\CSVExporter;
 
 class Admin extends SingletonClass
 {
@@ -12,6 +15,8 @@ class Admin extends SingletonClass
 
     public const FORM_FIELDS_META_NAME = '_mashvp-forms__fields';
     public const FORM_OPTIONS_META_NAME = '_mashvp-forms__options';
+
+    public const SECURITY_CODE = 'qdCHbdMLD8U62WXDPSwfgGBzKN5WLR5r';
 
     private function shouldInit()
     {
@@ -50,11 +55,17 @@ class Admin extends SingletonClass
             );
 
             $this->registerOptions();
+            $this->registerAdminFormHandlers();
 
             if ($this->shouldInit()) {
                 $this->addMetaBoxes();
             }
         }
+    }
+
+    private function registerAdminFormHandlers()
+    {
+        add_action('wp_ajax_mvpfadmin__export_data', [$this, 'handleExportFormData']);
     }
 
     private function registerOptions()
@@ -108,7 +119,17 @@ class Admin extends SingletonClass
             'manage_options',
             'mvpf-general-options',
             [$this, 'formGeneralOptionsRenderContent'],
-            99
+            980
+        );
+
+        add_submenu_page(
+            'edit.php?post_type=mvpf-form',
+            _x('Export data', 'Menu page title', 'mashvp-forms'),
+            _x('Export', 'Menu page title', 'mashvp-forms'),
+            'manage_options',
+            'mvpf-export-data',
+            [$this, 'formExportDataRenderContent'],
+            990
         );
     }
 
@@ -261,7 +282,12 @@ class Admin extends SingletonClass
 
     public function formGeneralOptionsRenderContent()
     {
-        Renderer::instance()->renderTemplate('admin/general-options', []);
+        Renderer::instance()->renderTemplate('admin/general-options');
+    }
+
+    public function formExportDataRenderContent()
+    {
+        Renderer::instance()->renderTemplate('admin/export-data');
     }
 
     public function renderFormFieldsMetabox()
@@ -336,5 +362,57 @@ class Admin extends SingletonClass
                 'submission' => $submission,
             ]
         );
+    }
+
+    private function getExporterClass()
+    {
+        $export_format = Utils::get($_REQUEST, 'export_format');
+
+        if ($export_format) {
+            switch ($export_format) {
+                case 'csv':
+                    return 'Mashvp\Forms\CSVExporter';
+
+                default:
+                    return null;
+            }
+        }
+
+        return null;
+    }
+
+    private function getExportData()
+    {
+        $query = new \WP_Query([
+            'post_type'      => 'mvpf-submission',
+            'post_status'    => 'publish',
+            'posts_per_page' => -1,
+            'post_parent'    => Utils::get($_REQUEST, 'form_id'),
+        ]);
+
+        return array_map(function ($submission_id) {
+            return new Submission($submission_id);
+        }, wp_list_pluck($query->posts, 'ID'));
+    }
+
+    public function handleExportFormData()
+    {
+        if (
+            current_user_can('export') &&
+            wp_verify_nonce(
+                $_REQUEST[self::SECURITY_CODE],
+                'mvpfadmin__export_data'
+            )
+        ) {
+            $exporter_class = $this->getExporterClass();
+
+            if ($exporter_class) {
+                $exporter = new $exporter_class();
+                $export_data = $this->getExportData();
+
+                $exporter->generateFile($export_data);
+                // die();
+            }
+        }
     }
 }

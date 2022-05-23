@@ -26,7 +26,8 @@ class Form
         }
     }
 
-    public function getPost() {
+    public function getPost()
+    {
         return $this->post;
     }
 
@@ -68,7 +69,8 @@ class Form
             return null;
         }
 
-        return get_post_meta($this->post->ID, self::FORM_OPTIONS_META_NAME, true);;
+        return get_post_meta($this->post->ID, self::FORM_OPTIONS_META_NAME, true);
+        ;
     }
 
     public function getOption($name, $raw = false)
@@ -131,8 +133,9 @@ class Form
         return $fields;
     }
 
-    public function getFieldByID($id) {
-        $filtered = array_filter($this->getFields(), function($field) use ($id) {
+    public function getFieldByID($id)
+    {
+        $filtered = array_filter($this->getFields(), function ($field) use ($id) {
             return $field['id'] === $id;
         });
 
@@ -194,5 +197,18 @@ class Form
         }
 
         return '';
+    }
+
+    public static function getAllForms()
+    {
+        $query = new \WP_Query([
+            'post_type'      => 'mvpf-form',
+            'post_status'    => 'publish',
+            'posts_per_page' => -1,
+        ]);
+
+        return array_map(function($form_id) {
+            return new Form($form_id);
+        }, wp_list_pluck($query->posts, 'ID'));
     }
 }
