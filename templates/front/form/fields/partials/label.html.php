@@ -1,4 +1,4 @@
-<?php use Mashvp\Forms\Form ?>
+<?php use Mashvp\Forms\Form; ?>
 
 <p class="label">
   <span class="label-value"><?= Form::get($field, 'attributes.label') ?></span>

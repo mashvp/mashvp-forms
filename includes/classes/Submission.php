@@ -3,6 +3,7 @@
 namespace Mashvp\Forms;
 
 use Mashvp\Forms\Form;
+use Mashvp\Forms\Utils;
 
 class Submission
 {
@@ -29,7 +30,8 @@ class Submission
         }
     }
 
-    public function getPost() {
+    public function getPost()
+    {
         return $this->post;
     }
 
@@ -66,11 +68,26 @@ class Submission
         return $fields;
     }
 
-    public function getFieldById($id) {
+    public function getPrintableFields()
+    {
+        return array_filter($this->getFields(), function ($field) {
+            return !in_array(Utils::get($field, 'type'), [
+                'submit',
+                'reset',
+                'button',
+                'message',
+                'horizontal-separator',
+                'builtin-status-message-zone'
+            ]);
+        });
+    }
+
+    public function getFieldById($id)
+    {
         $results = array_values(
             array_filter(
                 $this->getFields(),
-                function($field) use ($id) {
+                function ($field) use ($id) {
                     return $field['id'] === $id;
                 }
             )
@@ -166,7 +183,7 @@ class Submission
         }
 
         if ($field) {
-            switch ($field['type']) {
+            switch (Utils::get($field, 'type')) {
                 case 'checkbox':
                     return Renderer::instance()->renderTemplateToString(
                         'admin/metaboxes/fields/checkbox',
@@ -215,6 +232,43 @@ class Submission
                         'admin/metaboxes/fields/generic',
                         ['field' => $field, 'args' => $args]
                     );
+            }
+        }
+    }
+
+    public static function getPrintableFieldValue($field)
+    {
+        if ($field) {
+            $value = Utils::get($field, 'value');
+
+            switch (Utils::get($field, 'type')) {
+                case 'checkbox':
+                    return (
+                        $value ?
+                        _x('Yes', 'Checkbox field value', 'mashvp-forms') :
+                        _x('No', 'Checkbox field value', 'mashvp-forms')
+                    );
+
+                case 'choice-list':
+                    $values = array_filter($value, 'is_int', ARRAY_FILTER_USE_KEY);
+
+                    return implode(', ', array_map(function($key) use ($value) {
+                        return Utils::get($value, "__label--$key");
+                    }, $values));
+
+                case 'range':
+                    $current = Utils::get($value, 'value');
+                    $max = Utils::get($value, 'max');
+
+                    return sprintf(
+                        /* translators: %1$s current range value, %2$s max range value */
+                        _x('%1$s/%2$s', 'Range field value', 'mashvp-forms'),
+                        $current,
+                        $max,
+                    );
+
+                default:
+                    return $value;
             }
         }
     }

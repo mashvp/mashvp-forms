@@ -2,9 +2,9 @@
   use Mashvp\Forms\Form;
 
   $value = Form::get($field, 'value.value');
-  $min = Form::get($field, 'value.min');
-  $max = Form::get($field, 'value.max');
-  $step = Form::get($field, 'value.step');
+  $min   = Form::get($field, 'value.min');
+  $max   = Form::get($field, 'value.max');
+  $step  = Form::get($field, 'value.step');
 
   $percent = (floatval($value) - floatval($min)) / (floatval($max) - floatval($min)) * 100;
 ?>

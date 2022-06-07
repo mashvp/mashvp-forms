@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Mashvp — Forms plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Mashvp — Forms 0.2.1-beta.6\n"
+"Project-Id-Version: Mashvp — Forms 0.2.2-beta.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mashvp-forms\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-05-12T18:31:36+02:00\n"
+"POT-Creation-Date: 2022-06-07T15:20:44+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: mashvp-forms\n"
@@ -31,56 +31,97 @@ msgstr ""
 msgid "Mashvp"
 msgstr ""
 
-#: includes/classes/Admin.php:67
+#: includes/classes/Admin.php:79
 msgctxt "Global settings option description"
 msgid "reCAPTCHA version"
 msgstr ""
 
-#: includes/classes/Admin.php:77
+#: includes/classes/Admin.php:89
 msgctxt "Global settings option description"
 msgid "Hide badge? (for v2 invisible only)"
 msgstr ""
 
-#: includes/classes/Admin.php:86
+#: includes/classes/Admin.php:98
 msgctxt "Global settings option description"
 msgid "reCAPTCHA site key"
 msgstr ""
 
-#: includes/classes/Admin.php:96
+#: includes/classes/Admin.php:108
 msgctxt "Global settings option description"
 msgid "reCAPTCHA secret key"
 msgstr ""
 
-#: includes/classes/Admin.php:106
+#: includes/classes/Admin.php:126
 #: templates/admin/general-options.html.php:4
 msgctxt "Menu page title"
 msgid "General form settings"
 msgstr ""
 
-#: includes/classes/Admin.php:107
+#: includes/classes/Admin.php:127
 msgctxt "Menu page title"
 msgid "Settings"
 msgstr ""
 
 #: includes/classes/Admin.php:136
-#: includes/classes/Admin.php:173
+#: templates/admin/export-data.html.php:11
+msgctxt "Menu page title"
+msgid "Export data"
+msgstr ""
+
+#: includes/classes/Admin.php:137
+msgctxt "Menu page title"
+msgid "Export"
+msgstr ""
+
+#: includes/classes/Admin.php:166
+#: includes/classes/Admin.php:203
 msgid "Form fields"
 msgstr ""
 
-#: includes/classes/Admin.php:145
+#: includes/classes/Admin.php:175
 msgid "Form options"
 msgstr ""
 
-#: includes/classes/Admin.php:154
+#: includes/classes/Admin.php:184
 msgid "Shortcode"
 msgstr ""
 
-#: includes/classes/Admin.php:163
+#: includes/classes/Admin.php:193
 msgid "Field options"
 msgstr ""
 
-#: includes/classes/Admin.php:182
+#: includes/classes/Admin.php:212
 msgid "Info"
+msgstr ""
+
+#: includes/classes/CSVExporter.php:16
+msgctxt "CSV Exporter settings"
+msgid "Separator"
+msgstr ""
+
+#: includes/classes/CSVExporter.php:19
+msgctxt "CSV Exporter settings"
+msgid "Comma"
+msgstr ""
+
+#: includes/classes/CSVExporter.php:20
+msgctxt "CSV Exporter settings"
+msgid "Semicolon"
+msgstr ""
+
+#: includes/classes/CSVExporter.php:21
+msgctxt "CSV Exporter settings"
+msgid "Tab"
+msgstr ""
+
+#: includes/classes/CSVExporter.php:22
+msgctxt "CSV Exporter settings"
+msgid "Space"
+msgstr ""
+
+#: includes/classes/CSVExporter.php:28
+msgctxt "CSV Exporter settings"
+msgid "Include header"
 msgstr ""
 
 #: includes/classes/PostTypes.php:22
@@ -90,6 +131,7 @@ msgid "Forms"
 msgstr ""
 
 #: includes/classes/PostTypes.php:25
+#: templates/admin/export-data.html.php:25
 msgctxt "Post type UI"
 msgid "Form"
 msgstr ""
@@ -100,7 +142,7 @@ msgid "All forms"
 msgstr ""
 
 #: includes/classes/PostTypes.php:27
-#: includes/classes/PostTypes.php:71
+#: includes/classes/PostTypes.php:72
 msgctxt "Post type UI"
 msgid "Add new"
 msgstr ""
@@ -135,68 +177,85 @@ msgctxt "Post type UI"
 msgid "No forms found in Trash"
 msgstr ""
 
-#: includes/classes/PostTypes.php:66
-#: includes/classes/PostTypes.php:68
-#: includes/classes/PostTypes.php:70
+#: includes/classes/PostTypes.php:67
+#: includes/classes/PostTypes.php:69
+#: includes/classes/PostTypes.php:71
+#: templates/admin/export-data.html.php:82
 msgctxt "Post type UI"
 msgid "Form submissions"
 msgstr ""
 
-#: includes/classes/PostTypes.php:69
-#: includes/classes/Submission.php:92
+#: includes/classes/PostTypes.php:70
+#: includes/classes/Submission.php:109
 msgctxt "Post type UI"
 msgid "Form submission"
 msgstr ""
 
-#: includes/classes/PostTypes.php:72
+#: includes/classes/PostTypes.php:73
 msgctxt "Post type UI"
 msgid "Edit form submission"
 msgstr ""
 
-#: includes/classes/PostTypes.php:73
+#: includes/classes/PostTypes.php:74
 msgctxt "Post type UI"
 msgid "New form submission"
 msgstr ""
 
-#: includes/classes/PostTypes.php:74
+#: includes/classes/PostTypes.php:75
 msgctxt "Post type UI"
 msgid "Show form submission"
 msgstr ""
 
-#: includes/classes/PostTypes.php:75
+#: includes/classes/PostTypes.php:76
 msgctxt "Post type UI"
 msgid "Search form submissions"
 msgstr ""
 
-#: includes/classes/PostTypes.php:76
+#: includes/classes/PostTypes.php:77
 msgctxt "Post type UI"
 msgid "No form submissions found"
 msgstr ""
 
-#: includes/classes/PostTypes.php:77
+#: includes/classes/PostTypes.php:78
 msgctxt "Post type UI"
 msgid "No form submissions found in Trash"
 msgstr ""
 
-#: includes/classes/PostTypes.php:113
-#: includes/classes/PostTypes.php:140
+#: includes/classes/PostTypes.php:115
+#: includes/classes/PostTypes.php:142
 msgctxt "Post type columns"
 msgid "ID"
 msgstr ""
 
-#: includes/classes/PostTypes.php:114
+#: includes/classes/PostTypes.php:116
 msgctxt "Post type columns"
 msgid "Shortcode"
 msgstr ""
 
-#: includes/classes/PostTypes.php:141
+#: includes/classes/PostTypes.php:143
 msgctxt "Post type columns"
 msgid "Form"
 msgstr ""
 
-#: includes/classes/PostTypes.php:142
+#: includes/classes/PostTypes.php:144
 msgctxt "Post type columns"
 msgid "Notifications"
+msgstr ""
+
+#: includes/classes/Submission.php:248
+msgctxt "Checkbox field value"
+msgid "Yes"
+msgstr ""
+
+#: includes/classes/Submission.php:249
+msgctxt "Checkbox field value"
+msgid "No"
+msgstr ""
+
+#. translators: %1$s current range value, %2$s max range value
+#: includes/classes/Submission.php:265
+msgctxt "Range field value"
+msgid "%1$s/%2$s"
 msgstr ""
 
 #: includes/classes/SubmissionHandler.php:78
@@ -205,39 +264,56 @@ msgctxt "Submission default success message"
 msgid "Message sent successfully"
 msgstr ""
 
-#: includes/classes/SubmissionHandler.php:172
+#: includes/classes/SubmissionHandler.php:175
 msgctxt "Submission handler error"
 msgid "Cannot verify reCAPTCHA response, please try again"
 msgstr ""
 
-#: includes/classes/SubmissionHandler.php:227
+#: includes/classes/SubmissionHandler.php:230
 msgctxt "Submission handler error"
 msgid "Cannot verify the authenticity of the message"
 msgstr ""
 
-#: includes/classes/SubmissionHandler.php:239
+#: includes/classes/SubmissionHandler.php:242
 msgctxt "Submission handler error"
 msgid "Missing form ID"
 msgstr ""
 
-#: includes/classes/SubmissionHandler.php:254
+#: includes/classes/SubmissionHandler.php:257
 msgctxt "Submission handler error"
 msgid "Unable to retreive form data"
 msgstr ""
 
-#: includes/classes/SubmissionHandler.php:268
+#: includes/classes/SubmissionHandler.php:271
 msgctxt "Submission handler error"
 msgid "Your message was rejected because it looks like spam. If you are a legitimate user, please try again."
 msgstr ""
 
-#: includes/classes/SubmissionHandler.php:294
+#: includes/classes/SubmissionHandler.php:297
 msgctxt "Message submission status"
 msgid "Your message was sent successfully."
 msgstr ""
 
-#: includes/classes/SubmissionHandler.php:299
+#: includes/classes/SubmissionHandler.php:302
 msgctxt "Message submission status"
 msgid "There was an error trying to send your message. Please try again later."
+msgstr ""
+
+#: templates/admin/export-data.html.php:32
+msgid "Select a form"
+msgstr ""
+
+#: templates/admin/export-data.html.php:48
+msgid "Export format"
+msgstr ""
+
+#: templates/admin/export-data.html.php:60
+msgid "Select an export format"
+msgstr ""
+
+#: templates/admin/export-data.html.php:72
+msgctxt "Action"
+msgid "Export form submissions"
 msgstr ""
 
 #: templates/admin/general-options.html.php:13
@@ -343,17 +419,17 @@ msgctxt "Submission preview"
 msgid "No fields found"
 msgstr ""
 
-#: templates/admin/metaboxes/submission-info.html.php:19
+#: templates/admin/metaboxes/submission-info.html.php:17
 msgctxt "Notification email status"
 msgid "Email sent"
 msgstr ""
 
-#: templates/admin/metaboxes/submission-info.html.php:22
+#: templates/admin/metaboxes/submission-info.html.php:20
 msgctxt "Notification email status"
 msgid "Email send error"
 msgstr ""
 
-#: templates/admin/metaboxes/submission-info.html.php:25
+#: templates/admin/metaboxes/submission-info.html.php:23
 msgctxt "Notification email status"
 msgid "Email not sent"
 msgstr ""

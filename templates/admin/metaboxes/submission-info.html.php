@@ -1,7 +1,5 @@
 <?php
 
-use Mashvp\Forms\Submission;
-
 global $wp;
 
 ?>

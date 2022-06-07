@@ -51,7 +51,11 @@ function mashvp_forms__register_plugin__admin_enqueue_scripts()
 add_action('plugins_loaded', 'mashvp_forms__load_textdomain');
 function mashvp_forms__load_textdomain()
 {
-    load_plugin_textdomain('mashvp-forms', false, MASHVP_FORMS__DIR . '/languages/');
+    load_plugin_textdomain(
+        'mashvp-forms',
+        false,
+        MASHVP_FORMS__DIR . '/languages/'
+    );
 }
 
 add_action('save_post_mvpf-form', 'mashvp_forms__save_post');

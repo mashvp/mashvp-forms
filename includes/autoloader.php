@@ -8,6 +8,8 @@ spl_autoload_register(
         if ($classes === null) {
             $classes = array(
                 'mashvp\\forms\\admin' => '/classes/Admin.php',
+                'mashvp\\forms\\csvexporter' => '/classes/CSVExporter.php',
+                'mashvp\\forms\\exporter' => '/classes/inherit/Exporter.php',
                 'mashvp\\forms\\form' => '/classes/Form.php',
                 'mashvp\\forms\\front' => '/classes/Front.php',
                 'mashvp\\forms\\notifications\\email' => '/classes/Notification/Email.php',
