@@ -21,7 +21,8 @@ spl_autoload_register(
                 'mashvp\\forms\\submission' => '/classes/Submission.php',
                 'mashvp\\forms\\submissionhandler' => '/classes/SubmissionHandler.php',
                 'mashvp\\forms\\utils' => '/classes/Utils.php',
-                'mashvp\\singletonclass' => '/classes/inherit/SingletonClass.php'
+                'mashvp\\singletonclass' => '/classes/inherit/SingletonClass.php',
+                'mashvp\\staticclass' => '/classes/inherit/StaticClass.php'
             );
         }
         $cn = strtolower($class);

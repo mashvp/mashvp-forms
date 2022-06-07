@@ -129,7 +129,7 @@ class PostTypes extends SingletonClass
         }
 
         if ($column === 'shortcode') {
-            Renderer::instance()->renderTemplate('admin/shortcode-input', ['id' => $post_id]);
+            Renderer::renderTemplate('admin/shortcode-input', ['id' => $post_id]);
         }
     }
 

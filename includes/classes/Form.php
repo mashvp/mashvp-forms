@@ -90,7 +90,7 @@ class Form
 
         $form_data = $this->getFormData();
 
-        Renderer::instance()->renderTemplate(
+        Renderer::renderTemplate(
             'front/form',
             [
                 'post' => $this->post,

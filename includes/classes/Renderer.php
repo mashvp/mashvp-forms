@@ -2,10 +2,10 @@
 
 namespace Mashvp\Forms;
 
-use Mashvp\SingletonClass;
+use Mashvp\StaticClass;
 use Mashvp\Forms\Utils;
 
-class Renderer extends SingletonClass
+class Renderer extends StaticClass
 {
     public static function renderTemplate($name, $locals = [])
     {

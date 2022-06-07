@@ -32,7 +32,7 @@ class Email extends GenericNotification
             ),
 
             // Content
-            Renderer::instance()->renderTemplateToString(
+            Renderer::renderTemplateToString(
                 'email/submission-notification',
                 [
                     'submission' => $submission,

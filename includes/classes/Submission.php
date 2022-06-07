@@ -185,27 +185,27 @@ class Submission
         if ($field) {
             switch (Utils::get($field, 'type')) {
                 case 'checkbox':
-                    return Renderer::instance()->renderTemplateToString(
+                    return Renderer::renderTemplateToString(
                         'admin/metaboxes/fields/checkbox',
                         ['field' => $field, 'args' => $args]
                     );
                 case 'radio':
-                    return Renderer::instance()->renderTemplateToString(
+                    return Renderer::renderTemplateToString(
                         'admin/metaboxes/fields/radio',
                         ['field' => $field, 'args' => $args]
                     );
                 case 'choice-list':
-                    return Renderer::instance()->renderTemplateToString(
+                    return Renderer::renderTemplateToString(
                         'admin/metaboxes/fields/choice-list',
                         ['field' => $field, 'form' => $form, 'args' => $args]
                     );
                 case 'url':
-                    return Renderer::instance()->renderTemplateToString(
+                    return Renderer::renderTemplateToString(
                         'admin/metaboxes/fields/link',
                         ['field' => $field, 'args' => $args]
                     );
                 case 'email':
-                    return Renderer::instance()->renderTemplateToString(
+                    return Renderer::renderTemplateToString(
                         'admin/metaboxes/fields/link',
                         [
                             'field' => $field,
@@ -214,7 +214,7 @@ class Submission
                         ]
                     );
                 case 'tel':
-                    return Renderer::instance()->renderTemplateToString(
+                    return Renderer::renderTemplateToString(
                         'admin/metaboxes/fields/link',
                         [
                             'field' => $field,
@@ -223,12 +223,12 @@ class Submission
                         ]
                     );
                 case 'range':
-                    return Renderer::instance()->renderTemplateToString(
+                    return Renderer::renderTemplateToString(
                         'admin/metaboxes/fields/range',
                         ['field' => $field, 'args' => $args]
                     );
                 default:
-                    return Renderer::instance()->renderTemplateToString(
+                    return Renderer::renderTemplateToString(
                         'admin/metaboxes/fields/generic',
                         ['field' => $field, 'args' => $args]
                     );

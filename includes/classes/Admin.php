@@ -291,12 +291,12 @@ class Admin extends SingletonClass
 
     public function formGeneralOptionsRenderContent()
     {
-        Renderer::instance()->renderTemplate('admin/general-options');
+        Renderer::renderTemplate('admin/general-options');
     }
 
     public function formExportDataRenderContent()
     {
-        Renderer::instance()->renderTemplate('admin/export-data');
+        Renderer::renderTemplate('admin/export-data');
     }
 
     public function renderFormFieldsMetabox()
@@ -305,7 +305,7 @@ class Admin extends SingletonClass
 
         $form_fields_json = get_post_meta($post->ID, self::FORM_FIELDS_META_NAME, true);
 
-        Renderer::instance()->renderTemplate(
+        Renderer::renderTemplate(
             'admin/metaboxes/fields-editor',
             [
                 'form_fields_json' => $form_fields_json
@@ -319,7 +319,7 @@ class Admin extends SingletonClass
 
         $form_options = get_post_meta($post->ID, self::FORM_OPTIONS_META_NAME, true);
 
-        Renderer::instance()->renderTemplate(
+        Renderer::renderTemplate(
             'admin/metaboxes/options-editor',
             [
                 'form_options' => $form_options
@@ -331,12 +331,12 @@ class Admin extends SingletonClass
     {
         global $post;
 
-        Renderer::instance()->renderTemplate('admin/shortcode-input', ['id' => $post->ID]);
+        Renderer::renderTemplate('admin/shortcode-input', ['id' => $post->ID]);
     }
 
     public function renderFieldOptionsMetabox()
     {
-        Renderer::instance()->renderTemplate('admin/metaboxes/field-options');
+        Renderer::renderTemplate('admin/metaboxes/field-options');
     }
 
     public function renderSubmissionFieldsMetabox()
@@ -347,7 +347,7 @@ class Admin extends SingletonClass
             get_post_meta($post->ID, self::FORM_FIELDS_META_NAME, true)
         );
 
-        Renderer::instance()->renderTemplate(
+        Renderer::renderTemplate(
             'admin/metaboxes/submission-fields',
             [
                 'id' => $post->ID,
@@ -363,7 +363,7 @@ class Admin extends SingletonClass
 
         $submission = new Submission($post->ID);
 
-        Renderer::instance()->renderTemplate(
+        Renderer::renderTemplate(
             'admin/metaboxes/submission-info',
             [
                 'id' => $post->ID,
