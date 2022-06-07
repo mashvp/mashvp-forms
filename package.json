@@ -1,6 +1,6 @@
 {
   "name": "mashvp-forms",
-  "version": "0.2.1-beta.6",
+  "version": "0.2.2-beta.1",
   "description": "No-bullsh!t form plugin",
   "main": "js/index.js",
   "author": "Mashvp",
@@ -55,6 +55,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.12.5",
+    "@hotwired/stimulus": "^3.0.1",
+    "@hotwired/stimulus-webpack-helpers": "^1.0.1",
     "classnames": "^2.2.6",
     "lodash.camelcase": "^4.3.0",
     "lodash.clonedeep": "^4.5.0",
@@ -65,7 +67,6 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-smooth-dnd": "^0.11.1",
-    "stimulus": "^2",
     "uuid": "^8.3.1"
   }
 }

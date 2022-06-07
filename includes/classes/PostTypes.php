@@ -38,6 +38,7 @@ class PostTypes extends SingletonClass
                 'public'              => false,
                 'show_ui'             => true,
                 'exclude_from_search' => true,
+                'show_in_rest'        => false,
 
                 'capability_type'     => 'post',
                 'supports'            => ['title', 'custom-fields'],
@@ -82,6 +83,7 @@ class PostTypes extends SingletonClass
                 'public'              => false,
                 'show_ui'             => true,
                 'exclude_from_search' => true,
+                'show_in_rest'        => false,
                 'show_in_menu'        => 'edit.php?post_type=mvpf-form',
                 'menu_position'       => 10,
 

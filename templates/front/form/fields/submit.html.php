@@ -1,4 +1,4 @@
-<?php use Mashvp\Forms\Form ?>
+<?php use Mashvp\Forms\Form; ?>
 
 <label class="mvpf__form-field--submit <?= Form::get($field, 'attributes.className') ?>" for="<?= Form::get($field, 'id') ?>">
   <input
