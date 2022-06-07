@@ -1,4 +1,4 @@
-<?php use Mashvp\Forms\Renderer ?>
+<?php use Mashvp\Forms\Renderer; ?>
 
 <?php
   $fields_count = 0;

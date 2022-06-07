@@ -1,4 +1,4 @@
-<?php use Mashvp\Forms\Form ?>
+<?php use Mashvp\Forms\Form; ?>
 
 <div id="mashvp-forms--options" data-controller="form--options">
   <fieldset>

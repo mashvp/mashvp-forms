@@ -1,6 +1,5 @@
 <?php
   use Mashvp\Forms\Form;
-  use Mashvp\Forms\Renderer;
 ?>
 
 <label class="mvpf__form-field--horizontal-separator <?= Form::get($field, 'attributes.className') ?>" for="<?= Form::get($field, 'id') ?>">

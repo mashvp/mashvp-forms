@@ -8,10 +8,26 @@ use Mashvp\Forms\Utils;
 
 class CSVExporter extends Exporter
 {
-    protected function getDefaultExporterSettings()
+    public static function getAvailableExporterSettings()
     {
         return [
-            'separator' => ';',
+            'separator' => [
+                'type'    => 'select',
+                'label'   => _x('Separator', 'CSV Exporter settings', 'mashvp-forms'),
+                'default' => ',',
+                'values'  => [
+                    ','  => _x('Comma', 'CSV Exporter settings', 'mashvp-forms'),
+                    ';'  => _x('Semicolon', 'CSV Exporter settings', 'mashvp-forms'),
+                    "\t" => _x('Tab', 'CSV Exporter settings', 'mashvp-forms'),
+                    ' '  => _x('Space', 'CSV Exporter settings', 'mashvp-forms')
+                ],
+            ],
+
+            'use_header' => [
+                'type'    => 'checkbox',
+                'label'   => _x('Include header', 'CSV Exporter settings', 'mashvp-forms'),
+                'default' => true,
+            ]
         ];
     }
 
@@ -19,10 +35,10 @@ class CSVExporter extends Exporter
     {
         $filename = $this->getFilename('csv');
 
-        // header('Content-Type: text/csv; utf-8');
-        // header('Cache-Control: no-store, no-cache');
-        // header('Pragma: no-cache');
-        // header("Content-Disposition: attachment;filename={$filename}");
+        header('Content-Type: text/csv; utf-8');
+        header('Cache-Control: no-store, no-cache');
+        header('Pragma: no-cache');
+        header("Content-Disposition: attachment;filename={$filename}");
     }
 
     private function echoCSV($fd, $data)
@@ -66,13 +82,14 @@ class CSVExporter extends Exporter
     {
         $this->echoHeaders();
 
-        echo '<pre>';
-
         if ($data && is_array($data) && count($data) > 0) {
             $fd = fopen('php://output', 'w');
 
             $field_ids = $this->getFieldIDs($data);
-            $this->generateHeader($fd, $field_ids, $data);
+
+            if ($this->getSetting('use_header')) {
+                $this->generateHeader($fd, $field_ids, $data);
+            }
 
             foreach ($data as $entry) {
                 $this->generatePrintableLine($fd, $field_ids, $entry);
@@ -81,7 +98,5 @@ class CSVExporter extends Exporter
             fflush($fd);
             fclose($fd);
         }
-
-        echo '</pre>';
     }
 }

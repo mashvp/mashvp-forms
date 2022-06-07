@@ -6,7 +6,15 @@ use Mashvp\Forms\Utils;
 
 abstract class Exporter
 {
-    abstract protected function getDefaultExporterSettings();
+    abstract public static function getAvailableExporterSettings();
+
+    public static function getDefaultExporterSettings()
+    {
+        return array_map(function ($defs) {
+            return Utils::get($defs, 'default');
+        }, static::getAvailableExporterSettings());
+    }
+
     abstract public function echoHeaders();
     abstract public function generateFile($data);
 
@@ -17,10 +25,8 @@ abstract class Exporter
 
     protected function getExporterSettings()
     {
-        $default_settings = $this->getDefaultExporterSettings();
-
-        return array_merge_recursive(
-            $default_settings,
+        return array_replace_recursive(
+            static::getDefaultExporterSettings(),
             $this->settings,
         );
     }

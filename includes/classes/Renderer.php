@@ -7,7 +7,7 @@ use Mashvp\Forms\Utils;
 
 class Renderer extends SingletonClass
 {
-    public function renderTemplate($name, $locals = [])
+    public static function renderTemplate($name, $locals = [])
     {
         $path = Utils::template_path($name);
 
@@ -24,11 +24,11 @@ class Renderer extends SingletonClass
         return false;
     }
 
-    public function renderTemplateToString($name, $locals = [])
+    public static function renderTemplateToString($name, $locals = [])
     {
         ob_start();
 
-        $this->renderTemplate($name, $locals);
+        self::renderTemplate($name, $locals);
 
         return ob_get_clean();
     }

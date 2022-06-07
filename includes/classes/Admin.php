@@ -56,6 +56,7 @@ class Admin extends SingletonClass
 
             $this->registerOptions();
             $this->registerAdminFormHandlers();
+            $this->registerAjaxAction();
 
             if ($this->shouldInit()) {
                 $this->addMetaBoxes();
@@ -107,6 +108,14 @@ class Admin extends SingletonClass
                 'description' => _x('reCAPTCHA secret key', 'Global settings option description', 'mashvp-forms'),
                 'sanitize_callback' => 'sanitize_text_field',
             ]
+        );
+    }
+
+    private function registerAjaxAction()
+    {
+        add_action(
+            'wp_ajax_mvpf__get_exporter_settings',
+            [$this, 'getExporterSettings'],
         );
     }
 
@@ -364,10 +373,8 @@ class Admin extends SingletonClass
         );
     }
 
-    private function getExporterClass()
+    private function getExporterClass($export_format)
     {
-        $export_format = Utils::get($_REQUEST, 'export_format');
-
         if ($export_format) {
             switch ($export_format) {
                 case 'csv':
@@ -395,6 +402,23 @@ class Admin extends SingletonClass
         }, wp_list_pluck($query->posts, 'ID'));
     }
 
+    private function collectExporterSettings()
+    {
+        $settings = [];
+
+        foreach ($_REQUEST as $key => $value) {
+            $matches = [];
+
+            if (preg_match("/^mvpf_es__(.+)$/", $key, $matches)) {
+                $settingKey = $matches[1];
+
+                $settings[$settingKey] = $value;
+            }
+        }
+
+        return $settings;
+    }
+
     public function handleExportFormData()
     {
         if (
@@ -404,15 +428,50 @@ class Admin extends SingletonClass
                 'mvpfadmin__export_data'
             )
         ) {
-            $exporter_class = $this->getExporterClass();
+            $exporter_class = $this->getExporterClass(
+                Utils::get($_REQUEST, 'export_format')
+            );
 
             if ($exporter_class) {
-                $exporter = new $exporter_class();
-                $export_data = $this->getExportData();
+                $exporter_settings = $this->collectExporterSettings();
+                $exporter          = new $exporter_class($exporter_settings);
+                $export_data       = $this->getExportData();
 
                 $exporter->generateFile($export_data);
-                // die();
+                die();
             }
         }
+    }
+
+    public function getExporterSettings()
+    {
+        header('Content-Type: application/json');
+
+        $format = Utils::get($_REQUEST, 'export_format');
+
+        if (!$format) {
+            die(json_encode([
+                'success' => false,
+                'message' => 'Missing required parameter `export_format`',
+                'data'    => [],
+            ]));
+        }
+
+        $exporter_class = $this->getExporterClass($format);
+
+        if (!$exporter_class || !class_exists($exporter_class)) {
+            die(json_encode([
+                'success' => false,
+                'message' => "Unhandled export format `{$format}`",
+                'data'    => [],
+            ]));
+        }
+
+        $settings = $exporter_class::getAvailableExporterSettings();
+
+        die(json_encode([
+            'success' => true,
+            'data'    => $settings,
+        ]));
     }
 }

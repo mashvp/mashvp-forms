@@ -12,33 +12,68 @@
     </div>
 
     <div class="inside">
-      <form action="<?= admin_url('admin-ajax.php') ?>" method="GET">
-        <label for="form_id">
-          <select name="form_id" id="form_id">
-            <option value="" selected disabled>
-              <?= __('Select a form', 'mashvp-forms') ?>
-            </option>
+      <form
+        action="<?= admin_url('admin-ajax.php') ?>"
+        method="GET"
+        data-controller="exporter-settings"
+      >
+        <table class="form-table">
+          <tbody data-exporter-settings-target="container">
+            <tr>
+              <th>
+                <label for="form_id">
+                  <?= esc_html_x('Form', 'Post type UI', 'mashvp-forms') ?>
+                </label>
+              </th>
 
-            <?php foreach (Form::getAllForms() as $form): ?>
-              <option value="<?= $form->getID() ?>">
-                <span class="name"><?= $form->getTitle() ?></span>
-                <span class="id">(#<?= $form->getID() ?>)</span>
-              </option>
-            <?php endforeach ?>
-          </select>
-        </label>
+              <td>
+                <select name="form_id" id="form_id" required>
+                  <option value="" selected disabled>
+                    <?= __('Select a form', 'mashvp-forms') ?>
+                  </option>
 
-        <label for="export_format">
-          <select name="export_format" id="export_format">
-            <option value="" selected disabled>
-              <?= __('Select an export format', 'mashvp-forms') ?>
-            </option>
+                  <?php foreach (Form::getAllForms() as $form): ?>
+                    <option value="<?= esc_attr($form->getID()) ?>">
+                      <span class="name"><?= esc_html($form->getTitle()) ?></span>
+                      <span class="id">(#<?= esc_html($form->getID()) ?>)</span>
+                    </option>
+                  <?php endforeach ?>
+                </select>
+              </td>
+            </tr>
 
-            <option value="csv">CSV</option>
-          </select>
-        </label>
+            <tr>
+              <th>
+                <label for="export_format">
+                  <?= esc_html__('Export format', 'mashvp-forms') ?>
+                </label>
+              </th>
 
-        <button type="submit">Export</button>
+              <td>
+                <select
+                  name="export_format"
+                  id="export_format"
+                  required
+
+                  data-exporter-settings-target="formatSelect"
+                  data-action="exporter-settings#updateTemplate"
+                >
+                  <option value="" selected disabled>
+                    <?= __('Select an export format', 'mashvp-forms') ?>
+                  </option>
+
+                  <option value="csv">CSV</option>
+                </select>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="submit">
+          <button type="submit" class="button button-primary button-large">
+            <span><?= esc_html_x('Export form submissions', 'Action', 'mashvp-forms') ?></span>
+          </button>
+        </p>
 
         <input
           type="hidden"

@@ -1,4 +1,4 @@
-<?php use Mashvp\Forms\Form ?>
+<?php use Mashvp\Forms\Form; ?>
 
 <label class="mvpf__form-field--hidden <?= Form::get($field, 'attributes.className') ?>">
   <input
