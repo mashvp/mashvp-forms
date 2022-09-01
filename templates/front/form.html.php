@@ -1,9 +1,12 @@
 <?php
   use Mashvp\Forms\Form;
   use Mashvp\Forms\Renderer;
+  use Mashvp\Forms\Utils;
 
   $controllers = ['mashvp-forms--form'];
   $actions = [];
+
+  $is_admin_preview = Utils::get_render_global('is_admin_preview', false);
 
   if ($form->getOption('submission.ajax.enabled')) {
     $controllers[] = 'mashvp-forms--ajax';
@@ -22,10 +25,10 @@
   $actions = implode(' ', $actions);
 
   // Do not use a <form> tag for admin previews as this breaks WordPress' post saving.
-  $html_tag = (isset($is_admin_preview) && $is_admin_preview) ? 'div' : 'form';
+  $html_tag = $is_admin_preview ? 'div' : 'form';
 
   $klass = ['mvpf', 'mvpf__form'];
-  if (isset($is_admin_preview) && $is_admin_preview) {
+  if ($is_admin_preview) {
     $klass[] = 'mvpf__form--preview';
   }
   $klass = implode(' ', $klass);

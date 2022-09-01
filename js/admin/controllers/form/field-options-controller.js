@@ -99,7 +99,8 @@ export default class extends ApplicationController {
         case 'className':
         case 'defaultValue':
         case 'value':
-        case 'successMessage': {
+        case 'successMessage':
+        case 'id': {
           const inputType = (() => {
             if (attributeName === 'defaultValue') {
               if (fieldType === 'checkbox') {

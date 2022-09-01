@@ -1,6 +1,6 @@
 {
   "name": "mashvp-forms",
-  "version": "0.2.2-beta.3",
+  "version": "0.2.3-beta.1",
   "description": "No-bullsh!t form plugin",
   "main": "js/index.js",
   "author": "Mashvp",
@@ -67,6 +67,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-smooth-dnd": "^0.11.1",
+    "styled-components": "^5.3.5",
     "uuid": "^8.3.1"
   }
 }

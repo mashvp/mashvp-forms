@@ -82,6 +82,7 @@ export const inputTypes = [
   'text',
   'textarea',
   'url',
+  'hidden',
 ];
 
 export const additionalTypes = ['message', 'group'];
@@ -124,6 +125,7 @@ export const attributesPropType = PropTypes.shape({
 
 export const attributeLabels = {
   type: _x('Type', 'Field attribute label', 'mashvp-forms'),
+  id: _x('ID (technical identifier)', 'Field attribute label', 'mashvp-forms'),
   label: _x('Label', 'Field attribute label', 'mashvp-forms'),
   defaultValue: _x('Default value', 'Field attribute label', 'mashvp-forms'),
   value: _x('Value', 'Field attribute label', 'mashvp-forms'),
@@ -446,6 +448,15 @@ export const toolbarItems = [
     ),
     className: '',
   },
+  {
+    _skip: ['label', 'placeholder'],
+    type: 'hidden',
+    label: __('Hidden', 'mashvp-forms'),
+    id: '',
+    value: '',
+    placeholder: __('Hidden value', 'mashvp-forms'),
+    className: '',
+  }
 ];
 
 export const autocompleteValues = {

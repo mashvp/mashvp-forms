@@ -1,14 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import classNames from 'classnames';
 
 import { attributesPropType, inputTypes, noop } from '../../utils';
 import isPlainObject from 'lodash.isplainobject';
 
+export const FakeHiddenInput = styled.input`
+  border-style: dashed !important;
+  opacity: 0.5;
+`;
+
 const InputField = ({ type, id, attributes }) => {
   const name = id;
 
   const {
+    id: idAttribute,
     label,
     defaultValue,
     value,
@@ -42,6 +49,7 @@ const InputField = ({ type, id, attributes }) => {
         name={name}
         value={currentValue}
         placeholder={placeholder}
+        data-id={idAttribute}
         tabIndex="-1"
         onChange={noop}
       />
@@ -77,6 +85,7 @@ const InputField = ({ type, id, attributes }) => {
           type={type}
           name={name}
           checked={currentValue}
+          data-id={idAttribute}
           tabIndex="-1"
           onChange={noop}
         ></input>
@@ -94,6 +103,7 @@ const InputField = ({ type, id, attributes }) => {
         name={name}
         value={currentValue}
         placeholder={placeholder}
+        data-id={idAttribute}
         tabIndex="-1"
         onChange={noop}
       ></input>
@@ -111,9 +121,25 @@ const InputField = ({ type, id, attributes }) => {
         max={max}
         step={step}
         placeholder={placeholder}
+        data-id={idAttribute}
         tabIndex="-1"
         onChange={noop}
       ></input>
+    );
+  }
+
+  if (type === 'hidden') {
+    return (
+      <FakeHiddenInput
+        className={classes}
+        type="text"
+        name={name}
+        value={currentValue}
+        placeholder={placeholder}
+        data-id={idAttribute}
+        tabIndex="-1"
+        onChange={noop}
+      ></FakeHiddenInput>
     );
   }
 
@@ -124,6 +150,7 @@ const InputField = ({ type, id, attributes }) => {
       name={name}
       value={currentValue}
       placeholder={placeholder}
+      data-id={idAttribute}
       tabIndex="-1"
       onChange={noop}
     ></input>

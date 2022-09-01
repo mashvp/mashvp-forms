@@ -26,6 +26,11 @@ class Form
         }
     }
 
+    public function exists()
+    {
+        return $this->post !== null;
+    }
+
     public function getPost()
     {
         return $this->post;
@@ -69,8 +74,7 @@ class Form
             return null;
         }
 
-        return get_post_meta($this->post->ID, self::FORM_OPTIONS_META_NAME, true);
-        ;
+        return get_post_meta($this->post->ID, self::FORM_OPTIONS_META_NAME, true);;
     }
 
     public function getOption($name, $raw = false)
@@ -93,10 +97,13 @@ class Form
         Renderer::renderTemplate(
             'front/form',
             [
-                'post' => $this->post,
-                'form_data' => $form_data,
-                'form' => $this,
+                'post'             => $this->post,
+                'form_data'        => $form_data,
+                'form'             => $this,
+            ],
+            [
                 'is_admin_preview' => Utils::get($this->options, 'is_admin_preview'),
+                'hidden_data'      => Utils::get($this->options, 'hidden_data', []),
             ]
         );
     }
@@ -205,7 +212,7 @@ class Form
             'posts_per_page' => -1,
         ]);
 
-        return array_map(function($form_id) {
+        return array_map(function ($form_id) {
             return new Form($form_id);
         }, wp_list_pluck($query->posts, 'ID'));
     }

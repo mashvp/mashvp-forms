@@ -64,4 +64,28 @@ function mashvp_forms__save_post($post_id)
     Admin::instance()->savePostData($post_id);
 }
 
+/** ===== PUBLIC FACING FUNCTIONS ===== */
+
+if (!function_exists('mvpf_render')) {
+    /**
+     * Render a form by ID
+     *
+     * Similar to the [mashvp-forms] shortcode, but it also allows to pass
+     * additional values.
+     */
+    function mvpf_render($id, $args = []) {
+        $args = wp_parse_args($args, [
+            'hidden_data'      => [],
+            'is_admin_preview' => false,
+        ]);
+
+        $form = new Form($id, $args);
+
+        if ($form->exists()) {
+            $form->render();
+        }
+    }
+}
+
+/** ===== HOOKS ===== */
 add_action('mvpf__submission_created', [Email::class, 'handle'], 10, 2);

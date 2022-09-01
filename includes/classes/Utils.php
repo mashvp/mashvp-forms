@@ -54,4 +54,19 @@ abstract class Utils
 
         return $default;
     }
+
+    public static function get_render_global($prop, $default = null)
+    {
+        if (
+            isset($GLOBALS['__mvpf_render_globals']) &&
+            is_array($GLOBALS['__mvpf_render_globals']) &&
+            !empty($GLOBALS['__mvpf_render_globals'])
+        ) {
+            $globals = $GLOBALS['__mvpf_render_globals'];
+
+            return static::get($globals, $prop, $default);
+        }
+
+        return $default;
+    }
 }

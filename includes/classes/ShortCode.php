@@ -9,7 +9,10 @@ use Mashvp\Forms\Utils;
 
 class ShortCode extends SingletonClass
 {
-    private const DEFAULT_ATTRIBUTES = [ 'id' => false, 'is_admin_preview' => false ];
+    private const DEFAULT_ATTRIBUTES = [
+        'id'               => false,
+        'is_admin_preview' => false,
+    ];
 
     public function register()
     {
