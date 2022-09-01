@@ -3,7 +3,6 @@
 namespace Mashvp\Forms\Notifications;
 
 use Mashvp\Forms\Notifications\GenericNotification;
-use Mashvp\Forms\Form;
 use Mashvp\Forms\Renderer;
 use Mashvp\Forms\Submission;
 
@@ -11,8 +10,6 @@ class Email extends GenericNotification
 {
     private static function sendNotificationMail($to, $submission, $form)
     {
-        $site_name = get_bloginfo('name');
-
         $url_parts = parse_url(home_url());
         $domain = $url_parts['host'];
 
