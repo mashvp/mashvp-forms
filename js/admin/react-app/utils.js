@@ -449,7 +449,7 @@ export const toolbarItems = [
     className: '',
   },
   {
-    _skip: ['label', 'placeholder'],
+    _skip: ['placeholder'],
     type: 'hidden',
     label: __('Hidden', 'mashvp-forms'),
     id: '',
