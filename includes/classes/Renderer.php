@@ -10,6 +10,7 @@ class Renderer extends StaticClass
     public static function renderTemplate($name, $locals = [])
     {
         $path = Utils::template_path($name);
+        $path = apply_filters('mvpf/template_path', $path, $name, $locals);
 
         if (is_readable($path)) {
             extract($locals);
