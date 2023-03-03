@@ -8,7 +8,6 @@ use Mashvp\Forms\Front;
 use Mashvp\Forms\ShortCode;
 
 use Mashvp\Forms\Form;
-use Mashvp\Forms\Submission;
 use Mashvp\Forms\SubmissionHandler;
 
 use Mashvp\Forms\Notifications\Email;
