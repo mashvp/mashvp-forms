@@ -34,9 +34,9 @@ export default class extends ApplicationController {
       target.dataset.status = status;
 
       if (status === 'success') {
-        target.innerText = defaultSuccessMessage || message;
+        target.innerHTML = defaultSuccessMessage || message;
       } else {
-        target.innerText = message;
+        target.innerHTML = message;
       }
     });
   }
