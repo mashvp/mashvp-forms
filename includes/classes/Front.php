@@ -22,6 +22,8 @@ class Front extends SingletonClass
                 'mashvp-forms',
                 MASHVP_FORMS__PATH . 'languages'
             );
+
+            $GLOBALS['__mvpf_form_iteration'] = 1;
         }
     }
 

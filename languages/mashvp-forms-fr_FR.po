@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Mashvp — Forms 0.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mashvp-forms\n"
 "POT-Creation-Date: 2022-05-12T18:18:24+02:00\n"
-"PO-Revision-Date: 2022-09-01 14:04+0000\n"
+"PO-Revision-Date: 2023-08-28 13:57+0000\n"
 "Last-Translator: \n"
 "Language-Team: Français\n"
 "Language: fr_FR\n"
@@ -20,7 +20,7 @@ msgctxt "Action"
 msgid "Export form submissions"
 msgstr "Exporter les messages"
 
-#: js/admin/react-app/components/AppControls.js:13
+#: js/admin/react-app/components/AppControls.js:13 dist/index.min.js:2252
 msgid "Add row"
 msgstr "Ajouter une ligne"
 
@@ -41,7 +41,7 @@ msgstr ""
 "Veuillez vous assurer que la version sélectionnée corresponde bien à la "
 "version des clés, sinon reCAPTCHA ne fonctionnera pas correctement."
 
-#: js/admin/react-app/utils.js:439
+#: js/admin/react-app/utils.js:456
 msgctxt "Builtin message zone placeholder example"
 msgid ""
 "Status messages are inserted in this zone if the form runs in AJAX mode."
@@ -49,22 +49,22 @@ msgstr ""
 "Les messages de statut sont insérés dans cette zone si le mode AJAX est "
 "sélectionné."
 
-#: js/admin/react-app/utils.js:657
+#: js/admin/react-app/utils.js:675
 msgctxt "Button HTML type"
 msgid "Button"
 msgstr "Bouton"
 
-#: js/admin/react-app/utils.js:659
+#: js/admin/react-app/utils.js:677
 msgctxt "Button HTML type"
 msgid "Reset"
 msgstr "Effacer formulaire"
 
-#: js/admin/react-app/utils.js:658
+#: js/admin/react-app/utils.js:676
 msgctxt "Button HTML type"
 msgid "Submit"
 msgstr "Envoyer formulaire"
 
-#: js/admin/react-app/utils.js:292
+#: js/admin/react-app/utils.js:303 dist/index.min.js:2815
 msgid "Checkbox"
 msgstr "Case à cocher"
 
@@ -78,30 +78,30 @@ msgctxt "Checkbox field value"
 msgid "Yes"
 msgstr "Oui"
 
-#: js/admin/react-app/utils.js:315
+#: js/admin/react-app/utils.js:328
 msgid "Choice list"
 msgstr "Liste de choix"
 
-#: js/admin/react-app/utils.js:318
+#: js/admin/react-app/utils.js:331
 msgctxt "Choice list field default option"
 msgid "One"
 msgstr "Un"
 
-#: js/admin/react-app/utils.js:320
+#: js/admin/react-app/utils.js:333
 msgctxt "Choice list field default option"
 msgid "Three"
 msgstr "Trois"
 
-#: js/admin/react-app/utils.js:319
+#: js/admin/react-app/utils.js:332
 msgctxt "Choice list field default option"
 msgid "Two"
 msgstr "Deux"
 
-#: js/admin/react-app/utils.js:311
+#: js/admin/react-app/utils.js:324 dist/index.min.js:2820
 msgid "Composite"
 msgstr "Composé"
 
-#: js/admin/react-app/utils.js:383
+#: js/admin/react-app/utils.js:397 dist/index.min.js:2868
 msgid "Controls"
 msgstr "Contrôles"
 
@@ -135,34 +135,44 @@ msgctxt "CSV Exporter settings"
 msgid "Tab"
 msgstr "Tabulation"
 
-#: js/admin/react-app/utils.js:246
+#: dist/index.min.js:2892
+msgid "Custom content"
+msgstr "Contenu personnalisé"
+
+#: js/admin/react-app/utils.js:254 dist/index.min.js:2797
 msgid "Date and time"
 msgstr "Date et heure"
 
-#: js/admin/react-app/utils.js:664
+#: js/admin/react-app/utils.js:682
 msgctxt "DateTime HTML type"
 msgid "Date"
 msgstr "Date"
 
-#: js/admin/react-app/utils.js:663
+#: js/admin/react-app/utils.js:681
 msgctxt "DateTime HTML type"
 msgid "Date and time"
 msgstr "Date et heure"
 
-#: js/admin/react-app/utils.js:665
+#: js/admin/react-app/utils.js:683
 msgctxt "DateTime HTML type"
 msgid "Time"
 msgstr "Heure"
 
-#: js/admin/react-app/components/Row.js:15
+#: js/admin/react-app/components/Row.js:15 dist/index.min.js:2500
 msgid "Drop items here"
 msgstr "Déposez des champs ici"
 
-#: js/admin/react-app/utils.js:185
+#: js/admin/react-app/utils.js:188 dist/index.min.js:2756
 msgid "Email"
 msgstr "Adresse email"
 
-#: js/admin/react-app/utils.js:187 js/admin/react-app/utils.js:672
+#: dist/index.min.js:2757
+msgctxt "Email field default value"
+msgid "user@example.com"
+msgstr "utilisateur@example.com"
+
+#: js/admin/controllers/form/email-settings-controller.js:85
+#: js/admin/react-app/utils.js:190 js/admin/react-app/utils.js:690
 msgctxt "Email field placeholder example"
 msgid "user@example.com"
 msgstr "prenom.nom@domaine.fr"
@@ -187,117 +197,123 @@ msgstr "Vous avez reçu un nouveau message depuis votre formulaire %s."
 msgid "Export format"
 msgstr "Format d'export"
 
-#: js/admin/react-app/utils.js:160
+#: js/admin/react-app/utils.js:162
 msgctxt "Field attribute label"
 msgid "Additional CSS classes"
 msgstr "Classes CSS additionnelles"
 
-#: js/admin/react-app/utils.js:140
+#: js/admin/react-app/utils.js:142
 msgctxt "Field attribute label"
 msgid "Allowed file types"
 msgstr "Types de fichiers autorisés"
 
-#: js/admin/react-app/utils.js:134
+#: js/admin/react-app/utils.js:136
 msgctxt "Field attribute label"
 msgid "Autocomplete"
 msgstr "Auto-complétion"
 
-#: js/admin/react-app/utils.js:149
+#: js/admin/react-app/utils.js:151
 msgctxt "Field attribute label"
 msgid "Date and/or time type"
 msgstr "Type de champ date et/ou heure"
 
-#: js/admin/react-app/utils.js:130
+#: js/admin/react-app/utils.js:132
 msgctxt "Field attribute label"
 msgid "Default value"
 msgstr "Valeur par défaut"
 
-#: js/admin/react-app/utils.js:138
+#: js/admin/react-app/utils.js:140
 msgctxt "Field attribute label"
 msgid "Disabled"
 msgstr "Désactivé"
 
-#: js/admin/react-app/utils.js:136
+#: js/admin/react-app/utils.js:138
 msgctxt "Field attribute label"
 msgid "Hide field"
 msgstr "Cacher le champ"
 
-#: js/admin/react-app/utils.js:128
+#: js/admin/react-app/utils.js:129
 msgctxt "Field attribute label"
 msgid "ID (technical identifier)"
 msgstr "ID (identifiant technique)"
 
-#: js/admin/react-app/utils.js:129
+#: js/admin/react-app/utils.js:130
 msgctxt "Field attribute label"
 msgid "Label"
 msgstr "Libellé"
 
-#: js/admin/react-app/utils.js:147
+#: js/admin/react-app/utils.js:149
 msgctxt "Field attribute label"
 msgid "Maximum"
 msgstr "Maximum"
 
-#: js/admin/react-app/utils.js:146
+#: js/admin/react-app/utils.js:148
 msgctxt "Field attribute label"
 msgid "Minimum"
 msgstr "Minimum"
 
-#: js/admin/react-app/utils.js:141
+#: js/admin/react-app/utils.js:143
 msgctxt "Field attribute label"
 msgid "Multiple choice"
 msgstr "Choix multiple"
 
-#: js/admin/react-app/utils.js:132
+#: js/admin/react-app/utils.js:134
 msgctxt "Field attribute label"
 msgid "Options"
 msgstr "Options"
 
-#: js/admin/react-app/utils.js:133
+#: js/admin/react-app/utils.js:135
 msgctxt "Field attribute label"
 msgid "Placeholder"
 msgstr "Valeur d'exemple"
 
-#: js/admin/react-app/utils.js:137
+#: js/admin/react-app/utils.js:139
 msgctxt "Field attribute label"
 msgid "Read-only"
 msgstr "Lecture seule"
 
-#: js/admin/react-app/utils.js:135
+#: js/admin/react-app/utils.js:137
 msgctxt "Field attribute label"
 msgid "Required"
 msgstr "Obligatoire"
 
-#: js/admin/react-app/utils.js:139
+#: js/admin/react-app/utils.js:141
 msgctxt "Field attribute label"
 msgid "Show label"
 msgstr "Afficher le libellé"
 
-#: js/admin/react-app/utils.js:148
+#: js/admin/react-app/utils.js:150
 msgctxt "Field attribute label"
 msgid "Step"
 msgstr "Pas"
 
-#: js/admin/react-app/utils.js:159
+#: js/admin/react-app/utils.js:161
 msgctxt "Field attribute label"
 msgid "Sucess message"
 msgstr "Message d'envoi réussi"
 
-#: js/admin/react-app/utils.js:127
+#: js/admin/react-app/utils.js:131
+msgctxt "Field attribute label"
+msgid "Technical name"
+msgstr "Nom technique"
+
+#: js/admin/react-app/utils.js:128
 msgctxt "Field attribute label"
 msgid "Type"
 msgstr "Type"
 
-#: js/admin/react-app/utils.js:166
+#: js/admin/react-app/utils.js:168
 msgctxt "Field attribute label"
 msgid "Unknown attribute"
 msgstr "Attribut inconnu"
 
-#: js/admin/react-app/utils.js:131 js/admin/react-app/utils.js:674
+#: js/admin/controllers/form/email-settings-controller.js:180
+#: js/admin/react-app/utils.js:133 js/admin/react-app/utils.js:692
 msgctxt "Field attribute label"
 msgid "Value"
 msgstr "Valeur"
 
-#: js/admin/react-app/utils.js:154
+#: js/admin/react-app/utils.js:156
 msgctxt "Field attribute label (HTML button type)"
 msgid "Type"
 msgstr "Type"
@@ -310,7 +326,20 @@ msgstr "Options du champ"
 msgid "Fields list"
 msgstr "Liste des champs"
 
-#: js/admin/react-app/utils.js:256
+#: dist/index.min.js:2802
+msgid "File upload"
+msgstr "Envoi de fichier"
+
+#: dist/index.min.js:2829
+msgid "First name"
+msgstr "Prénom"
+
+#: dist/index.min.js:2830
+msgctxt "First name field default value"
+msgid "John"
+msgstr "Jean"
+
+#: js/admin/react-app/utils.js:265
 msgctxt "Form field type"
 msgid "Select"
 msgstr "Liste déroulante"
@@ -323,7 +352,8 @@ msgstr "Champs du formulaire"
 msgid "Form options"
 msgstr "Options du formulaire"
 
-#: js/admin/react-app/utils.js:671
+#: js/admin/controllers/form/email-settings-controller.js:100
+#: js/admin/react-app/utils.js:689
 msgctxt "Form options"
 msgid "Condition"
 msgstr "Condition"
@@ -373,16 +403,26 @@ msgctxt "Form settings email"
 msgid "Add email"
 msgstr "Ajouter une adresse mail"
 
-#: js/admin/react-app/utils.js:673
+#: js/admin/controllers/form/email-settings-controller.js:164
+#: js/admin/react-app/utils.js:691
 msgctxt "Form settings email condition"
 msgid "IF"
 msgstr "SI"
 
-#: js/admin/react-app/utils.js:402
+#: dist/index.min.js:2824
+msgid "Full name"
+msgstr "Nom complet"
+
+#: js/admin/react-app/utils.js:418 dist/index.min.js:2882
 msgid "Generic button"
 msgstr "Bouton générique"
 
-#: js/admin/react-app/utils.js:403
+#: dist/index.min.js:2883
+msgctxt "Generic button field default value"
+msgid "Generic button"
+msgstr "Bouton générique"
+
+#: js/admin/react-app/utils.js:419
 msgctxt "Generic button field placeholder example"
 msgid "Generic button"
 msgstr "Bouton générique"
@@ -417,15 +457,15 @@ msgctxt "Global settings section"
 msgid "Spam protection"
 msgstr "Protection anti-spam"
 
-#: js/admin/react-app/utils.js:453
+#: js/admin/react-app/utils.js:471
 msgid "Hidden"
 msgstr "Texte caché"
 
-#: js/admin/react-app/utils.js:456
+#: js/admin/react-app/utils.js:474
 msgid "Hidden value"
 msgstr "Valeur cachée"
 
-#: js/admin/react-app/utils.js:431
+#: js/admin/react-app/utils.js:448
 msgid "Horizontal separator"
 msgstr "Séparateur horizontal"
 
@@ -438,289 +478,298 @@ msgstr "http://mashvp.com/fr"
 msgid "Info"
 msgstr "Informations"
 
-#: js/admin/react-app/utils.js:462
+#: js/admin/react-app/utils.js:480
 msgctxt "Input autocomplete value"
 msgid "(none)"
 msgstr "(aucune)"
 
-#: js/admin/react-app/utils.js:476
+#: js/admin/react-app/utils.js:494
 msgctxt "Input autocomplete value"
 msgid "Additional (middle) name"
 msgstr "Autres prénoms"
 
-#: js/admin/react-app/utils.js:550
+#: js/admin/react-app/utils.js:568
 msgctxt "Input autocomplete value"
 msgid "Address administrative level 1"
 msgstr "Adresse administrative niveau 1"
 
-#: js/admin/react-app/utils.js:545
+#: js/admin/react-app/utils.js:563
 msgctxt "Input autocomplete value"
 msgid "Address administrative level 2"
 msgstr "Adresse administrative niveau 2"
 
-#: js/admin/react-app/utils.js:540
+#: js/admin/react-app/utils.js:558
 msgctxt "Input autocomplete value"
 msgid "Address administrative level 3"
 msgstr "Adresse administrative niveau 3"
 
-#: js/admin/react-app/utils.js:535
+#: js/admin/react-app/utils.js:553
 msgctxt "Input autocomplete value"
 msgid "Address administrative level 4"
 msgstr "Adresse administrative niveau 4"
 
-#: js/admin/react-app/utils.js:520
+#: js/admin/react-app/utils.js:538
 msgctxt "Input autocomplete value"
 msgid "Address line 1"
 msgstr "Adresse ligne 1"
 
-#: js/admin/react-app/utils.js:525
+#: js/admin/react-app/utils.js:543
 msgctxt "Input autocomplete value"
 msgid "Address line 2"
 msgstr "Adresse ligne 2"
 
-#: js/admin/react-app/utils.js:530
+#: js/admin/react-app/utils.js:548
 msgctxt "Input autocomplete value"
 msgid "Address line 3"
 msgstr "Adresse ligne 3"
 
-#: js/admin/react-app/utils.js:616
+#: js/admin/react-app/utils.js:634
 msgctxt "Input autocomplete value"
 msgid "Birthday"
 msgstr "Date de naissance"
 
-#: js/admin/react-app/utils.js:617
+#: js/admin/react-app/utils.js:635
 msgctxt "Input autocomplete value"
 msgid "Birthday day"
 msgstr "Jour de naissance"
 
-#: js/admin/react-app/utils.js:618
+#: js/admin/react-app/utils.js:636
 msgctxt "Input autocomplete value"
 msgid "Birthday month"
 msgstr "Mois de naissance"
 
-#: js/admin/react-app/utils.js:623
+#: js/admin/react-app/utils.js:641
 msgctxt "Input autocomplete value"
 msgid "Birthday year"
 msgstr "Année de naissance"
 
-#: js/admin/react-app/utils.js:562
+#: js/admin/react-app/utils.js:580
 msgctxt "Input autocomplete value"
 msgid "City"
 msgstr "Ville"
 
-#: js/admin/react-app/utils.js:514
+#: js/admin/react-app/utils.js:532
 msgctxt "Input autocomplete value"
 msgid "Company name"
 msgstr "Nom d'entreprise"
 
-#: js/admin/react-app/utils.js:555
+#: js/admin/react-app/utils.js:573
 msgctxt "Input autocomplete value"
 msgid "Country"
 msgstr "Pays"
 
-#: js/admin/react-app/utils.js:556
+#: js/admin/react-app/utils.js:574
 msgctxt "Input autocomplete value"
 msgid "Country name"
 msgstr "Nom du pays"
 
-#: js/admin/react-app/utils.js:569
+#: js/admin/react-app/utils.js:587
 msgctxt "Input autocomplete value"
 msgid "Credit card additional name"
 msgstr "Carte de crédit : Autres prénoms"
 
-#: js/admin/react-app/utils.js:584
+#: js/admin/react-app/utils.js:602
 msgctxt "Input autocomplete value"
 msgid "Credit card expiration"
 msgstr "Carte de crédit : Date d'expiration"
 
-#: js/admin/react-app/utils.js:589
+#: js/admin/react-app/utils.js:607
 msgctxt "Input autocomplete value"
 msgid "Credit card expiration month"
 msgstr "Carte de crédit : Mois d'expiration"
 
-#: js/admin/react-app/utils.js:594
+#: js/admin/react-app/utils.js:612
 msgctxt "Input autocomplete value"
 msgid "Credit card expiration year"
 msgstr "Carte de crédit : Année d'expiration"
 
-#: js/admin/react-app/utils.js:574
+#: js/admin/react-app/utils.js:592
 msgctxt "Input autocomplete value"
 msgid "Credit card family name"
 msgstr "Carte de crédit : Nom de famille"
 
-#: js/admin/react-app/utils.js:564
+#: js/admin/react-app/utils.js:582
 msgctxt "Input autocomplete value"
 msgid "Credit card given name"
 msgstr "Carte de crédit : Prénom"
 
-#: js/admin/react-app/utils.js:563
+#: js/admin/react-app/utils.js:581
 msgctxt "Input autocomplete value"
 msgid "Credit card name"
 msgstr "Carte de crédit : Nom"
 
-#: js/admin/react-app/utils.js:579
+#: js/admin/react-app/utils.js:597
 msgctxt "Input autocomplete value"
 msgid "Credit card number"
 msgstr "Carte de crédit : Numéro"
 
-#: js/admin/react-app/utils.js:599
+#: js/admin/react-app/utils.js:617
 msgctxt "Input autocomplete value"
 msgid "Credit card security code"
 msgstr "Carte de crédit : Cryptogramme visuel"
 
-#: js/admin/react-app/utils.js:604
+#: js/admin/react-app/utils.js:622
 msgctxt "Input autocomplete value"
 msgid "Credit card type"
 msgstr "Carte de crédit : Type"
 
-#: js/admin/react-app/utils.js:499
+#: js/admin/react-app/utils.js:517
 msgctxt "Input autocomplete value"
 msgid "Current password"
 msgstr "Mot de passe actuel"
 
-#: js/admin/react-app/utils.js:492
+#: js/admin/react-app/utils.js:510
 msgctxt "Input autocomplete value"
 msgid "Email address"
 msgstr "Adresse email"
 
-#: js/admin/react-app/utils.js:481
+#: js/admin/react-app/utils.js:499
 msgctxt "Input autocomplete value"
 msgid "Family (last) name"
 msgstr "Nom de famille"
 
-#: js/admin/react-app/utils.js:624
+#: js/admin/react-app/utils.js:642
 msgctxt "Input autocomplete value"
 msgid "Gender"
 msgstr "Genre"
 
-#: js/admin/react-app/utils.js:471
+#: js/admin/react-app/utils.js:489
 msgctxt "Input autocomplete value"
 msgid "Given (first) name"
 msgstr "Prénom"
 
-#: js/admin/react-app/utils.js:466
+#: js/admin/react-app/utils.js:484
 msgctxt "Input autocomplete value"
 msgid "Honorific prefix"
 msgstr "Préfixe honorifique"
 
-#: js/admin/react-app/utils.js:486
+#: js/admin/react-app/utils.js:504
 msgctxt "Input autocomplete value"
 msgid "Honorific suffix"
 msgstr "Suffixe honorifique"
 
-#: js/admin/react-app/utils.js:651
+#: js/admin/react-app/utils.js:669
 msgctxt "Input autocomplete value"
 msgid "IMPP"
 msgstr "IMPP"
 
-#: js/admin/react-app/utils.js:509
+#: js/admin/react-app/utils.js:527
 msgctxt "Input autocomplete value"
 msgid "Job title"
 msgstr "Métier"
 
-#: js/admin/react-app/utils.js:615
+#: js/admin/react-app/utils.js:633
 msgctxt "Input autocomplete value"
 msgid "Language"
 msgstr "Langue"
 
-#: js/admin/react-app/utils.js:465
+#: js/admin/react-app/utils.js:483
 msgctxt "Input autocomplete value"
 msgid "Name"
 msgstr "Nom"
 
-#: js/admin/react-app/utils.js:494
+#: js/admin/react-app/utils.js:512
 msgctxt "Input autocomplete value"
 msgid "New password"
 msgstr "Nouveau mot de passe"
 
-#: js/admin/react-app/utils.js:491
+#: js/admin/react-app/utils.js:509
 msgctxt "Input autocomplete value"
 msgid "Nickname"
 msgstr "Surnom"
 
-#: js/admin/react-app/utils.js:463
+#: js/admin/react-app/utils.js:481
 msgctxt "Input autocomplete value"
 msgid "Off"
 msgstr "Désactivé"
 
-#: js/admin/react-app/utils.js:464
+#: js/admin/react-app/utils.js:482
 msgctxt "Input autocomplete value"
 msgid "On"
 msgstr "Activé"
 
-#: js/admin/react-app/utils.js:504
+#: js/admin/react-app/utils.js:522
 msgctxt "Input autocomplete value"
 msgid "One time code"
 msgstr "Code à usage unique"
 
-#: js/admin/react-app/utils.js:653
+#: js/admin/react-app/utils.js:671
 msgctxt "Input autocomplete value"
 msgid "Photo URL"
 msgstr "URL photo de profil"
 
-#: js/admin/react-app/utils.js:561
+#: js/admin/react-app/utils.js:579
 msgctxt "Input autocomplete value"
 msgid "Postal code"
 msgstr "Code postal"
 
-#: js/admin/react-app/utils.js:515
+#: js/admin/react-app/utils.js:533
 msgctxt "Input autocomplete value"
 msgid "Street address"
 msgstr "Adresse"
 
-#: js/admin/react-app/utils.js:625
+#: js/admin/react-app/utils.js:643
 msgctxt "Input autocomplete value"
 msgid "Telephone"
 msgstr "Numéro de téléphone"
 
-#: js/admin/react-app/utils.js:636
+#: js/admin/react-app/utils.js:654
 msgctxt "Input autocomplete value"
 msgid "Telephone area code"
 msgstr "Téléphone : Code régional"
 
-#: js/admin/react-app/utils.js:626
+#: js/admin/react-app/utils.js:644
 msgctxt "Input autocomplete value"
 msgid "Telephone country code"
 msgstr "Téléphone : Code pays"
 
-#: js/admin/react-app/utils.js:646
+#: js/admin/react-app/utils.js:664
 msgctxt "Input autocomplete value"
 msgid "Telephone extension"
 msgstr "Téléphone : Extension"
 
-#: js/admin/react-app/utils.js:641
+#: js/admin/react-app/utils.js:659
 msgctxt "Input autocomplete value"
 msgid "Telephone local (without country and area code)"
 msgstr "Téléphone : Numéro local (sans code pays ou régional)"
 
-#: js/admin/react-app/utils.js:631
+#: js/admin/react-app/utils.js:649
 msgctxt "Input autocomplete value"
 msgid "Telephone national (without country code)"
 msgstr "Téléphone : Numéro national (sans code régional)"
 
-#: js/admin/react-app/utils.js:610
+#: js/admin/react-app/utils.js:628
 msgctxt "Input autocomplete value"
 msgid "Transaction amount"
 msgstr "Valeur de transaction"
 
-#: js/admin/react-app/utils.js:605
+#: js/admin/react-app/utils.js:623
 msgctxt "Input autocomplete value"
 msgid "Transaction currency"
 msgstr "Devise de transaction"
 
-#: js/admin/react-app/utils.js:652
+#: js/admin/react-app/utils.js:670
 msgctxt "Input autocomplete value"
 msgid "URL"
 msgstr "URL"
 
-#: js/admin/react-app/utils.js:493
+#: js/admin/react-app/utils.js:511
 msgctxt "Input autocomplete value"
 msgid "Username"
 msgstr "Nom d'utilisateur"
 
-#: js/admin/react-app/utils.js:172
+#: js/admin/react-app/utils.js:174 dist/index.min.js:2747
 msgid "Inputs"
 msgstr "Champs de saisie"
+
+#: dist/index.min.js:2854
+msgid "Last name"
+msgstr "Nom de famille"
+
+#: dist/index.min.js:2855
+msgctxt "Last name field default value"
+msgid "Doe"
+msgstr "Martin"
 
 #. Author of the plugin
 msgid "Mashvp"
@@ -762,7 +811,16 @@ msgctxt "Message submission status"
 msgid "Your message was sent successfully."
 msgstr "Votre message a bien été envoyé."
 
-#: js/admin/react-app/utils.js:414
+#: dist/index.min.js:2841
+msgid "Middle name"
+msgstr "Autres prénoms"
+
+#: dist/index.min.js:2842
+msgctxt "Middle name field default value"
+msgid "H."
+msgstr "Pierre"
+
+#: js/admin/react-app/utils.js:431
 msgid "Miscellaneous"
 msgstr "Divers"
 
@@ -785,24 +843,34 @@ msgctxt "Notification email status"
 msgid "Email sent"
 msgstr "Email envoyé"
 
-#: js/admin/react-app/utils.js:237
+#: js/admin/react-app/utils.js:244 dist/index.min.js:2792
 msgid "Number"
 msgstr "Nombre"
 
-#: js/admin/react-app/utils.js:198
+#: js/admin/react-app/utils.js:202 dist/index.min.js:2765
 msgid "Password"
 msgstr "Mot de passe"
 
-#: js/admin/react-app/utils.js:200
+#: dist/index.min.js:2766
+msgctxt "Password field default value"
+msgid "password"
+msgstr "mot de passe"
+
+#: js/admin/react-app/utils.js:204
 msgctxt "Password field placeholder example"
 msgid "********"
 msgstr "**********"
 
-#: js/admin/react-app/utils.js:211
+#: js/admin/react-app/utils.js:216 dist/index.min.js:2774
 msgid "Phone number"
 msgstr "Numéro de téléphone"
 
-#: js/admin/react-app/utils.js:213
+#: dist/index.min.js:2775
+msgctxt "Phone number field default value"
+msgid "(541) 754-3010"
+msgstr "05 12 34 56 78"
+
+#: js/admin/react-app/utils.js:218
 msgctxt "Phone number field placeholder example"
 msgid "(541) 754-3010"
 msgstr "01 02 03 04 05"
@@ -929,7 +997,7 @@ msgctxt "Quotation marks"
 msgid "“%s”"
 msgstr "« %s »"
 
-#: js/admin/react-app/utils.js:300
+#: js/admin/react-app/utils.js:312
 msgid "Range"
 msgstr "Intervalle"
 
@@ -992,11 +1060,16 @@ msgctxt "reCAPTCHA"
 msgid "Version"
 msgstr "Version"
 
-#: js/admin/react-app/utils.js:395
+#: js/admin/react-app/utils.js:410 dist/index.min.js:2877
 msgid "Reset form button"
 msgstr "Bouton effacer le formulaire"
 
-#: js/admin/react-app/utils.js:396
+#: dist/index.min.js:2878
+msgctxt "Reset form field default value"
+msgid "Reset"
+msgstr "Réinitialiser"
+
+#: js/admin/react-app/utils.js:411
 msgctxt "Reset form field placeholder example"
 msgid "Reset"
 msgstr "Effacer"
@@ -1013,22 +1086,25 @@ msgstr "Choisir un formulaire"
 msgid "Select an export format"
 msgstr "Choisir un format d'export"
 
-#: js/admin/react-app/utils.js:676
+#: js/admin/controllers/form/select-options-controller.js:58
+#: js/admin/react-app/utils.js:694
 msgctxt "Select field option attribute"
 msgid "Label"
 msgstr "Libellé"
 
-#: js/admin/react-app/utils.js:675
+#: js/admin/controllers/form/select-options-controller.js:49
+#: js/admin/react-app/utils.js:693
 msgctxt "Select field option attribute"
 msgid "Value"
 msgstr "Valeur"
 
-#: js/admin/react-app/utils.js:670
+#: js/admin/controllers/form/field-options-controller.js:210
+#: js/admin/react-app/utils.js:688
 msgctxt "Select field options"
 msgid "Add an option"
 msgstr "Ajouter une option"
 
-#: js/admin/react-app/utils.js:257
+#: js/admin/react-app/utils.js:266
 msgctxt "Select field placeholder example"
 msgid "Menu of options"
 msgstr "Liste d'options"
@@ -1043,11 +1119,11 @@ msgstr "Ça se prononce %s."
 msgid "Shortcode"
 msgstr "Shortcode"
 
-#: js/admin/react-app/utils.js:438
+#: js/admin/react-app/utils.js:455
 msgid "Status message zone"
 msgstr "Zone de message de statut"
 
-#: includes/classes/SubmissionHandler.php:78 js/admin/react-app/utils.js:444
+#: includes/classes/SubmissionHandler.php:78 js/admin/react-app/utils.js:461
 msgctxt "Submission default success message"
 msgid "Message sent successfully"
 msgstr "Message envoyé avec succès"
@@ -1086,51 +1162,76 @@ msgctxt "Submission preview"
 msgid "No fields found"
 msgstr "Aucun champ trouvé"
 
-#: js/admin/react-app/utils.js:388
+#: js/admin/react-app/utils.js:402 dist/index.min.js:2872
 msgid "Submit form button"
 msgstr "Bouton envoyer le formulaire"
 
-#: js/admin/react-app/utils.js:389
+#: dist/index.min.js:2873
+msgctxt "Submit form field default value"
+msgid "Send"
+msgstr "Envoyer"
+
+#: js/admin/react-app/utils.js:403
 msgctxt "Submit form field placeholder example"
 msgid "Send"
 msgstr "Envoyer"
 
-#: js/admin/react-app/utils.js:176
+#: js/admin/react-app/utils.js:178 dist/index.min.js:2751
 msgid "Text"
 msgstr "Texte"
 
-#: js/admin/react-app/utils.js:279
+#: js/admin/react-app/utils.js:289 dist/index.min.js:2806
 msgid "Text area"
 msgstr "Zone de texte"
 
-#: js/admin/react-app/utils.js:281
+#: dist/index.min.js:2807
+msgctxt "Text area field default value"
+msgid "Multi-line text"
+msgstr "Texte multiligne"
+
+#: js/admin/react-app/utils.js:291
 msgctxt "Text area field placeholder example"
 msgid "Multi-line text"
 msgstr "Texte multiligne"
 
-#: js/admin/react-app/utils.js:178
+#: dist/index.min.js:2752
+msgctxt "Text field default value"
+msgid "Text"
+msgstr "Texte"
+
+#: js/admin/react-app/utils.js:180
 msgctxt "Text field placeholder example"
 msgid "Text"
 msgstr "Texte"
 
-#: js/admin/react-app/utils.js:420
+#: js/admin/react-app/utils.js:437 dist/index.min.js:2896
 msgid "Text message"
 msgstr "Message textuel"
 
-#: js/admin/react-app/utils.js:421
+#: dist/index.min.js:2897
+msgctxt "Text message field default value"
+msgid "You can insert text anywhere in the form"
+msgstr "Vous vouvez insérer du texte n'importe où dans le formulaire"
+
+#: js/admin/react-app/utils.js:438
 msgctxt "Text message field placeholder example"
 msgid "You can insert text anywhere in the form"
 msgstr "Vous pouvez insérer du texte n'importe où dans le formulaire"
 
-#: js/admin/react-app/components/Item.js:91
+#: js/admin/react-app/components/Item.js:91 dist/index.min.js:2311
 msgid "Unknown field type"
 msgstr "Type de champ inconnu"
 
-#: js/admin/react-app/utils.js:224
+#: js/admin/react-app/utils.js:230 dist/index.min.js:2783
 msgid "URL"
 msgstr "URL"
 
-#: js/admin/react-app/utils.js:226
+#: dist/index.min.js:2784
+msgctxt "URL field default value"
+msgid "http://example.com/"
+msgstr "http://example.com/"
+
+#: js/admin/react-app/utils.js:232
 msgctxt "URL field placeholder example"
 msgid "http://example.com/"
 msgstr "http://example.com/"

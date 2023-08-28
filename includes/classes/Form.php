@@ -93,19 +93,24 @@ class Form
         }
 
         $form_data = $this->getFormData();
+        $iteration = Utils::get($GLOBALS, '__mvpf_form_iteration', 1);
 
         Renderer::renderTemplate(
             'front/form',
             [
-                'post'             => $this->post,
-                'form_data'        => $form_data,
-                'form'             => $this,
+                'post'            => $this->post,
+                'form_data'       => $form_data,
+                'form'            => $this,
+                'form_attributes' => Utils::get($this->options, 'form_attributes', []),
             ],
             [
+                'form_iteration'   => $iteration,
                 'is_admin_preview' => Utils::get($this->options, 'is_admin_preview'),
                 'hidden_data'      => Utils::get($this->options, 'hidden_data', []),
             ]
         );
+
+        $GLOBALS['__mvpf_form_iteration'] = $iteration + 1;
     }
 
     public function getFields()
@@ -193,6 +198,14 @@ class Form
     public static function get($object, $properties, $default = '')
     {
         return esc_html(self::getRaw($object, $properties, $default));
+    }
+
+    public static function getIter($object, $properties, $default = '')
+    {
+        $iter = Utils::get($GLOBALS, '__mvpf_form_iteration', 1);
+        $value = static::get($object, $properties, $default);
+
+        return "{$value}--{$iter}";
     }
 
     public static function required($field)

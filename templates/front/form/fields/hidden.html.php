@@ -25,7 +25,7 @@
   <input
     type="hidden"
     name="<?= Form::get($field, 'id') ?>"
-    id="<?= Form::get($field, 'id') ?>"
+    id="<?= Form::getIter($field, 'id') ?>"
     data-id="<?= Form::get($field, 'attributes.id') ?>"
     value="<?= esc_attr($value) ?>"
   >

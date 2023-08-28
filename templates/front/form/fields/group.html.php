@@ -3,7 +3,7 @@
   use Mashvp\Forms\Renderer;
 ?>
 
-<label class="mvpf__form-field--group <?= Form::get($field, 'attributes.className') ?>" for="<?= Form::get($field, 'id') ?>">
+<label class="mvpf__form-field--group <?= Form::get($field, 'attributes.className') ?>" for="<?= Form::getIter($field, 'id') ?>">
   <span class="label"><?= Form::get($field, 'attributes.label') ?></span>
 
   <?php

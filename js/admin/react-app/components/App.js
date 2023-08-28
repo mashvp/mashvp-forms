@@ -21,9 +21,10 @@ const App = ({ initialData }) => {
 
   const serializeData = () => JSON.stringify({ rows });
 
-  const handleOnDrop = useCallback((event) => setRows(applyDrag(rows, event)), [
-    rows,
-  ]);
+  const handleOnDrop = useCallback(
+    (event) => setRows(applyDrag(rows, event)),
+    [rows]
+  );
 
   const handleOnItemDrop = useCallback(
     (rowID, dropResult) => {
@@ -70,6 +71,10 @@ const App = ({ initialData }) => {
         items.forEach((item) => {
           if (item.id === id) {
             item.attributes = { ...item.attributes, ...attributes };
+
+            if ('name' in item.attributes && item.attributes.name !== item.id) {
+              item.id = item.attributes.name;
+            }
           }
         });
       });

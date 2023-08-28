@@ -77,6 +77,7 @@ if (!function_exists('mvpf_render')) {
         $args = wp_parse_args($args, [
             'hidden_data'      => [],
             'is_admin_preview' => false,
+            'form_attributes'  => [],
         ]);
 
         $form = new Form($id, $args);
