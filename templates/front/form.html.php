@@ -62,6 +62,24 @@
   data-form-id="<?= $post->ID ?>"
   data-controller="<?= $controllers ?>"
   data-action="<?= $actions ?>"
+
+  <?php
+    if (
+      isset($form_attributes) &&
+      array_key_exists('data', $form_attributes) &&
+      is_array($form_attributes['data']) &&
+      !empty($form_attributes['data'])
+    ):
+  ?>
+    <?php
+      foreach ($form_attributes['data'] as $key => $value) {
+        $key = esc_attr($key);
+        $value = esc_attr($value);
+
+        echo "data-{$key}=\"{$value}\"";
+      }
+    ?>
+  <?php endif ?>
 >
   <?php if (isset($form_data['rows'])): ?>
     <?php foreach ($form_data['rows'] as $row): ?>
