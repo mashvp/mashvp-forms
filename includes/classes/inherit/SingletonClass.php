@@ -4,18 +4,20 @@ namespace Mashvp;
 
 abstract class SingletonClass
 {
+    protected static $instances = [];
+
     final public static function instance()
     {
-        static $instance = null;
+        $class = static::class;
 
-        if ($instance === null) {
-            $instance = new static();
+        if (!isset(static::$instances[$class])) {
+            static::$instances[$class] = new static();
         }
 
-        return $instance;
+        return static::$instances[$class];
     }
 
-    protected function __construct()
+    final private function __construct()
     {
     }
 
