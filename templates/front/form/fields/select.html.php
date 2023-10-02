@@ -3,14 +3,14 @@
   use Mashvp\Forms\Renderer;
 ?>
 
-<label class="mvpf__form-field--select <?= Form::get($field, 'attributes.className') ?>" for="<?= Form::get($field, 'id') ?>">
+<label class="mvpf__form-field--select <?= Form::get($field, 'attributes.className') ?>" for="<?= Form::getIter($field, 'id') ?>">
   <?php Renderer::renderTemplate('front/form/fields/partials/label', ['field' => $field]) ?>
 
   <?php $defaultValue = Form::get($field, 'attributes.defaultValue') ?>
 
   <select
     name="<?= Form::get($field, 'id') ?>"
-    id="<?= Form::get($field, 'id') ?>"
+    id="<?= Form::getIter($field, 'id') ?>"
     <?= Form::required($field) ?>
   >
     <?php if (Form::get($field, 'attributes.placeholder')): ?>

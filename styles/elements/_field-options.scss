@@ -65,6 +65,24 @@
               width: 100%;
             }
           }
+
+          &:has(input[name='name']) {
+            @include transition((opacity));
+
+            &:not(:hover):not(:focus-within) {
+              opacity: 0.5;
+            }
+
+            span.option-field__label {
+              &::before {
+                content: '⚙️ ';
+              }
+            }
+
+            input[name='name'] {
+              font-family: 'Courier New', Courier, monospace;
+            }
+          }
         }
 
         &.className {
@@ -131,8 +149,7 @@
                 }
 
                 &:focus {
-                  box-shadow: 0 0 0 1px $red,
-                    0 0 2px 1px rgba($red, 0.8);
+                  box-shadow: 0 0 0 1px $red, 0 0 2px 1px rgba($red, 0.8);
                 }
               }
             }

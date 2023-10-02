@@ -91,6 +91,7 @@ export const itemTypes = [...inputTypes, ...additionalTypes];
 
 export const attributesPropType = PropTypes.shape({
   label: PropTypes.string,
+  name: PropTypes.string,
   defaultValue: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
@@ -127,6 +128,7 @@ export const attributeLabels = {
   type: _x('Type', 'Field attribute label', 'mashvp-forms'),
   id: _x('ID (technical identifier)', 'Field attribute label', 'mashvp-forms'),
   label: _x('Label', 'Field attribute label', 'mashvp-forms'),
+  name: _x('Technical name', 'Field attribute label', 'mashvp-forms'),
   defaultValue: _x('Default value', 'Field attribute label', 'mashvp-forms'),
   value: _x('Value', 'Field attribute label', 'mashvp-forms'),
   options: _x('Options', 'Field attribute label', 'mashvp-forms'),
@@ -179,6 +181,7 @@ export const toolbarItems = [
     autocomplete: '',
     required: false,
     className: '',
+    name: '',
   },
   {
     type: 'email',
@@ -192,6 +195,7 @@ export const toolbarItems = [
     autocomplete: 'email',
     required: false,
     className: '',
+    name: '',
   },
   {
     type: 'password',
@@ -205,6 +209,7 @@ export const toolbarItems = [
     autocomplete: 'new-password',
     required: false,
     className: '',
+    name: '',
   },
   {
     type: 'tel',
@@ -218,6 +223,7 @@ export const toolbarItems = [
     autocomplete: 'tel',
     required: false,
     className: '',
+    name: '',
   },
   {
     type: 'url',
@@ -231,6 +237,7 @@ export const toolbarItems = [
     autocomplete: '',
     required: false,
     className: '',
+    name: '',
   },
   {
     type: 'number',
@@ -240,6 +247,7 @@ export const toolbarItems = [
     autocomplete: '',
     required: false,
     className: '',
+    name: '',
   },
   {
     type: 'datetime-local',
@@ -250,6 +258,7 @@ export const toolbarItems = [
     autocomplete: '',
     required: false,
     className: '',
+    name: '',
   },
   {
     type: 'select',
@@ -263,6 +272,7 @@ export const toolbarItems = [
     defaultValue: '',
     required: false,
     className: '',
+    name: '',
   },
   //
   // TODO: File uploads are not currently handled
@@ -286,6 +296,7 @@ export const toolbarItems = [
     autocomplete: '',
     required: false,
     className: '',
+    name: '',
   },
   {
     type: 'checkbox',
@@ -294,6 +305,7 @@ export const toolbarItems = [
     showLabel: true,
     required: false,
     className: '',
+    name: '',
   },
   {
     type: 'range',
@@ -304,6 +316,7 @@ export const toolbarItems = [
     step: 1,
     required: false,
     className: '',
+    name: '',
   },
 
   {
@@ -322,6 +335,7 @@ export const toolbarItems = [
     defaultValue: null,
     required: false,
     className: '',
+    name: '',
   },
 
   // {
@@ -388,6 +402,7 @@ export const toolbarItems = [
     label: __('Submit form button', 'mashvp-forms'),
     value: _x('Send', 'Submit form field placeholder example', 'mashvp-forms'),
     className: '',
+    name: '',
   },
   {
     _skip: ['label'],
@@ -395,6 +410,7 @@ export const toolbarItems = [
     label: __('Reset form button', 'mashvp-forms'),
     value: _x('Reset', 'Reset form field placeholder example', 'mashvp-forms'),
     className: '',
+    name: '',
   },
   {
     _skip: ['label'],
@@ -407,6 +423,7 @@ export const toolbarItems = [
     ),
     htmlType: 'button',
     className: '',
+    name: '',
   },
 
   {
@@ -456,7 +473,7 @@ export const toolbarItems = [
     value: '',
     placeholder: __('Hidden value', 'mashvp-forms'),
     className: '',
-  }
+  },
 ];
 
 export const autocompleteValues = {

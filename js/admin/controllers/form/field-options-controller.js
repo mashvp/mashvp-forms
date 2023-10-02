@@ -100,7 +100,8 @@ export default class extends ApplicationController {
         case 'defaultValue':
         case 'value':
         case 'successMessage':
-        case 'id': {
+        case 'id':
+        case 'name': {
           const inputType = (() => {
             if (attributeName === 'defaultValue') {
               if (fieldType === 'checkbox') {
@@ -138,6 +139,15 @@ export default class extends ApplicationController {
               type="${inputType}"
               data-action="input->form--field-options#save"
             >${value}</textarea>`;
+          }
+
+          if (attributeName === 'name') {
+            return html`<input
+              name="${attributeName}"
+              type="${inputType}"
+              value="${value}"
+              data-action="change->form--field-options#save"
+            />`;
           }
 
           return html`<input
@@ -242,6 +252,7 @@ export default class extends ApplicationController {
     li.classList.add('option-field', name);
     li.dataset.id = id;
 
+    span.classList.add('option-field__label');
     span.textContent = label;
 
     const input = this.createInputForOptionField({
@@ -270,12 +281,20 @@ export default class extends ApplicationController {
       if (!skipAttributes.includes(key)) {
         const label = attributeLabels[key] || attributeLabels['undefined'];
 
+        const effectiveValue = (() => {
+          if (key === 'name') {
+            return id || value;
+          }
+
+          return value;
+        })();
+
         this.createOptionField({
           id,
           name: key,
           fieldType: type,
           label,
-          value,
+          value: effectiveValue,
 
           attributes,
         });

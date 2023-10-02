@@ -21,27 +21,65 @@
     }
   }
 
+  if (
+    isset($form_attributes) &&
+    array_key_exists('data-controller', $form_attributes) &&
+    is_array($form_attributes['data-controller']) &&
+    !empty($form_attributes['data-controller'])
+  ) {
+    $controllers = array_merge($controllers, $form_attributes['data-controller']);
+  }
+
+  if (
+    isset($form_attributes) &&
+    array_key_exists('data-action', $form_attributes) &&
+    is_array($form_attributes['data-action']) &&
+    !empty($form_attributes['data-action'])
+  ) {
+    $actions = array_merge($actions, $form_attributes['data-action']);
+  }
+
   $controllers = implode(' ', $controllers);
   $actions = implode(' ', $actions);
 
   // Do not use a <form> tag for admin previews as this breaks WordPress' post saving.
   $html_tag = $is_admin_preview ? 'div' : 'form';
 
-  $klass = ['mvpf', 'mvpf__form'];
+  $classnames = ['mvpf', 'mvpf__form'];
+
   if ($is_admin_preview) {
-    $klass[] = 'mvpf__form--preview';
+    $classnames[] = 'mvpf__form--preview';
   }
-  $klass = implode(' ', $klass);
+
+  $classnames = implode(' ', $classnames);
 ?>
 
 <<?= $html_tag ?>
   action="<?= admin_url('admin-ajax.php') ?>"
   method="post"
-  class="<?= $klass ?>"
+  class="<?= $classnames ?>"
   id="mvpf-form--<?= $post->ID ?>"
   data-form-id="<?= $post->ID ?>"
   data-controller="<?= $controllers ?>"
   data-action="<?= $actions ?>"
+
+  <?php
+    if (
+      isset($form_attributes) &&
+      array_key_exists('data', $form_attributes) &&
+      is_array($form_attributes['data']) &&
+      !empty($form_attributes['data'])
+    ):
+  ?>
+    <?php
+      foreach ($form_attributes['data'] as $key => $value) {
+        $key = esc_attr($key);
+        $value = esc_attr($value);
+
+        echo "data-{$key}=\"{$value}\"";
+      }
+    ?>
+  <?php endif ?>
 >
   <?php if (isset($form_data['rows'])): ?>
     <?php foreach ($form_data['rows'] as $row): ?>
