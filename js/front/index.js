@@ -1,5 +1,7 @@
 /* eslint-disable no-undef */
 
+import 'regenerator-runtime';
+
 import { Application } from '@hotwired/stimulus';
 import { definitionsFromContext } from '@hotwired/stimulus-webpack-helpers';
 
