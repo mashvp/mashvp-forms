@@ -2,7 +2,10 @@
   use Mashvp\Forms\Form;
   use Mashvp\Forms\Submission;
 
-  $values = Form::getRaw($field, 'value');
+  $values = Form::getRaw($field, 'value') ?: [];
+  if (!is_array($values)) {
+    $values = [];
+  }
 
   $options = array_filter(
     $values,
