@@ -12,6 +12,7 @@ class Email extends GenericNotification
     {
         $url_parts = parse_url(home_url());
         $domain = $url_parts['host'];
+        $site_name = get_bloginfo('name');
 
         if ($domain === 'localhost') {
             $domain = 'localhost.dev';
@@ -25,7 +26,7 @@ class Email extends GenericNotification
             sprintf(
                 '%s | %s',
                 $submission->getTitle(),
-                get_bloginfo('name')
+                $site_name
             ),
 
             // Content
@@ -40,7 +41,7 @@ class Email extends GenericNotification
             // Headers
             [
                 'Content-Type: text/html; charset=UTF-8',
-                "From: Mashvp Forms Notification <noreply@{$domain}>"
+                "From: {$site_name} Notification <noreply@{$domain}>"
             ]
         );
 
