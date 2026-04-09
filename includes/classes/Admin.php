@@ -1,477 +1,471 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Mashvp\Forms;
 
 use Mashvp\SingletonClass;
 use Mashvp\Forms\Renderer;
 use Mashvp\Forms\Utils;
 use Mashvp\Forms\Submission;
-
 use Mashvp\Forms\CSVExporter;
 
 class Admin extends SingletonClass
 {
-    public const GLOBAL_OPTIONS_NAME = '_mashvp-forms__global-options';
+  public const GLOBAL_OPTIONS_NAME = '_mashvp-forms__global-options';
 
-    public const FORM_FIELDS_META_NAME = '_mashvp-forms__fields';
-    public const FORM_OPTIONS_META_NAME = '_mashvp-forms__options';
+  public const FORM_FIELDS_META_NAME = '_mashvp-forms__fields';
 
-    public const SECURITY_CODE = 'qdCHbdMLD8U62WXDPSwfgGBzKN5WLR5r';
+  public const FORM_OPTIONS_META_NAME = '_mashvp-forms__options';
 
-    private function shouldInit()
-    {
-        if (isset($_GET['post_type'])) {
-            return in_array(
-                $_GET['post_type'],
-                ['mvpf-form', 'mvpf-submission']
-            );
-        }
+  public const SECURITY_CODE = 'qdCHbdMLD8U62WXDPSwfgGBzKN5WLR5r';
 
-        if (isset($_GET['post'])) {
-            return in_array(
-                get_post_type($_GET['post']),
-                ['mvpf-form', 'mvpf-submission']
-            );
-        }
-
-        return false;
+  private function shouldInit()
+  {
+    if (isset($_GET['post_type'])) {
+      return in_array(
+        $_GET['post_type'],
+        ['mvpf-form', 'mvpf-submission'],
+      );
     }
 
-    public function register()
-    {
-        if (is_admin()) {
-            $css = Utils::dist_uri('admin.css');
-            $css_version = @filemtime(Utils::dist_path('admin.css'));
-
-            $js = Utils::dist_uri('admin.min.js');
-            $js_version = @filemtime(Utils::dist_path('admin.min.js'));
-
-            wp_register_style('mashvp-forms--admin-styles', $css, [], $css_version);
-            wp_register_script('mashvp-forms--admin-script', $js, ['wp-i18n'], $js_version);
-            wp_set_script_translations(
-                'mashvp-forms--admin-script',
-                'mashvp-forms',
-                MASHVP_FORMS__PATH . 'languages'
-            );
-
-            $this->registerOptions();
-            $this->registerAdminFormHandlers();
-            $this->registerAjaxAction();
-
-            if ($this->shouldInit()) {
-                $this->addMetaBoxes();
-            }
-        }
+    if (isset($_GET['post'])) {
+      return in_array(
+        get_post_type($_GET['post']),
+        ['mvpf-form', 'mvpf-submission'],
+      );
     }
 
-    private function registerAdminFormHandlers()
-    {
-        add_action('wp_ajax_mvpfadmin__export_data', [$this, 'handleExportFormData']);
+    return false;
+  }
+
+  public function register(): void
+  {
+    if (is_admin()) {
+      $css = Utils::dist_uri('admin.css');
+      $css_version = @filemtime(Utils::dist_path('admin.css'));
+
+      $js = Utils::dist_uri('admin.min.js');
+      $js_version = @filemtime(Utils::dist_path('admin.min.js'));
+
+      wp_register_style('mashvp-forms--admin-styles', $css, [], $css_version);
+      wp_register_script('mashvp-forms--admin-script', $js, ['wp-i18n'], $js_version);
+      wp_set_script_translations(
+        'mashvp-forms--admin-script',
+        'mashvp-forms',
+        MASHVP_FORMS__PATH . 'languages',
+      );
+
+      $this->registerOptions();
+      $this->registerAdminFormHandlers();
+      $this->registerAjaxAction();
+
+      if ($this->shouldInit()) {
+        $this->addMetaBoxes();
+      }
+    }
+  }
+
+  private function registerAdminFormHandlers(): void
+  {
+    add_action('wp_ajax_mvpfadmin__export_data', $this->handleExportFormData(...));
+  }
+
+  private function registerOptions(): void
+  {
+    register_setting(
+      'mvpf-general-options',
+      'mvpf__antispam-recaptcha--version',
+      [
+        'type' => 'string',
+        'description' => _x('reCAPTCHA version', 'Global settings option description', 'mashvp-forms'),
+        'sanitize_callback' => 'sanitize_text_field',
+      ],
+    );
+
+    register_setting(
+      'mvpf-general-options',
+      'mvpf__antispam-recaptcha--hide-badge',
+      [
+        'type' => 'boolean',
+        'description' => _x('Hide badge? (for v2 invisible only)', 'Global settings option description', 'mashvp-forms'),
+      ],
+    );
+
+    register_setting(
+      'mvpf-general-options',
+      'mvpf__antispam-recaptcha--sitekey',
+      [
+        'type' => 'string',
+        'description' => _x('reCAPTCHA site key', 'Global settings option description', 'mashvp-forms'),
+        'sanitize_callback' => 'sanitize_text_field',
+      ],
+    );
+
+    register_setting(
+      'mvpf-general-options',
+      'mvpf__antispam-recaptcha--secretkey',
+      [
+        'type' => 'string',
+        'description' => _x('reCAPTCHA secret key', 'Global settings option description', 'mashvp-forms'),
+        'sanitize_callback' => 'sanitize_text_field',
+      ],
+    );
+  }
+
+  private function registerAjaxAction(): void
+  {
+    add_action(
+      'wp_ajax_mvpf__get_exporter_settings',
+      $this->getExporterSettings(...),
+    );
+  }
+
+  public function registerAdminMenu(): void
+  {
+    add_submenu_page(
+      'edit.php?post_type=mvpf-form',
+      _x('General form settings', 'Menu page title', 'mashvp-forms'),
+      _x('Settings', 'Menu page title', 'mashvp-forms'),
+      'manage_options',
+      'mvpf-general-options',
+      $this->formGeneralOptionsRenderContent(...),
+      980,
+    );
+
+    add_submenu_page(
+      'edit.php?post_type=mvpf-form',
+      _x('Export data', 'Menu page title', 'mashvp-forms'),
+      _x('Export', 'Menu page title', 'mashvp-forms'),
+      'manage_options',
+      'mvpf-export-data',
+      $this->formExportDataRenderContent(...),
+      990,
+    );
+  }
+
+  public function enqueueScripts(): void
+  {
+    if (is_admin() && $this->shouldInit()) {
+      $css = Utils::dist_uri('admin.css');
+      $css_version = @filemtime(Utils::dist_path('admin.css'));
+      $js = Utils::dist_uri('admin.min.js');
+      $js_version = @filemtime(Utils::dist_path('admin.min.js'));
+      wp_enqueue_style('mashvp-forms--admin-styles', $css, [], $css_version);
+      wp_enqueue_script('mashvp-forms--admin-script', $js, ['wp-i18n'], $js_version);
+    }
+  }
+
+  private function addMetaBoxes(): void
+  {
+    // Form
+    add_meta_box(
+      'post_metadata_mashvp-forms__fields',
+      __('Form fields', 'mashvp-forms'),
+      $this->renderFormFieldsMetabox(...),
+      'mvpf-form',
+      'normal',
+      'high',
+    );
+
+    add_meta_box(
+      'post_metadata_mashvp-forms__options',
+      __('Form options', 'mashvp-forms'),
+      $this->renderFormOptionsMetabox(...),
+      'mvpf-form',
+      'normal',
+      'low',
+    );
+
+    add_meta_box(
+      'post_metadata_mashvp-forms__shortcode',
+      __('Shortcode', 'mashvp-forms'),
+      $this->renderShortcodeMetabox(...),
+      'mvpf-form',
+      'side',
+      'low',
+    );
+
+    add_meta_box(
+      'post_metadata_mashvp-forms__field-options',
+      __('Field options', 'mashvp-forms'),
+      $this->renderFieldOptionsMetabox(...),
+      'mvpf-form',
+      'side',
+      'low',
+    );
+
+    // Submissions
+    add_meta_box(
+      'post_metadata_mashvp-forms__submission-fields',
+      __('Form fields', 'mashvp-forms'),
+      $this->renderSubmissionFieldsMetabox(...),
+      'mvpf-submission',
+      'normal',
+      'high',
+    );
+
+    add_meta_box(
+      'post_metadata_mashvp-forms__submission-info',
+      __('Info', 'mashvp-forms'),
+      $this->renderSubmissionInfoMetabox(...),
+      'mvpf-submission',
+      'side',
+      'low',
+    );
+  }
+
+  private function getFormOptionFromPost(string $name, $default = null, bool $boolean = false)
+  {
+    if ($boolean) {
+      return Utils::get($_POST, 'mvpf_options--' . $name, false) === 'on';
     }
 
-    private function registerOptions()
-    {
-        register_setting(
-            'mvpf-general-options',
-            'mvpf__antispam-recaptcha--version',
-            [
-                'type' => 'string',
-                'description' => _x('reCAPTCHA version', 'Global settings option description', 'mashvp-forms'),
-                'sanitize_callback' => 'sanitize_text_field',
-            ]
-        );
+    return Utils::get($_POST, 'mvpf_options--' . $name, $default);
+  }
 
-        register_setting(
-            'mvpf-general-options',
-            'mvpf__antispam-recaptcha--hide-badge',
-            [
-                'type' => 'boolean',
-                'description' => _x('Hide badge? (for v2 invisible only)', 'Global settings option description', 'mashvp-forms'),
-            ]
-        );
+  private function getFormOptionValues(): array
+  {
+    return [
+      'submission' => [
+        'ajax' => [
+          'enabled' => $this->getFormOptionFromPost('submission__ajax--enabled', null, true),
+        ],
+      ],
 
-        register_setting(
-            'mvpf-general-options',
-            'mvpf__antispam-recaptcha--sitekey',
-            [
-                'type' => 'string',
-                'description' => _x('reCAPTCHA site key', 'Global settings option description', 'mashvp-forms'),
-                'sanitize_callback' => 'sanitize_text_field',
-            ]
-        );
+      'notifications' => [
+        'email' => [
+          'enabled' => $this->getFormOptionFromPost('notification__email--enabled', null, true),
+          'settings' => $this->getFormOptionFromPost('notification__email--values'),
+        ],
+      ],
 
-        register_setting(
-            'mvpf-general-options',
-            'mvpf__antispam-recaptcha--secretkey',
-            [
-                'type' => 'string',
-                'description' => _x('reCAPTCHA secret key', 'Global settings option description', 'mashvp-forms'),
-                'sanitize_callback' => 'sanitize_text_field',
-            ]
-        );
+      'antispam' => [
+        'honeypot' => [
+          'enabled' => $this->getFormOptionFromPost('antispam__honeypot--enabled', null, true),
+        ],
+        'recaptcha' => [
+          'enabled' => $this->getFormOptionFromPost('antispam__recaptcha--enabled', null, true),
+        ],
+      ],
+    ];
+  }
+
+  public function savePostData($post_id): void
+  {
+    if (
+      !$post_id
+      || get_post_type($post_id) !== 'mvpf-form'
+      || (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
+      || (get_post_status($post_id) === 'auto-draft')
+    ) {
+      return;
     }
 
-    private function registerAjaxAction()
-    {
-        add_action(
-            'wp_ajax_mvpf__get_exporter_settings',
-            [$this, 'getExporterSettings'],
-        );
+    if (
+      isset($_REQUEST['fields_nonce'])
+      && wp_verify_nonce($_REQUEST['fields_nonce'], 'update_mashvp-forms__fields')
+    ) {
+      update_post_meta(
+        $post_id,
+        self::FORM_FIELDS_META_NAME,
+        sanitize_text_field($_REQUEST[self::FORM_FIELDS_META_NAME]),
+      );
     }
 
-    public function registerAdminMenu()
-    {
-        add_submenu_page(
-            'edit.php?post_type=mvpf-form',
-            _x('General form settings', 'Menu page title', 'mashvp-forms'),
-            _x('Settings', 'Menu page title', 'mashvp-forms'),
-            'manage_options',
-            'mvpf-general-options',
-            [$this, 'formGeneralOptionsRenderContent'],
-            980
-        );
+    if (
+      isset($_REQUEST['options_nonce'])
+      && wp_verify_nonce($_REQUEST['options_nonce'], 'update_mashvp-forms__options')
+    ) {
+      update_post_meta(
+        $post_id,
+        self::FORM_OPTIONS_META_NAME,
+        $this->getFormOptionValues(),
+      );
+    }
+  }
 
-        add_submenu_page(
-            'edit.php?post_type=mvpf-form',
-            _x('Export data', 'Menu page title', 'mashvp-forms'),
-            _x('Export', 'Menu page title', 'mashvp-forms'),
-            'manage_options',
-            'mvpf-export-data',
-            [$this, 'formExportDataRenderContent'],
-            990
-        );
+  public function formGeneralOptionsRenderContent(): void
+  {
+    Renderer::renderTemplate('admin/general-options');
+  }
+
+  public function formExportDataRenderContent(): void
+  {
+    Renderer::renderTemplate('admin/export-data');
+  }
+
+  public function renderFormFieldsMetabox(): void
+  {
+    global $post;
+
+    $form_fields_json = get_post_meta($post->ID, self::FORM_FIELDS_META_NAME, true);
+
+    Renderer::renderTemplate(
+      'admin/metaboxes/fields-editor',
+      [
+        'form_fields_json' => $form_fields_json,
+      ],
+    );
+  }
+
+  public function renderFormOptionsMetabox(): void
+  {
+    global $post;
+
+    $form_options = get_post_meta($post->ID, self::FORM_OPTIONS_META_NAME, true);
+
+    Renderer::renderTemplate(
+      'admin/metaboxes/options-editor',
+      [
+        'form_options' => $form_options,
+      ],
+    );
+  }
+
+  public function renderShortcodeMetabox(): void
+  {
+    global $post;
+
+    Renderer::renderTemplate('admin/shortcode-input', ['id' => $post->ID]);
+  }
+
+  public function renderFieldOptionsMetabox(): void
+  {
+    Renderer::renderTemplate('admin/metaboxes/field-options');
+  }
+
+  public function renderSubmissionFieldsMetabox(): void
+  {
+    global $post;
+
+    $fields = maybe_unserialize(
+      get_post_meta($post->ID, self::FORM_FIELDS_META_NAME, true),
+    );
+
+    Renderer::renderTemplate(
+      'admin/metaboxes/submission-fields',
+      [
+        'id' => $post->ID,
+        'post' => $post,
+        'fields' => $fields,
+      ],
+    );
+  }
+
+  public function renderSubmissionInfoMetabox(): void
+  {
+    global $post;
+
+    $submission = new Submission($post->ID);
+
+    Renderer::renderTemplate(
+      'admin/metaboxes/submission-info',
+      [
+        'id' => $post->ID,
+        'post' => $post,
+        'submission' => $submission,
+      ],
+    );
+  }
+
+  private function getExporterClass($export_format): ?string
+  {
+    if ($export_format) {
+      return match ($export_format) {
+        'csv' => CSVExporter::class,
+        default => null,
+      };
     }
 
-    public function enqueueScripts()
-    {
-        if (is_admin()) {
-            if ($this->shouldInit()) {
-                $css = Utils::dist_uri('admin.css');
-                $css_version = @filemtime(Utils::dist_path('admin.css'));
+    return null;
+  }
 
-                $js = Utils::dist_uri('admin.min.js');
-                $js_version = @filemtime(Utils::dist_path('admin.min.js'));
+  private function getExportData(): array
+  {
+    $query = new \WP_Query([
+      'post_type' => 'mvpf-submission',
+      'post_status' => 'publish',
+      'posts_per_page' => -1,
+      'post_parent' => Utils::get($_REQUEST, 'form_id'),
+    ]);
 
-                wp_enqueue_style('mashvp-forms--admin-styles', $css, [], $css_version);
-                wp_enqueue_script('mashvp-forms--admin-script', $js, ['wp-i18n'], $js_version);
-            }
-        }
+    return array_map(fn ($submission_id): Submission => new Submission($submission_id), wp_list_pluck($query->posts, 'ID'));
+  }
+
+  /**
+   * @return mixed[]
+   */
+  private function collectExporterSettings(): array
+  {
+    $settings = [];
+
+    foreach ($_REQUEST as $key => $value) {
+      $matches = [];
+
+      if (preg_match("/^mvpf_es__(.+)$/", (string) $key, $matches)) {
+        $settingKey = $matches[1];
+
+        $settings[$settingKey] = $value;
+      }
     }
 
-    private function addMetaBoxes()
-    {
-        // Form
-        add_meta_box(
-            'post_metadata_mashvp-forms__fields',
-            __('Form fields', 'mashvp-forms'),
-            [$this, 'renderFormFieldsMetabox'],
-            'mvpf-form',
-            'normal',
-            'high'
-        );
+    return $settings;
+  }
 
-        add_meta_box(
-            'post_metadata_mashvp-forms__options',
-            __('Form options', 'mashvp-forms'),
-            [$this, 'renderFormOptionsMetabox'],
-            'mvpf-form',
-            'normal',
-            'low'
-        );
+  public function handleExportFormData(): void
+  {
+    if (
+      current_user_can('export')
+      && wp_verify_nonce(
+        $_REQUEST[self::SECURITY_CODE],
+        'mvpfadmin__export_data',
+      )
+    ) {
+      $exporter_class = $this->getExporterClass(
+        Utils::get($_REQUEST, 'export_format'),
+      );
 
-        add_meta_box(
-            'post_metadata_mashvp-forms__shortcode',
-            __('Shortcode', 'mashvp-forms'),
-            [$this, 'renderShortcodeMetabox'],
-            'mvpf-form',
-            'side',
-            'low'
-        );
+      if ($exporter_class) {
+        $exporter_settings = $this->collectExporterSettings();
+        $exporter = new $exporter_class($exporter_settings);
+        $export_data = $this->getExportData();
 
-        add_meta_box(
-            'post_metadata_mashvp-forms__field-options',
-            __('Field options', 'mashvp-forms'),
-            [$this, 'renderFieldOptionsMetabox'],
-            'mvpf-form',
-            'side',
-            'low'
-        );
+        $exporter->generateFile($export_data);
+        die();
+      }
+    }
+  }
 
-        // Submissions
-        add_meta_box(
-            'post_metadata_mashvp-forms__submission-fields',
-            __('Form fields', 'mashvp-forms'),
-            [$this, 'renderSubmissionFieldsMetabox'],
-            'mvpf-submission',
-            'normal',
-            'high'
-        );
+  public function getExporterSettings(): void
+  {
+    header('Content-Type: application/json');
 
-        add_meta_box(
-            'post_metadata_mashvp-forms__submission-info',
-            __('Info', 'mashvp-forms'),
-            [$this, 'renderSubmissionInfoMetabox'],
-            'mvpf-submission',
-            'side',
-            'low'
-        );
+    $format = Utils::get($_REQUEST, 'export_format');
+
+    if (!$format) {
+      die(json_encode([
+        'success' => false,
+        'message' => 'Missing required parameter `export_format`',
+        'data' => [],
+      ]));
     }
 
-    private function getFormOptionFromPost($name, $default = null, $boolean = false)
-    {
-        if ($boolean) {
-            return Utils::get($_POST, "mvpf_options--{$name}", false) === 'on';
-        }
+    $exporter_class = $this->getExporterClass($format);
 
-        return Utils::get($_POST, "mvpf_options--{$name}", $default);
+    if (!$exporter_class || !class_exists($exporter_class)) {
+      die(json_encode([
+        'success' => false,
+        'message' => sprintf('Unhandled export format `%s`', $format),
+        'data' => [],
+      ]));
     }
 
-    private function getFormOptionValues()
-    {
-        $values = [
-            'submission' => [
-                'ajax' => [
-                    'enabled' => $this->getFormOptionFromPost('submission__ajax--enabled', null, true)
-                ]
-            ],
+    $settings = $exporter_class::getAvailableExporterSettings();
 
-            'notifications' => [
-                'email' => [
-                    'enabled' => $this->getFormOptionFromPost('notification__email--enabled', null, true),
-                    'settings' => $this->getFormOptionFromPost('notification__email--values')
-                ]
-            ],
-
-            'antispam' => [
-                'honeypot' => [
-                    'enabled' => $this->getFormOptionFromPost('antispam__honeypot--enabled', null, true),
-                ],
-                'recaptcha' => [
-                    'enabled'  => $this->getFormOptionFromPost('antispam__recaptcha--enabled', null, true),
-                ]
-            ]
-        ];
-
-        return $values;
-    }
-
-    public function savePostData($post_id)
-    {
-        if (
-            !$post_id ||
-            get_post_type($post_id) !== 'mvpf-form' ||
-            (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) ||
-            (get_post_status($post_id) === 'auto-draft')
-        ) {
-            return;
-        }
-
-        if (
-            isset($_REQUEST['fields_nonce']) &&
-            wp_verify_nonce($_REQUEST['fields_nonce'], 'update_mashvp-forms__fields')
-        ) {
-            update_post_meta(
-                $post_id,
-                self::FORM_FIELDS_META_NAME,
-                sanitize_text_field($_REQUEST[self::FORM_FIELDS_META_NAME])
-            );
-        }
-
-        if (
-            isset($_REQUEST['options_nonce']) &&
-            wp_verify_nonce($_REQUEST['options_nonce'], 'update_mashvp-forms__options')
-        ) {
-            update_post_meta(
-                $post_id,
-                self::FORM_OPTIONS_META_NAME,
-                $this->getFormOptionValues()
-            );
-        }
-    }
-
-    public function formGeneralOptionsRenderContent()
-    {
-        Renderer::renderTemplate('admin/general-options');
-    }
-
-    public function formExportDataRenderContent()
-    {
-        Renderer::renderTemplate('admin/export-data');
-    }
-
-    public function renderFormFieldsMetabox()
-    {
-        global $post;
-
-        $form_fields_json = get_post_meta($post->ID, self::FORM_FIELDS_META_NAME, true);
-
-        Renderer::renderTemplate(
-            'admin/metaboxes/fields-editor',
-            [
-                'form_fields_json' => $form_fields_json
-            ]
-        );
-    }
-
-    public function renderFormOptionsMetabox()
-    {
-        global $post;
-
-        $form_options = get_post_meta($post->ID, self::FORM_OPTIONS_META_NAME, true);
-
-        Renderer::renderTemplate(
-            'admin/metaboxes/options-editor',
-            [
-                'form_options' => $form_options
-            ]
-        );
-    }
-
-    public function renderShortcodeMetabox()
-    {
-        global $post;
-
-        Renderer::renderTemplate('admin/shortcode-input', ['id' => $post->ID]);
-    }
-
-    public function renderFieldOptionsMetabox()
-    {
-        Renderer::renderTemplate('admin/metaboxes/field-options');
-    }
-
-    public function renderSubmissionFieldsMetabox()
-    {
-        global $post;
-
-        $fields = maybe_unserialize(
-            get_post_meta($post->ID, self::FORM_FIELDS_META_NAME, true)
-        );
-
-        Renderer::renderTemplate(
-            'admin/metaboxes/submission-fields',
-            [
-                'id' => $post->ID,
-                'post' => $post,
-                'fields' => $fields
-            ]
-        );
-    }
-
-    public function renderSubmissionInfoMetabox()
-    {
-        global $post;
-
-        $submission = new Submission($post->ID);
-
-        Renderer::renderTemplate(
-            'admin/metaboxes/submission-info',
-            [
-                'id' => $post->ID,
-                'post' => $post,
-                'submission' => $submission,
-            ]
-        );
-    }
-
-    private function getExporterClass($export_format)
-    {
-        if ($export_format) {
-            switch ($export_format) {
-                case 'csv':
-                    return 'Mashvp\Forms\CSVExporter';
-
-                default:
-                    return null;
-            }
-        }
-
-        return null;
-    }
-
-    private function getExportData()
-    {
-        $query = new \WP_Query([
-            'post_type'      => 'mvpf-submission',
-            'post_status'    => 'publish',
-            'posts_per_page' => -1,
-            'post_parent'    => Utils::get($_REQUEST, 'form_id'),
-        ]);
-
-        return array_map(function ($submission_id) {
-            return new Submission($submission_id);
-        }, wp_list_pluck($query->posts, 'ID'));
-    }
-
-    private function collectExporterSettings()
-    {
-        $settings = [];
-
-        foreach ($_REQUEST as $key => $value) {
-            $matches = [];
-
-            if (preg_match("/^mvpf_es__(.+)$/", $key, $matches)) {
-                $settingKey = $matches[1];
-
-                $settings[$settingKey] = $value;
-            }
-        }
-
-        return $settings;
-    }
-
-    public function handleExportFormData()
-    {
-        if (
-            current_user_can('export') &&
-            wp_verify_nonce(
-                $_REQUEST[self::SECURITY_CODE],
-                'mvpfadmin__export_data'
-            )
-        ) {
-            $exporter_class = $this->getExporterClass(
-                Utils::get($_REQUEST, 'export_format')
-            );
-
-            if ($exporter_class) {
-                $exporter_settings = $this->collectExporterSettings();
-                $exporter          = new $exporter_class($exporter_settings);
-                $export_data       = $this->getExportData();
-
-                $exporter->generateFile($export_data);
-                die();
-            }
-        }
-    }
-
-    public function getExporterSettings()
-    {
-        header('Content-Type: application/json');
-
-        $format = Utils::get($_REQUEST, 'export_format');
-
-        if (!$format) {
-            die(json_encode([
-                'success' => false,
-                'message' => 'Missing required parameter `export_format`',
-                'data'    => [],
-            ]));
-        }
-
-        $exporter_class = $this->getExporterClass($format);
-
-        if (!$exporter_class || !class_exists($exporter_class)) {
-            die(json_encode([
-                'success' => false,
-                'message' => "Unhandled export format `{$format}`",
-                'data'    => [],
-            ]));
-        }
-
-        $settings = $exporter_class::getAvailableExporterSettings();
-
-        die(json_encode([
-            'success' => true,
-            'data'    => $settings,
-        ]));
-    }
+    die(json_encode([
+      'success' => true,
+      'data' => $settings,
+    ]));
+  }
 }

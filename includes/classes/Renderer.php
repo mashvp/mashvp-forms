@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Mashvp\Forms;
 
 use Mashvp\StaticClass;
@@ -7,40 +9,40 @@ use Mashvp\Forms\Utils;
 
 class Renderer extends StaticClass
 {
-    public static function renderTemplate($name, $locals = [], $globals = [])
-    {
-        $path = Utils::template_path($name);
-        $path = apply_filters('mvpf/template_path', $path, $name, $locals);
+  public static function renderTemplate(string $name, $locals = [], $globals = []): bool
+  {
+    $path = Utils::template_path($name);
+    $path = apply_filters('mvpf/template_path', $path, $name, $locals);
 
-        if (is_readable($path)) {
-            $has_provided_globals = is_array($globals) && !empty($globals);
+    if (is_readable($path)) {
+      $has_provided_globals = is_array($globals) && $globals !== [];
 
-            extract($locals);
+      extract($locals);
 
-            if ($has_provided_globals) {
-                $GLOBALS['__mvpf_render_globals'] = $globals;
-            }
+      if ($has_provided_globals) {
+        $GLOBALS['__mvpf_render_globals'] = $globals;
+      }
 
-            include $path;
+      include $path;
 
-            if ($has_provided_globals) {
-                unset($GLOBALS['__mvpf_render_globals']);
-            }
+      if ($has_provided_globals) {
+        unset($GLOBALS['__mvpf_render_globals']);
+      }
 
-            return true;
-        } else {
-            echo "<!-- [mashvp-forms] Render error: Template \"$name\" not found -->";
-        }
-
-        return false;
+      return true;
+    } else {
+      echo sprintf('<!-- [mashvp-forms] Render error: Template "%s" not found -->', $name);
     }
 
-    public static function renderTemplateToString($name, $locals = [])
-    {
-        ob_start();
+    return false;
+  }
 
-        self::renderTemplate($name, $locals);
+  public static function renderTemplateToString(string $name, $locals = []): string|false
+  {
+    ob_start();
 
-        return ob_get_clean();
-    }
+    self::renderTemplate($name, $locals);
+
+    return ob_get_clean();
+  }
 }

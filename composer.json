@@ -1,0 +1,33 @@
+{
+  "name": "mashvp/forms",
+  "description": "Mashvp Forms plugin for WordPress",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Mashvp\\Forms\\": "includes/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Dev Mashvp",
+      "email": "dev@mashvp.com"
+    }
+  ],
+  "require": {
+    "php": "^8.1"
+  },
+  "require-dev": {
+    "php-stubs/wordpress-stubs": "^6.9",
+    "rector/rector": "^2.4",
+    "friendsofphp/php-cs-fixer": "^3.94"
+  },
+  "scripts": {
+    "rector": "rector process",
+    "lint:fix": "php-cs-fixer fix",
+    "refactor": [
+      "@rector",
+      "@lint:fix"
+    ]
+  }
+}

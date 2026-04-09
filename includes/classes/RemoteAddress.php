@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Mashvp\Forms;
 
 /**
@@ -9,48 +11,44 @@ namespace Mashvp\Forms;
  */
 class RemoteAddress
 {
-    protected $useProxy = false;
-    protected $trustedProxies = [];
-    protected $proxyHeader = 'HTTP_X_FORWARDED_FOR';
+  protected $useProxy = false;
 
-    public function getIpAddress()
-    {
-        $ip = $this->getIpAddressFromProxy();
+  protected $trustedProxies = [];
 
-        if ($ip) {
-            return $ip;
-        }
+  protected $proxyHeader = 'HTTP_X_FORWARDED_FOR';
 
-        if (isset($_SERVER['REMOTE_ADDR'])) {
-            return $_SERVER['REMOTE_ADDR'];
-        }
+  public function getIpAddress()
+  {
+    $ip = $this->getIpAddressFromProxy();
 
-        return '';
+    if ($ip) {
+      return $ip;
     }
 
-    protected function getIpAddressFromProxy()
-    {
-        if (!$this->useProxy
-            || (isset($_SERVER['REMOTE_ADDR']) && !in_array($_SERVER['REMOTE_ADDR'], $this->trustedProxies))
-        ) {
-            return false;
-        }
+    return $_SERVER['REMOTE_ADDR'] ?? '';
+  }
 
-        $header = $this->proxyHeader;
-        if (!isset($_SERVER[$header]) || empty($_SERVER[$header])) {
-            return false;
-        }
-
-        $ips = explode(',', $_SERVER[$header]);
-        $ips = array_map('trim', $ips);
-        $ips = array_diff($ips, $this->trustedProxies);
-
-        if (empty($ips)) {
-            return false;
-        }
-
-        $ip = array_pop($ips);
-
-        return $ip;
+  protected function getIpAddressFromProxy(): false|string
+  {
+    if (!$this->useProxy
+        || (isset($_SERVER['REMOTE_ADDR']) && !in_array($_SERVER['REMOTE_ADDR'], $this->trustedProxies))
+    ) {
+      return false;
     }
+
+    $header = $this->proxyHeader;
+    if (!isset($_SERVER[$header]) || empty($_SERVER[$header])) {
+      return false;
+    }
+
+    $ips = explode(',', (string) $_SERVER[$header]);
+    $ips = array_map(trim(...), $ips);
+    $ips = array_diff($ips, $this->trustedProxies);
+
+    if ($ips === []) {
+      return false;
+    }
+
+    return array_pop($ips);
+  }
 }
