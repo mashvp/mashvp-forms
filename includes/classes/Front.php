@@ -41,7 +41,8 @@ class Front extends SingletonClass
             wp_localize_script('mashvp-forms--front-script', '__mvpf', [
                 'adminAjax' => [
                     'url' => admin_url('admin-ajax.php')
-                ]
+                ],
+                'nonceFieldName' => Form::SECURITY_CODE,
             ]);
         }
     }

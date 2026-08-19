@@ -11,8 +11,25 @@ class SubmissionHandler extends SingletonClass
 {
     public function registerFormHandler()
     {
-        add_action('wp_ajax_mvpf_form_submit', [$this, 'handleFormSubmit']);
-        add_action('wp_ajax_nopriv_mvpf_form_submit', [$this, 'handleFormSubmit']);
+        add_action(
+            'wp_ajax_mvpf_form_submit',
+            [$this, 'handleFormSubmit']
+        );
+
+        add_action(
+            'wp_ajax_nopriv_mvpf_form_submit',
+            [$this, 'handleFormSubmit']
+        );
+
+        add_action(
+            'wp_ajax_mvpf_refresh_nonce',
+            [$this, 'handleNonceRefresh']
+        );
+
+        add_action(
+            'wp_ajax_nopriv_mvpf_refresh_nonce',
+            [$this, 'handleNonceRefresh']
+        );
     }
 
     private function getRawFieldValue($field)
@@ -222,7 +239,10 @@ class SubmissionHandler extends SingletonClass
     {
         if (
             empty($_POST) ||
-            !wp_verify_nonce($_POST[Form::SECURITY_CODE], 'mvpf_form_submit')
+            !wp_verify_nonce(
+                Utils::get($_POST, Form::SECURITY_CODE),
+                'mvpf_form_submit'
+            )
         ) {
             return $this->terminateSubmissionProcess(
                 false,
@@ -310,5 +330,20 @@ class SubmissionHandler extends SingletonClass
             $defaultMessage,
             $defaultLocalizedMessage
         );
+    }
+
+    public function handleNonceRefresh()
+    {
+        header('Content-Type: application/json;charset=utf-8');
+        header('Access-Control-Allow-Origin: *');
+        header(
+            'Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Mvpf-Method'
+        );
+
+        echo json_encode([
+            Form::SECURITY_CODE => wp_create_nonce('mvpf_form_submit'),
+        ]);
+
+        die();
     }
 }

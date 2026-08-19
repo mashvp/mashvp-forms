@@ -41,18 +41,55 @@ export default class extends ApplicationController {
     });
   }
 
-  dispatch(name, data = {}) {
-    const event = new Event(`mvpf:${name}`);
-
-    event.detail = data;
-
-    this.element.dispatchEvent(event);
+  get nonceFieldName() {
+    return window?.__mvpf?.nonceFieldName;
   }
 
-  sendForm() {
+  get nonceField() {
+    const name = this.nonceFieldName;
+
+    return name ? this.element.querySelector(`[name="${name}"]`) : null;
+  }
+
+  async refreshNonce() {
+    const field = this.nonceField;
+    const fieldName = this.nonceFieldName;
+
+    if (!field || !fieldName) {
+      return;
+    }
+
+    try {
+      const response = await fetch(this.ajaxURL, {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: new Headers({
+          'Content-Type': 'application/x-www-form-urlencoded',
+        }),
+        body: new URLSearchParams({ action: 'mvpf_refresh_nonce' }),
+      });
+
+      if (!response.ok) {
+        return;
+      }
+
+      const json = await response.json();
+      const nonce = json[fieldName];
+
+      if (nonce) {
+        field.value = nonce;
+      }
+    } catch {
+      // Fail silently, submission proceeds with the existing field value.
+    }
+  }
+
+  async sendForm() {
     if (this.status !== 'sending') {
       this.setStatusMessage('sending');
       this.status = 'sending';
+
+      await this.refreshNonce();
 
       fetch(this.ajaxURL, {
         method: 'POST',
@@ -90,5 +127,13 @@ export default class extends ApplicationController {
   handleSubmit(event) {
     event.preventDefault();
     this.sendForm();
+  }
+
+  dispatch(name, data = {}) {
+    const event = new Event(`mvpf:${name}`);
+
+    event.detail = data;
+
+    this.element.dispatchEvent(event);
   }
 }
